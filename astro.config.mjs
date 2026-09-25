@@ -4,7 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://error420notfound.github.io',
-  base: '/chroma',
+  // GitHub Pages serves this project from /chroma, while local dev runs at /
+  base: process.env.NODE_ENV === 'development' ? '/' : '/chroma',
   output: 'static',
   integrations: [react()],
   vite: { plugins: [tailwindcss()] },

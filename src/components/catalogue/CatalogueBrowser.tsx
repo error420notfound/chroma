@@ -1,101 +1,27 @@
-import { useDeferredValue, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { CatalogueItem } from '../../lib/catalogue';
 import { bestTextColor, inSRGB } from '../../lib/colour';
 import { CopyButton } from '../colour/CopyButton';
+import { harmonyHues, harmonyModes, hueDistance, hueViews, inHueView, nearestColours, parseOklch, sortColours, type HarmonyMode, type HueView, type SortMode } from '../../lib/catalogueFilters';
 
-export function CatalogueBrowser({ items, base }: { items: CatalogueItem[]; base: string }) {
-  const [query, setQuery] = useState('');
-  const [type, setType] = useState('all');
-  const [family, setFamily] = useState('all');
-  const deferred = useDeferredValue(query);
-  const families = useMemo(
-    () => [...new Set(items.map((item) => item.family).filter(Boolean))],
-    [items],
-  );
-  const visible = useMemo(
-    () =>
-      items.filter((item) => {
-        const search =
-          `${item.name} ${item.description} ${item.tags.join(' ')} ${item.hex}`.toLowerCase();
-        return (
-          search.includes(deferred.toLowerCase()) &&
-          (type === 'all' || item.type === type) &&
-          (family === 'all' || item.family === family)
-        );
-      }),
-    [items, deferred, type, family],
-  );
-  return (
-    <div className="split">
-      <aside className="rail">
-        <div className="eyebrow">Catalogue tools</div>
-        <label htmlFor="search">Search records</label>
-        <input
-          id="search"
-          className="input"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          placeholder="Name, tag or HEX"
-        />
-        <label htmlFor="type">Record type</label>
-        <select
-          id="type"
-          className="select"
-          value={type}
-          onChange={(event) => setType(event.target.value)}
-        >
-          <option value="all">All records</option>
-          <option value="scale">Hue scales</option>
-          <option value="engineered">Engineered hues</option>
-        </select>
-        <label htmlFor="family">Colour family</label>
-        <select
-          id="family"
-          className="select"
-          value={family}
-          onChange={(event) => setFamily(event.target.value)}
-        >
-          <option value="all">All families</option>
-          {families.map((entry) => (
-            <option key={entry}>{entry}</option>
-          ))}
-        </select>
-      </aside>
-      <section>
-        <div className="toolbar" style={{ justifyContent: 'space-between', marginBottom: 14 }}>
-          <span className="eyebrow">{visible.length} colours found</span>
-          <span className="hex">sRGB and P3 metadata</span>
-        </div>
-        <div className="catalogue-grid">
-          {visible.map((item) => (
-            <article className="catalogue-cell" key={item.id}>
-              <a href={`${base}/${item.type === 'scale' ? 'scales' : 'engineered'}/${item.slug}`}>
-                <div
-                  className="swatch"
-                  style={{ background: item.hex, color: bestTextColor(item.hex) }}
-                >
-                  <span style={{ fontSize: 30, fontWeight: 650 }}>Aa</span>
-                  <span className="hex" style={{ color: 'inherit', opacity: 0.74 }}>
-                    {item.type === 'scale' ? item.step : 'engineered'}
-                  </span>
-                </div>
-              </a>
-              <div className="meta">
-                <span>
-                  <strong>{item.name}</strong>
-                  <br />
-                  <span className="hex">
-                    {item.hex}
-                    {!inSRGB(item.p3) ? ' · P3' : ''}
-                  </span>
-                </span>
-                <CopyButton value={item.hex} label="Copy" />
-              </div>
-            </article>
-          ))}
-        </div>
-        {!visible.length && <p className="notice">No catalogue records match those filters.</p>}
-      </section>
-    </div>
-  );
+const sortOptions: [SortMode, string][] = [['hue', 'Hue (A → Z)'], ['lightness', 'Lightness'], ['saturation', 'Saturation'], ['nameAsc', 'Name (A → Z)'], ['nameDesc', 'Name (Z → A)']];
+
+function ColourWheel({ hue, chroma, lightness, harmony, onChange }: { hue: number; chroma: number; lightness: number; harmony: HarmonyMode; onChange: (hue: number, chroma: number) => void }) {
+  const size = 240; const center = size / 2; const radius = 96;
+  const point = (angle: number, distance = radius) => ({ x: center + Math.cos((angle - 90) * Math.PI / 180) * distance, y: center + Math.sin((angle - 90) * Math.PI / 180) * distance });
+  const update = (event: React.PointerEvent<SVGSVGElement>) => { const rect = event.currentTarget.getBoundingClientRect(); const x = event.clientX - rect.left - center; const y = event.clientY - rect.top - center; onChange((Math.atan2(x, -y) * 180 / Math.PI + 360) % 360, Math.min(0.4, Math.hypot(x, y) / radius * 0.4)); };
+  const marker = point(hue, Math.max(8, chroma / 0.4 * radius));
+  return <div className="colour-wheel-wrap"><svg className="colour-wheel" viewBox={`0 0 ${size} ${size}`} aria-label="Interactive colour wheel" role="img" onPointerDown={(event) => { event.currentTarget.setPointerCapture(event.pointerId); update(event); }} onPointerMove={(event) => event.buttons && update(event)}><defs><radialGradient id="wheel-core"><stop stopColor="white"/><stop offset="1" stopColor="transparent"/></radialGradient></defs><circle className="wheel-spectrum" cx={center} cy={center} r={radius}/><circle cx={center} cy={center} r={radius} fill="url(#wheel-core)"/>{harmonyHues(hue, harmony).map((angle) => { const p = point(angle); return <circle key={angle} className="harmony-handle" cx={p.x} cy={p.y} r="6"/>; })}<circle className="wheel-marker" cx={marker.x} cy={marker.y} r="9"/></svg><div className="wheel-readout"><span style={{ background: `oklch(${lightness} ${chroma} ${hue})` }}/><label>Hue <input type="number" min="0" max="359" value={Math.round(hue)} onChange={(e) => onChange(Number(e.target.value), chroma)}/></label></div></div>;
+}
+
+export default function CatalogueBrowser({ items, base }: { items: CatalogueItem[]; base: string }) {
+  const [view, setView] = useState<HueView>('all'); const [collection, setCollection] = useState('all'); const [sort, setSort] = useState<SortMode>('hue'); const [lightness, setLightness] = useState<[number, number]>([0, 1]); const [chroma, setChroma] = useState<[number, number]>([0, 0.4]); const [hue, setHue] = useState(210); const [wheelChroma, setWheelChroma] = useState(0.16); const [lightnessValue] = useState(0.65); const [harmony, setHarmony] = useState<HarmonyMode>('none'); const [open, setOpen] = useState(''); const [mobileVisible, setMobileVisible] = useState(true);
+  const families = useMemo(() => [...new Set(items.map((item) => item.family).filter(Boolean))], [items]); const counts = useMemo(() => Object.fromEntries(hueViews.map((entry) => [entry.id, items.filter((item) => inHueView(item, entry.id)).length])), [items]);
+  const visible = useMemo(() => sortColours(items.filter((item) => { const colour = parseOklch(item.oklch); return inHueView(item, view) && (collection === 'all' || collection === item.type || collection === item.family) && colour.l >= lightness[0] && colour.l <= lightness[1] && colour.c >= chroma[0] && colour.c <= chroma[1] && (harmony === 'none' || hueDistance(colour.h, hue) <= 34); }), sort), [items, view, collection, sort, lightness, chroma, harmony, hue]);
+  const palette = harmonyHues(hue, harmony).flatMap((target) => nearestColours(items, target));
+  useEffect(() => { let previous = window.scrollY; const onScroll = () => { if (Math.abs(window.scrollY - previous) > 8) { setMobileVisible(window.scrollY < previous); previous = window.scrollY; } }; window.addEventListener('scroll', onScroll, { passive: true }); return () => window.removeEventListener('scroll', onScroll); }, []);
+  const reset = () => { setView('all'); setCollection('all'); setSort('hue'); setLightness([0, 1]); setChroma([0, 0.4]); setHarmony('none'); };
+  const disclosure = (id: string, label: string, children: React.ReactNode) => <><button className="filter-disclosure" onClick={() => setOpen(open === id ? '' : id)}>{label}<span>⌄</span></button>{open === id && <div className="filter-content">{children}</div>}</>;
+  const controls = <><div className="filter-section"><h3>View</h3>{hueViews.map((entry) => <button className={view === entry.id ? 'filter-choice active' : 'filter-choice'} key={entry.id} onClick={() => setView(entry.id)}><span>{entry.label}</span><small>{counts[entry.id]}</small></button>)}</div><div className="filter-section"><h3>Filter</h3>{disclosure('hue', 'Hue', <><ColourWheel hue={hue} chroma={wheelChroma} lightness={lightnessValue} harmony={harmony} onChange={(nextHue, nextChroma) => { setHue(nextHue); setWheelChroma(nextChroma); setView('all'); }}/><select className="select" value={harmony} onChange={(e) => setHarmony(e.target.value as HarmonyMode)}>{Object.keys(harmonyModes).map((mode) => <option key={mode} value={mode}>{mode === 'none' ? 'Nearest hues only' : mode}</option>)}</select></>)}{disclosure('lightness', 'Lightness', <div className="range-pair"><input type="range" min="0" max="1" step=".01" value={lightness[0]} onChange={(e) => setLightness([+e.target.value, lightness[1]])}/><input type="range" min="0" max="1" step=".01" value={lightness[1]} onChange={(e) => setLightness([lightness[0], +e.target.value])}/></div>)}{disclosure('chroma', 'Saturation', <div className="range-pair"><input type="range" min="0" max=".4" step=".01" value={chroma[0]} onChange={(e) => setChroma([+e.target.value, chroma[1]])}/><input type="range" min="0" max=".4" step=".01" value={chroma[1]} onChange={(e) => setChroma([chroma[0], +e.target.value])}/></div>)}{disclosure('collection', 'Collection', <select className="select" value={collection} onChange={(e) => setCollection(e.target.value)}><option value="all">All collections</option><option value="scale">Hue scales</option><option value="engineered">Engineered hues</option>{families.map((family) => <option key={family} value={family}>{family}</option>)}</select>)}</div><div className="filter-section"><h3>Sort</h3>{sortOptions.map(([id, label]) => <label className="sort-choice" key={id}><input type="radio" checked={sort === id} onChange={() => setSort(id)}/>{label}</label>)}</div><button className="reset-filter" onClick={reset}>Reset</button></>;
+  return <div className="catalogue-browser"><aside className="rail">{controls}</aside><div className={mobileVisible ? 'mobile-filter-bar visible' : 'mobile-filter-bar'}><label>View <select value={view} onChange={(e) => setView(e.target.value as HueView)}>{hueViews.map((entry) => <option key={entry.id} value={entry.id}>{entry.label}</option>)}</select></label><label>Collection <select value={collection} onChange={(e) => setCollection(e.target.value)}><option value="all">All</option><option value="scale">Scales</option><option value="engineered">Engineered</option></select></label><label>Sort <select value={sort} onChange={(e) => setSort(e.target.value as SortMode)}>{sortOptions.map(([id, label]) => <option key={id} value={id}>{label}</option>)}</select></label><button onClick={() => setOpen('hue')}>Colour wheel</button></div><section className="catalogue-results">{harmony !== 'none' && <div className="palette-panel"><div className="toolbar"><span className="eyebrow">{harmony} palette</span><span className="hex">Base hue {Math.round(hue)}°</span></div><div className="palette-swatches">{palette.map((item) => <div className="palette-swatch" key={item.id} style={{ background: item.hex, color: bestTextColor(item.hex) }}><strong>{item.name}</strong><span>{item.hex}</span><small>Harmony colour</small></div>)}</div></div>}<div className="toolbar result-toolbar"><span className="eyebrow">{visible.length} colours found</span><span className="hex">sRGB and P3 metadata</span></div><div className="catalogue-grid">{visible.map((item) => <article className="catalogue-cell" key={item.id}><a href={`${base}/${item.type === 'scale' ? 'scales' : 'engineered'}/${item.slug}`}><div className="swatch" style={{ background: item.hex, color: bestTextColor(item.hex) }}><span style={{ fontSize: 30, fontWeight: 650 }}>Aa</span><span className="hex" style={{ color: 'inherit', opacity: .74 }}>{item.type === 'scale' ? item.step : 'engineered'}</span></div></a><div className="meta"><span><strong>{item.name}</strong><br/><span className="hex">{item.hex}{!inSRGB(item.p3) ? ' · P3' : ''}</span></span><CopyButton value={item.hex} label="Copy"/></div></article>)}</div>{!visible.length && <p className="notice">No catalogue records match those filters.</p>}</section></div>;
 }

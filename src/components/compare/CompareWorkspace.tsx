@@ -5,7 +5,7 @@ import { bestTextColor } from '../../lib/colour';
 import { readStored, saveStored } from '../../lib/storage';
 import { CopyButton } from '../colour/CopyButton';
 type Mode = 'original' | 'lightness' | 'chroma';
-export function CompareWorkspace({ items }: { items: CatalogueItem[] }) {
+export default function CompareWorkspace({ items }: { items: CatalogueItem[] }) {
   const lookup = useMemo(() => new Map(items.map((item) => [item.id, item])), [items]);
   const [ids, setIds] = useState<string[]>(() => {
     const shared =

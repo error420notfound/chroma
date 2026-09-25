@@ -8,7 +8,7 @@ const checks = [
   ['Large text AAA', 4.5],
   ['Non-text UI', 3],
 ] as const;
-export function ContrastChecker({ items }: { items: CatalogueItem[] }) {
+export default function ContrastChecker({ items }: { items: CatalogueItem[] }) {
   const [foreground, setForeground] = useState(
     items.find((i) => i.hex === '#FFFFFF')?.id ?? items[0].id,
   );

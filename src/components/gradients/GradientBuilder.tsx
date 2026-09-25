@@ -1,11 +1,12 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { gsap } from 'gsap';
 import type { CatalogueItem } from '../../lib/catalogue';
 import { fallbackSRGB, inSRGB } from '../../lib/colour';
 import { gradientCss, type GradientStop } from '../../lib/gradients';
 import { readStored, saveStored } from '../../lib/storage';
 import { CopyButton } from '../colour/CopyButton';
 const id = () => Math.random().toString(36).slice(2);
-export function GradientBuilder({ items }: { items: CatalogueItem[] }) {
+export default function GradientBuilder({ items }: { items: CatalogueItem[] }) {
   const fallback: GradientStop[] = [
     { id: id(), color: items[4].hex, position: 0, name: items[4].name },
     {
@@ -20,23 +21,47 @@ export function GradientBuilder({ items }: { items: CatalogueItem[] }) {
   );
   const [space, setSpace] = useState('oklch');
   const [direction, setDirection] = useState('shorter hue');
+  const [playing, setPlaying] = useState(true);
+  const [catalogueQuery, setCatalogueQuery] = useState('');
+  const trackRef = useRef<HTMLDivElement>(null);
   useEffect(() => saveStored('chroma.gradient.v1', stops), [stops]);
   const css = useMemo(() => gradientCss(stops, space), [stops, space]);
   const hasP3 = stops.some((stop) => !inSRGB(stop.color));
-  const addStop = () => {
-    if (stops.length < 8)
-      setStops([...stops, { id: id(), color: items[0].hex, position: 50, name: items[0].name }]);
+  const catalogueMatches = useMemo(() => {
+    const query = catalogueQuery.trim().toLowerCase();
+    if (!query) return items.slice(0, 6);
+    return items.filter((item) => `${item.name} ${item.hex} ${item.tags.join(' ')}`.toLowerCase().includes(query)).slice(0, 8);
+  }, [catalogueQuery, items]);
+  useLayoutEffect(() => {
+    const element = trackRef.current;
+    if (!element) return;
+    const context = gsap.context(() => {
+      gsap.fromTo(element, { yPercent: 0 }, { yPercent: -50, duration: 4.5, ease: 'none', repeat: -1, paused: !playing });
+    }, element);
+    return () => context.revert();
+  }, [css, playing]);
+  const addStop = (item: CatalogueItem) => {
+    if (stops.length < 8) {
+      setStops([...stops, { id: id(), color: item.hex, position: 50, name: item.name }]);
+      setCatalogueQuery('');
+    }
   };
   return (
     <div className="tool-grid">
       <section className="panel" style={{ gridColumn: '1 / -1' }}>
-        <div className="swatch" style={{ background: css, minHeight: 210, color: '#fff' }}>
-          <span className="eyebrow" style={{ color: 'inherit' }}>
-            Live linear gradient
-          </span>
-          <strong style={{ fontSize: 36 }}>Colour in motion</strong>
+        <div className="swatch gradient-preview" data-gradient-animation={playing ? 'playing' : 'paused'} style={{ minHeight: 210, color: '#fff' }}>
+          <div ref={trackRef} className="gradient-track" aria-hidden="true">
+            <div className="gradient-frame" style={{ background: css }} />
+            <div className="gradient-frame" style={{ background: css }} />
+          </div>
+          <div className="gradient-content">
+            <span className="eyebrow" style={{ color: 'inherit' }}>
+              Live linear gradient
+            </span>
+            <strong style={{ fontSize: 36 }}>Colour in motion</strong>
+          </div>
         </div>
-        <div className="meta">
+        <div className="meta gradient-actions">
           <span
             className="hex"
             style={{ maxWidth: '75%', overflow: 'hidden', textOverflow: 'ellipsis' }}
@@ -44,6 +69,9 @@ export function GradientBuilder({ items }: { items: CatalogueItem[] }) {
             {css}
           </span>
           <CopyButton value={css} label="Copy CSS" />
+          <button className="button" type="button" onClick={() => setPlaying((value) => !value)}>
+            {playing ? 'Pause animation' : 'Play animation'}
+          </button>
         </div>
       </section>
       <section className="panel">
@@ -92,27 +120,22 @@ export function GradientBuilder({ items }: { items: CatalogueItem[] }) {
           </p>
         )}
       </section>
-      <section className="panel">
+      <section className="panel gradient-stops-panel" style={{ gridColumn: '1 / -1' }}>
         <div className="meta">
           <h2>Stops</h2>
-          <button className="button primary" disabled={stops.length >= 8} onClick={addStop}>
-            Add stop
-          </button>
+        </div>
+        <div className="catalogue-stop-picker">
+          <label className="eyebrow" htmlFor="catalogue-stop-search">Add a catalogue hue</label>
+          <input id="catalogue-stop-search" className="input" value={catalogueQuery} onChange={(event) => setCatalogueQuery(event.target.value)} placeholder="Search by name, tag, or HEX" disabled={stops.length >= 8} />
+          <div className="catalogue-stop-results">{catalogueMatches.map((item) => <button type="button" key={item.id} className="catalogue-stop-option" onClick={() => addStop(item)} disabled={stops.length >= 8}><span style={{ background: item.hex }} /><strong>{item.name}{item.step ? ` ${item.step}` : ''}</strong><small>{item.hex}</small></button>)}</div>
         </div>
         {stops.map((stop, index) => (
           <div
             key={stop.id}
-            className="meta"
-            style={{ borderTop: '1px solid var(--line)', paddingTop: 10, marginTop: 10 }}
+            className="gradient-stop-row"
           >
-            <input
-              aria-label={`Stop ${index + 1} colour`}
-              type="color"
-              value={stop.color}
-              onChange={(e) =>
-                setStops(stops.map((s) => (s.id === stop.id ? { ...s, color: e.target.value } : s)))
-              }
-            />
+            <span className="gradient-stop-colour" style={{ background: stop.color }} aria-hidden="true" />
+            <label><span className="visually-hidden">Stop {index + 1} colour</span><select className="select" value={`${stop.name}|${stop.color}`} onChange={(event) => { const [name, color] = event.target.value.split('|'); setStops(stops.map((entry) => entry.id === stop.id ? { ...entry, name, color } : entry)); }}>{items.map((item) => <option key={item.id} value={`${item.name}|${item.hex}`}>{item.name}{item.step ? ` ${item.step}` : ''} — {item.hex}</option>)}</select></label>
             <input
               aria-label={`Stop ${index + 1} position`}
               type="range"
@@ -127,7 +150,7 @@ export function GradientBuilder({ items }: { items: CatalogueItem[] }) {
                 )
               }
             />
-            <span className="hex">{stop.position}%</span>
+            <span className="hex gradient-stop-position">{stop.position}%</span>
             {stops.length > 2 && (
               <button
                 className="copy"

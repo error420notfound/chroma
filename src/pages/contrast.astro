@@ -1,4 +1,4 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'; import { catalogueItems } from '../lib/catalogue'; import { ContrastChecker } from '../components/contrast/ContrastChecker';
+import BaseLayout from '../layouts/BaseLayout.astro'; import { catalogueItems } from '../lib/catalogue'; import ContrastChecker from '../components/contrast/ContrastChecker.tsx';
 ---
 <BaseLayout title="Contrast checker — Chroma"><div class="eyebrow">Contrast checker</div><h1>Check before<br/>you commit.</h1><p>WCAG 2.2 results are calculated live and never stored in catalogue data.</p><hr class="rule"/><ContrastChecker client:load items={catalogueItems}/></BaseLayout>
