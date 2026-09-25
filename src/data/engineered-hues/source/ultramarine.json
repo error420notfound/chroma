@@ -1,0 +1,22 @@
+{
+  "id": "engineered-ultramarine",
+  "type": "engineered",
+  "name": "Ultramarine",
+  "slug": "ultramarine",
+  "description": "Deep, saturated synthetic blue-violet",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#120A8F",
+    "oklch": {
+      "l": 0.29784,
+      "c": 0.298259,
+      "h": 206.454779
+    },
+    "displayP3": {
+      "r": 0.065842,
+      "g": 0.040507,
+      "b": 0.537456
+    }
+  },
+  "textColor": "auto"
+}

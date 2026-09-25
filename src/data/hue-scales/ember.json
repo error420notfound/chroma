@@ -1,0 +1,98 @@
+{
+  "id": "ember",
+  "slug": "ember",
+  "name": "Ember",
+  "family": "Orange",
+  "description": "A warm signal scale with depth for active states.",
+  "tags": ["warm", "signal", "accent"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Ash",
+      "hex": "#FFF7ED",
+      "oklch": "oklch(0.97 0.02 64)",
+      "p3": "color(display-p3 1 0.96 0.91)",
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Glow",
+      "hex": "#FFEDD5",
+      "oklch": "oklch(0.92 0.05 64)",
+      "p3": "color(display-p3 1 0.9 0.8)",
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Tangerine",
+      "hex": "#FED7AA",
+      "oklch": "oklch(0.84 0.09 64)",
+      "p3": "color(display-p3 0.99 0.78 0.6)",
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Flame",
+      "hex": "#FDBA74",
+      "oklch": "oklch(0.76 0.13 60)",
+      "p3": "color(display-p3 0.98 0.65 0.4)",
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Saffron",
+      "hex": "#FB923C",
+      "oklch": "oklch(0.68 0.17 52)",
+      "p3": "color(display-p3 0.96 0.47 0.18)",
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Ember",
+      "hex": "#F97316",
+      "oklch": "oklch(0.64 0.2 42)",
+      "p3": "color(display-p3 0.94 0.35 0.05)",
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Burn",
+      "hex": "#EA580C",
+      "oklch": "oklch(0.56 0.2 38)",
+      "p3": "color(display-p3 0.87 0.23 0.03)",
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Kiln",
+      "hex": "#C2410C",
+      "oklch": "oklch(0.47 0.17 38)",
+      "p3": "color(display-p3 0.7 0.16 0.03)",
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Cinder",
+      "hex": "#9A3412",
+      "oklch": "oklch(0.39 0.13 39)",
+      "p3": "color(display-p3 0.55 0.11 0.04)",
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Coal",
+      "hex": "#7C2D12",
+      "oklch": "oklch(0.32 0.1 41)",
+      "p3": "color(display-p3 0.43 0.08 0.04)",
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Char",
+      "hex": "#431407",
+      "oklch": "oklch(0.2 0.06 43)",
+      "p3": "color(display-p3 0.22 0.03 0.01)",
+      "textColor": "auto"
+    }
+  ]
+}

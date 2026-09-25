@@ -1,0 +1,22 @@
+{
+  "id": "engineered-signal-violet",
+  "type": "engineered",
+  "name": "Signal Violet",
+  "slug": "signal-violet",
+  "description": "Industrialized violet",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#6A0DAD",
+    "oklch": {
+      "l": 0.429759,
+      "c": 0.121692,
+      "h": 256.281101
+    },
+    "displayP3": {
+      "r": 0.37999,
+      "g": 0.090955,
+      "b": 0.65239
+    }
+  },
+  "textColor": "auto"
+}

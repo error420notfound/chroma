@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'; import { catalogueItems } from '../lib/catalogue'; import { GradientBuilder } from '../components/gradients/GradientBuilder';
+---
+<BaseLayout title="Gradients — Chroma"><div class="eyebrow">Gradient draft</div><h1>Linear colour<br/>with intent.</h1><p>Build and persist local gradient studies from catalogue stops.</p><hr class="rule"/><GradientBuilder client:load items={catalogueItems}/></BaseLayout>

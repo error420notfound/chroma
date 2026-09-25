@@ -1,0 +1,245 @@
+{
+  "id": "scale-prana-verde",
+  "type": "scale",
+  "name": "Prana Verde",
+  "slug": "prana-verde",
+  "tags": ["02-Sheet-2-Sheet-2-Table-1"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Verde Haze",
+      "color": {
+        "hex": "#E8FAF3",
+        "oklch": {
+          "l": 0.97322,
+          "c": 0.020532,
+          "h": 54.352888
+        },
+        "displayP3": {
+          "r": 0.92291,
+          "g": 0.978149,
+          "b": 0.954159
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Verde Silk",
+      "color": {
+        "hex": "#CFF5E6",
+        "oklch": {
+          "l": 0.942399,
+          "c": 0.019603,
+          "h": 100.856588
+        },
+        "displayP3": {
+          "r": 0.840836,
+          "g": 0.956314,
+          "b": 0.904871
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Verde Leaflight",
+      "color": {
+        "hex": "#9EEBD0",
+        "oklch": {
+          "l": 0.885999,
+          "c": 0.039332,
+          "h": 144.973548
+        },
+        "displayP3": {
+          "r": 0.686315,
+          "g": 0.913567,
+          "b": 0.821074
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Verde Bloom",
+      "color": {
+        "hex": "#6BE0B9",
+        "oklch": {
+          "l": 0.831809,
+          "c": 0.061578,
+          "h": 153.476994
+        },
+        "displayP3": {
+          "r": 0.540322,
+          "g": 0.867978,
+          "b": 0.73411
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Verde Pulse",
+      "color": {
+        "hex": "#39D6A2",
+        "oklch": {
+          "l": 0.787537,
+          "c": 0.07679,
+          "h": 152.818821
+        },
+        "displayP3": {
+          "r": 0.427598,
+          "g": 0.827485,
+          "b": 0.648625
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Prana Verde",
+      "color": {
+        "hex": "#14B87A",
+        "oklch": {
+          "l": 0.69554,
+          "c": 0.076877,
+          "h": 145.740733
+        },
+        "displayP3": {
+          "r": 0.333348,
+          "g": 0.710875,
+          "b": 0.497768
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Verde Concentrate",
+      "color": {
+        "hex": "#109C68",
+        "oklch": {
+          "l": 0.616045,
+          "c": 0.067633,
+          "h": 146.434134
+        },
+        "displayP3": {
+          "r": 0.279034,
+          "g": 0.602592,
+          "b": 0.42381
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Verde Reserve",
+      "color": {
+        "hex": "#0C8056",
+        "oklch": {
+          "l": 0.533898,
+          "c": 0.058072,
+          "h": 147.424201
+        },
+        "displayP3": {
+          "r": 0.22475,
+          "g": 0.49431,
+          "b": 0.349866
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Verde Root",
+      "color": {
+        "hex": "#086543",
+        "oklch": {
+          "l": 0.451118,
+          "c": 0.048949,
+          "h": 147.334905
+        },
+        "displayP3": {
+          "r": 0.172226,
+          "g": 0.389893,
+          "b": 0.272959
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Verde Earth",
+      "color": {
+        "hex": "#054A31",
+        "oklch": {
+          "l": 0.364637,
+          "c": 0.039052,
+          "h": 148.392129
+        },
+        "displayP3": {
+          "r": 0.119967,
+          "g": 0.285479,
+          "b": 0.199477
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Verde Origin",
+      "color": {
+        "hex": "#02281B",
+        "oklch": {
+          "l": 0.247689,
+          "c": 0.025601,
+          "h": 153.151342
+        },
+        "displayP3": {
+          "r": 0.053588,
+          "g": 0.153987,
+          "b": 0.109278
+        }
+      },
+      "textColor": "auto"
+    }
+  ],
+  "referenceColors": [
+    {
+      "id": "verde-ivory",
+      "label": "Verde Ivory",
+      "color": {
+        "hex": "#F3FFFA",
+        "oklch": {
+          "l": 0.993032,
+          "c": 0.023822,
+          "h": 43.672911
+        },
+        "displayP3": {
+          "r": 0.961572,
+          "g": 0.998477,
+          "b": 0.981276
+        }
+      },
+      "description": "Text on Verde"
+    },
+    {
+      "id": "verde-ink",
+      "label": "Verde Ink",
+      "color": {
+        "hex": "#061A14",
+        "oklch": {
+          "l": 0.199553,
+          "c": 0.015299,
+          "h": 157.46455
+        },
+        "displayP3": {
+          "r": 0.042959,
+          "g": 0.100157,
+          "b": 0.079628
+        }
+      },
+      "description": "Micro typography"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "engineered-viridian",
+  "type": "engineered",
+  "name": "Viridian",
+  "slug": "viridian",
+  "description": "Manufactured blue-green pigment",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#40826D",
+    "oklch": {
+      "l": 0.559278,
+      "c": 0.038459,
+      "h": 154.40527
+    },
+    "displayP3": {
+      "r": 0.316743,
+      "g": 0.503736,
+      "b": 0.431787
+    }
+  },
+  "textColor": "auto"
+}

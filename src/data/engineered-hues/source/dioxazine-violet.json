@@ -1,0 +1,22 @@
+{
+  "id": "engineered-dioxazine-violet",
+  "type": "engineered",
+  "name": "Dioxazine Violet",
+  "slug": "dioxazine-violet",
+  "description": "Synthetic, extremely deep violet",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#4B0082",
+    "oklch": {
+      "l": 0.339772,
+      "c": 0.105703,
+      "h": 251.367049
+    },
+    "displayP3": {
+      "r": 0.266834,
+      "g": 0.03018,
+      "b": 0.489451
+    }
+  },
+  "textColor": "auto"
+}

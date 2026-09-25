@@ -1,0 +1,22 @@
+{
+  "id": "engineered-signal-vermilion",
+  "type": "engineered",
+  "name": "Signal Vermilion",
+  "slug": "signal-vermilion",
+  "description": "A hotter, clearer red-orange for alerts and calls to action; sits between Signal Red and Vermilion.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#F02B1D",
+    "oklch": {
+      "l": 0.615542,
+      "c": 0.22599,
+      "h": 18.065382
+    },
+    "displayP3": {
+      "r": 0.865611,
+      "g": 0.253489,
+      "b": 0.182178
+    }
+  },
+  "textColor": "auto"
+}

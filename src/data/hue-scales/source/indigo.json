@@ -1,0 +1,437 @@
+{
+  "id": "scale-indigo",
+  "type": "scale",
+  "name": "Indigo",
+  "slug": "indigo",
+  "tags": ["01-Sheet-1-Sheet-1-Orange"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Very pale lilac",
+      "color": {
+        "hex": "#F5F3FF",
+        "oklch": {
+          "l": 0.972373,
+          "c": 0.024402,
+          "h": 12.206521
+        },
+        "displayP3": {
+          "r": 0.959452,
+          "g": 0.953196,
+          "b": 0.99594
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Soft lavender",
+      "color": {
+        "hex": "#E7E2FE",
+        "oklch": {
+          "l": 0.928381,
+          "c": 0.021212,
+          "h": 336.907397
+        },
+        "displayP3": {
+          "r": 0.902493,
+          "g": 0.886928,
+          "b": 0.987104
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Pastel indigo",
+      "color": {
+        "hex": "#CFC4FD",
+        "oklch": {
+          "l": 0.851519,
+          "c": 0.035571,
+          "h": 285.663179
+        },
+        "displayP3": {
+          "r": 0.804373,
+          "g": 0.770105,
+          "b": 0.975318
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Muted violet",
+      "color": {
+        "hex": "#AE99FC",
+        "oklch": {
+          "l": 0.743813,
+          "c": 0.076145,
+          "h": 260.307478
+        },
+        "displayP3": {
+          "r": 0.668721,
+          "g": 0.602965,
+          "b": 0.962323
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Soft indigo",
+      "color": {
+        "hex": "#8B6EF6",
+        "oklch": {
+          "l": 0.635533,
+          "c": 0.126426,
+          "h": 245.180192
+        },
+        "displayP3": {
+          "r": 0.527175,
+          "g": 0.435754,
+          "b": 0.933152
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Base bright indigo",
+      "color": {
+        "hex": "#6A48EC",
+        "oklch": {
+          "l": 0.540963,
+          "c": 0.185366,
+          "h": 231.902361
+        },
+        "displayP3": {
+          "r": 0.395973,
+          "g": 0.287997,
+          "b": 0.891509
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Deeper base indigo",
+      "color": {
+        "hex": "#4B32C4",
+        "oklch": {
+          "l": 0.448443,
+          "c": 0.191528,
+          "h": 225.6608
+        },
+        "displayP3": {
+          "r": 0.279598,
+          "g": 0.200217,
+          "b": 0.7393
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Deep violet",
+      "color": {
+        "hex": "#3A279C",
+        "oklch": {
+          "l": 0.380358,
+          "c": 0.160255,
+          "h": 225.780648
+        },
+        "displayP3": {
+          "r": 0.216283,
+          "g": 0.15603,
+          "b": 0.588091
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Very dark indigo",
+      "color": {
+        "hex": "#291B74",
+        "oklch": {
+          "l": 0.307575,
+          "c": 0.128756,
+          "h": 225.816055
+        },
+        "displayP3": {
+          "r": 0.152502,
+          "g": 0.108136,
+          "b": 0.436824
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Near-navy indigo",
+      "color": {
+        "hex": "#1A114B",
+        "oklch": {
+          "l": 0.234604,
+          "c": 0.085937,
+          "h": 228.84006
+        },
+        "displayP3": {
+          "r": 0.096528,
+          "g": 0.068073,
+          "b": 0.281979
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Indigo-black",
+      "color": {
+        "hex": "#0E0830",
+        "oklch": {
+          "l": 0.176388,
+          "c": 0.063656,
+          "h": 229.118834
+        },
+        "displayP3": {
+          "r": 0.051186,
+          "g": 0.032214,
+          "b": 0.179801
+        }
+      },
+      "textColor": "auto"
+    }
+  ],
+  "referenceColors": [
+    {
+      "id": "text-on-light",
+      "label": "50",
+      "color": {
+        "hex": "#F5F3FF",
+        "oklch": {
+          "l": 0.972373,
+          "c": 0.024402,
+          "h": 12.206521
+        },
+        "displayP3": {
+          "r": 0.959452,
+          "g": 0.953196,
+          "b": 0.99594
+        }
+      }
+    },
+    {
+      "id": "text-on-dark",
+      "label": "900",
+      "color": {
+        "hex": "#1A114B",
+        "oklch": {
+          "l": 0.234604,
+          "c": 0.085937,
+          "h": 228.84006
+        },
+        "displayP3": {
+          "r": 0.096528,
+          "g": 0.068073,
+          "b": 0.281979
+        }
+      }
+    },
+    {
+      "id": "text-on-hue",
+      "label": "500",
+      "color": {
+        "hex": "#6A48EC",
+        "oklch": {
+          "l": 0.540963,
+          "c": 0.185366,
+          "h": 231.902361
+        },
+        "displayP3": {
+          "r": 0.395973,
+          "g": 0.287997,
+          "b": 0.891509
+        }
+      }
+    },
+    {
+      "id": "hue-on-dark",
+      "label": "500",
+      "color": {
+        "hex": "#6A48EC",
+        "oklch": {
+          "l": 0.540963,
+          "c": 0.185366,
+          "h": 231.902361
+        },
+        "displayP3": {
+          "r": 0.395973,
+          "g": 0.287997,
+          "b": 0.891509
+        }
+      }
+    },
+    {
+      "id": "native-black",
+      "label": "950",
+      "color": {
+        "hex": "#0E0830",
+        "oklch": {
+          "l": 0.176388,
+          "c": 0.063656,
+          "h": 229.118834
+        },
+        "displayP3": {
+          "r": 0.051186,
+          "g": 0.032214,
+          "b": 0.179801
+        }
+      }
+    },
+    {
+      "id": "native-white",
+      "label": "100",
+      "color": {
+        "hex": "#E7E2FE",
+        "oklch": {
+          "l": 0.928381,
+          "c": 0.021212,
+          "h": 336.907397
+        },
+        "displayP3": {
+          "r": 0.902493,
+          "g": 0.886928,
+          "b": 0.987104
+        }
+      }
+    }
+  ],
+  "contrastExamples": [
+    {
+      "id": "text-on-light",
+      "label": "Text on Light",
+      "foreground": {
+        "hex": "#0E0830",
+        "oklch": {
+          "l": 0.176388,
+          "c": 0.063656,
+          "h": 229.118834
+        },
+        "displayP3": {
+          "r": 0.051186,
+          "g": 0.032214,
+          "b": 0.179801
+        }
+      },
+      "background": {
+        "hex": "#F5F3FF",
+        "oklch": {
+          "l": 0.972373,
+          "c": 0.024402,
+          "h": 12.206521
+        },
+        "displayP3": {
+          "r": 0.959452,
+          "g": 0.953196,
+          "b": 0.99594
+        }
+      },
+      "sampleText": "Aa"
+    },
+    {
+      "id": "text-on-dark",
+      "label": "Text on Dark",
+      "foreground": {
+        "hex": "#E7E2FE",
+        "oklch": {
+          "l": 0.928381,
+          "c": 0.021212,
+          "h": 336.907397
+        },
+        "displayP3": {
+          "r": 0.902493,
+          "g": 0.886928,
+          "b": 0.987104
+        }
+      },
+      "background": {
+        "hex": "#1A114B",
+        "oklch": {
+          "l": 0.234604,
+          "c": 0.085937,
+          "h": 228.84006
+        },
+        "displayP3": {
+          "r": 0.096528,
+          "g": 0.068073,
+          "b": 0.281979
+        }
+      },
+      "sampleText": "Aa"
+    },
+    {
+      "id": "text-on-hue",
+      "label": "Text on Hue",
+      "foreground": {
+        "hex": "#0E0830",
+        "oklch": {
+          "l": 0.176388,
+          "c": 0.063656,
+          "h": 229.118834
+        },
+        "displayP3": {
+          "r": 0.051186,
+          "g": 0.032214,
+          "b": 0.179801
+        }
+      },
+      "background": {
+        "hex": "#6A48EC",
+        "oklch": {
+          "l": 0.540963,
+          "c": 0.185366,
+          "h": 231.902361
+        },
+        "displayP3": {
+          "r": 0.395973,
+          "g": 0.287997,
+          "b": 0.891509
+        }
+      },
+      "sampleText": "Aa"
+    },
+    {
+      "id": "hue-on-dark",
+      "label": "Hue on Dark",
+      "foreground": {
+        "hex": "#6A48EC",
+        "oklch": {
+          "l": 0.540963,
+          "c": 0.185366,
+          "h": 231.902361
+        },
+        "displayP3": {
+          "r": 0.395973,
+          "g": 0.287997,
+          "b": 0.891509
+        }
+      },
+      "background": {
+        "hex": "#6A48EC",
+        "oklch": {
+          "l": 0.540963,
+          "c": 0.185366,
+          "h": 231.902361
+        },
+        "displayP3": {
+          "r": 0.395973,
+          "g": 0.287997,
+          "b": 0.891509
+        }
+      },
+      "sampleText": "Aa"
+    }
+  ]
+}

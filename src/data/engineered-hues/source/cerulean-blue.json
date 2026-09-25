@@ -1,0 +1,22 @@
+{
+  "id": "engineered-cerulean-blue",
+  "type": "engineered",
+  "name": "Cerulean Blue",
+  "slug": "cerulean-blue",
+  "description": "Manufactured sky/cyan blue",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#007BA7",
+    "oklch": {
+      "l": 0.550796,
+      "c": 0.102214,
+      "h": 209.304941
+    },
+    "displayP3": {
+      "r": 0.206493,
+      "g": 0.474843,
+      "b": 0.6391
+    }
+  },
+  "textColor": "auto"
+}

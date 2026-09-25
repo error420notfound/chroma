@@ -1,0 +1,22 @@
+{
+  "id": "engineered-fluorescent-amber",
+  "type": "engineered",
+  "name": "Fluorescent Amber",
+  "slug": "fluorescent-amber",
+  "description": "Brighter and more yellow than Safety Orange; useful where orange and yellow need a clear middle hue.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#FFB000",
+    "oklch": {
+      "l": 0.812861,
+      "c": 0.156048,
+      "h": 41.693192
+    },
+    "displayP3": {
+      "r": 0.954533,
+      "g": 0.70346,
+      "b": 0.244024
+    }
+  },
+  "textColor": "auto"
+}

@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'; import { catalogueItems } from '../lib/catalogue'; import { CatalogueBrowser } from '../components/catalogue/CatalogueBrowser';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout><div class="eyebrow">HS108 colour catalogue</div><h1>A working library<br/>for colour systems.</h1><p style="max-width:600px">Inspect, compare and carry existing colour decisions through studio work. Source records are validated at build time.</p><hr class="rule"/><CatalogueBrowser client:load items={catalogueItems} base={base}/></BaseLayout>

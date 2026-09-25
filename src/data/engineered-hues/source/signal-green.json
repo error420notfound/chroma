@@ -1,0 +1,22 @@
+{
+  "id": "engineered-signal-green",
+  "type": "engineered",
+  "name": "Signal Green",
+  "slug": "signal-green",
+  "description": "A brighter, cooler green than Lime Green; useful for positive status or high-visibility graphics.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#00C853",
+    "oklch": {
+      "l": 0.730089,
+      "c": 0.099481,
+      "h": 130.074742
+    },
+    "displayP3": {
+      "r": 0.353437,
+      "g": 0.772583,
+      "b": 0.381932
+    }
+  },
+  "textColor": "auto"
+}

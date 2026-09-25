@@ -1,0 +1,22 @@
+{
+  "id": "engineered-acid-yellow",
+  "type": "engineered",
+  "name": "Acid Yellow",
+  "slug": "acid-yellow",
+  "description": "Synthetic, chemically intense yellow",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#DFFF00",
+    "oklch": {
+      "l": 0.945705,
+      "c": 0.126029,
+      "h": 79.062939
+    },
+    "displayP3": {
+      "r": 0.898544,
+      "g": 0.996158,
+      "b": 0.322732
+    }
+  },
+  "textColor": "auto"
+}

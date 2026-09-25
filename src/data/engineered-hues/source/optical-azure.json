@@ -1,0 +1,22 @@
+{
+  "id": "engineered-optical-azure",
+  "type": "engineered",
+  "name": "Optical Azure",
+  "slug": "optical-azure",
+  "description": "A clean blue-cyan bridge between Electric Blue and Manganese Blue.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#008CFF",
+    "oklch": {
+      "l": 0.643086,
+      "c": 0.199058,
+      "h": 216.300886
+    },
+    "displayP3": {
+      "r": 0.238935,
+      "g": 0.540577,
+      "b": 0.96825
+    }
+  },
+  "textColor": "auto"
+}

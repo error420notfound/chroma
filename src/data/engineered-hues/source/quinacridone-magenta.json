@@ -1,0 +1,22 @@
+{
+  "id": "engineered-quinacridone-magenta",
+  "type": "engineered",
+  "name": "Quinacridone Magenta",
+  "slug": "quinacridone-magenta",
+  "description": "Synthetic pigment magenta",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#8E3A59",
+    "oklch": {
+      "l": 0.472587,
+      "c": 0.103644,
+      "h": 3.108816
+    },
+    "displayP3": {
+      "r": 0.516903,
+      "g": 0.247514,
+      "b": 0.346861
+    }
+  },
+  "textColor": "auto"
+}

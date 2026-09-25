@@ -1,0 +1,22 @@
+{
+  "id": "engineered-fluorescent-rose",
+  "type": "engineered",
+  "name": "Fluorescent Rose",
+  "slug": "fluorescent-rose",
+  "description": "High-energy pink with more red presence than Fuchsia; useful for expressive emphasis and campaign graphics.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#FF2E93",
+    "oklch": {
+      "l": 0.666734,
+      "c": 0.206654,
+      "h": 0.797608
+    },
+    "displayP3": {
+      "r": 0.919937,
+      "g": 0.27082,
+      "b": 0.570014
+    }
+  },
+  "textColor": "auto"
+}

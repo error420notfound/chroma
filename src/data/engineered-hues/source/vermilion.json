@@ -1,0 +1,22 @@
+{
+  "id": "engineered-vermilion",
+  "type": "engineered",
+  "name": "Vermilion",
+  "slug": "vermilion",
+  "description": "Artificial-looking warm red-orange",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#E34234",
+    "oklch": {
+      "l": 0.612983,
+      "c": 0.198828,
+      "h": 18.306996
+    },
+    "displayP3": {
+      "r": 0.821862,
+      "g": 0.309776,
+      "b": 0.243539
+    }
+  },
+  "textColor": "auto"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "engineered-signal-red",
+  "type": "engineered",
+  "name": "Signal Red",
+  "slug": "signal-red",
+  "description": "Engineered, high-alert red",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#E00000",
+    "oklch": {
+      "l": 0.569271,
+      "c": 0.226656,
+      "h": 17.601119
+    },
+    "displayP3": {
+      "r": 0.805484,
+      "g": 0.170885,
+      "b": 0.116268
+    }
+  },
+  "textColor": "auto"
+}

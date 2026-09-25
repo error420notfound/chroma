@@ -1,0 +1,22 @@
+{
+  "id": "engineered-signal-cyan",
+  "type": "engineered",
+  "name": "Signal Cyan",
+  "slug": "signal-cyan",
+  "description": "A deeper, more legible cyan than pure Electric Cyan, useful for interface emphasis and diagrams.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#00C8E8",
+    "oklch": {
+      "l": 0.770504,
+      "c": 0.110851,
+      "h": 199.911796
+    },
+    "displayP3": {
+      "r": 0.353437,
+      "g": 0.772583,
+      "b": 0.894404
+    }
+  },
+  "textColor": "auto"
+}

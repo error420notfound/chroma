@@ -1,0 +1,12 @@
+{
+  "id": "safety-lime",
+  "slug": "safety-lime",
+  "name": "Safety Lime",
+  "description": "High-visibility lime engineered for directional markers and physical work cues.",
+  "tags": ["high visibility", "safety", "neon"],
+  "hex": "#C6FF00",
+  "oklch": "oklch(0.92 0.25 125)",
+  "p3": "color(display-p3 0.74 1 0)",
+  "textColor": "auto",
+  "relatedScaleId": "moss"
+}

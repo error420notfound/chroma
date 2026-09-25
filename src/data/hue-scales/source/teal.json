@@ -1,0 +1,437 @@
+{
+  "id": "scale-teal",
+  "type": "scale",
+  "name": "Teal",
+  "slug": "teal",
+  "tags": ["01-Sheet-1-Sheet-1-Orange"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Ice mint teal",
+      "color": {
+        "hex": "#F2FAF8",
+        "oklch": {
+          "l": 0.981809,
+          "c": 0.024431,
+          "h": 36.822811
+        },
+        "displayP3": {
+          "r": 0.954742,
+          "g": 0.979365,
+          "b": 0.972631
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Soft foam teal",
+      "color": {
+        "hex": "#E5F4F0",
+        "oklch": {
+          "l": 0.958142,
+          "c": 0.019724,
+          "h": 47.831506
+        },
+        "displayP3": {
+          "r": 0.908901,
+          "g": 0.954979,
+          "b": 0.941519
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Light sea glass",
+      "color": {
+        "hex": "#C7E7DF",
+        "oklch": {
+          "l": 0.905817,
+          "c": 0.014282,
+          "h": 97.852767
+        },
+        "displayP3": {
+          "r": 0.80461,
+          "g": 0.902073,
+          "b": 0.875255
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Muted teal",
+      "color": {
+        "hex": "#98D3C6",
+        "oklch": {
+          "l": 0.826109,
+          "c": 0.028185,
+          "h": 152.487135
+        },
+        "displayP3": {
+          "r": 0.645244,
+          "g": 0.82109,
+          "b": 0.777617
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Expressive teal",
+      "color": {
+        "hex": "#5EB7A6",
+        "oklch": {
+          "l": 0.72263,
+          "c": 0.048708,
+          "h": 166.146655
+        },
+        "displayP3": {
+          "r": 0.456717,
+          "g": 0.709419,
+          "b": 0.652513
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Base teal (balanced, calm)",
+      "color": {
+        "hex": "#2F9E8F",
+        "oklch": {
+          "l": 0.63741,
+          "c": 0.059502,
+          "h": 172.491163
+        },
+        "displayP3": {
+          "r": 0.321026,
+          "g": 0.61097,
+          "b": 0.561345
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Confident teal",
+      "color": {
+        "hex": "#238576",
+        "oklch": {
+          "l": 0.560697,
+          "c": 0.053126,
+          "h": 170.623426
+        },
+        "displayP3": {
+          "r": 0.261178,
+          "g": 0.514093,
+          "b": 0.463955
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Deep evergreen teal",
+      "color": {
+        "hex": "#1B6A5E",
+        "oklch": {
+          "l": 0.477009,
+          "c": 0.044855,
+          "h": 170.77899
+        },
+        "displayP3": {
+          "r": 0.204748,
+          "g": 0.409612,
+          "b": 0.369543
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Dark pine teal",
+      "color": {
+        "hex": "#134E45",
+        "oklch": {
+          "l": 0.386172,
+          "c": 0.035688,
+          "h": 170.779547
+        },
+        "displayP3": {
+          "r": 0.14681,
+          "g": 0.301273,
+          "b": 0.271245
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Near-black teal",
+      "color": {
+        "hex": "#0B332E",
+        "oklch": {
+          "l": 0.293551,
+          "c": 0.026611,
+          "h": 173.519384
+        },
+        "displayP3": {
+          "r": 0.090632,
+          "g": 0.196799,
+          "b": 0.180404
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Teal-black",
+      "color": {
+        "hex": "#051D1A",
+        "oklch": {
+          "l": 0.211622,
+          "c": 0.01842,
+          "h": 173.966337
+        },
+        "displayP3": {
+          "r": 0.044146,
+          "g": 0.111661,
+          "b": 0.10189
+        }
+      },
+      "textColor": "auto"
+    }
+  ],
+  "referenceColors": [
+    {
+      "id": "text-on-light",
+      "label": "50",
+      "color": {
+        "hex": "#F2FAF8",
+        "oklch": {
+          "l": 0.981809,
+          "c": 0.024431,
+          "h": 36.822811
+        },
+        "displayP3": {
+          "r": 0.954742,
+          "g": 0.979365,
+          "b": 0.972631
+        }
+      }
+    },
+    {
+      "id": "text-on-dark",
+      "label": "900",
+      "color": {
+        "hex": "#0B332E",
+        "oklch": {
+          "l": 0.293551,
+          "c": 0.026611,
+          "h": 173.519384
+        },
+        "displayP3": {
+          "r": 0.090632,
+          "g": 0.196799,
+          "b": 0.180404
+        }
+      }
+    },
+    {
+      "id": "text-on-hue",
+      "label": "500",
+      "color": {
+        "hex": "#2F9E8F",
+        "oklch": {
+          "l": 0.63741,
+          "c": 0.059502,
+          "h": 172.491163
+        },
+        "displayP3": {
+          "r": 0.321026,
+          "g": 0.61097,
+          "b": 0.561345
+        }
+      }
+    },
+    {
+      "id": "hue-on-dark",
+      "label": "900",
+      "color": {
+        "hex": "#0B332E",
+        "oklch": {
+          "l": 0.293551,
+          "c": 0.026611,
+          "h": 173.519384
+        },
+        "displayP3": {
+          "r": 0.090632,
+          "g": 0.196799,
+          "b": 0.180404
+        }
+      }
+    },
+    {
+      "id": "native-black",
+      "label": "950",
+      "color": {
+        "hex": "#051D1A",
+        "oklch": {
+          "l": 0.211622,
+          "c": 0.01842,
+          "h": 173.966337
+        },
+        "displayP3": {
+          "r": 0.044146,
+          "g": 0.111661,
+          "b": 0.10189
+        }
+      }
+    },
+    {
+      "id": "native-white",
+      "label": "100",
+      "color": {
+        "hex": "#E5F4F0",
+        "oklch": {
+          "l": 0.958142,
+          "c": 0.019724,
+          "h": 47.831506
+        },
+        "displayP3": {
+          "r": 0.908901,
+          "g": 0.954979,
+          "b": 0.941519
+        }
+      }
+    }
+  ],
+  "contrastExamples": [
+    {
+      "id": "text-on-light",
+      "label": "Text on Light",
+      "foreground": {
+        "hex": "#051D1A",
+        "oklch": {
+          "l": 0.211622,
+          "c": 0.01842,
+          "h": 173.966337
+        },
+        "displayP3": {
+          "r": 0.044146,
+          "g": 0.111661,
+          "b": 0.10189
+        }
+      },
+      "background": {
+        "hex": "#F2FAF8",
+        "oklch": {
+          "l": 0.981809,
+          "c": 0.024431,
+          "h": 36.822811
+        },
+        "displayP3": {
+          "r": 0.954742,
+          "g": 0.979365,
+          "b": 0.972631
+        }
+      },
+      "sampleText": "Aa"
+    },
+    {
+      "id": "text-on-dark",
+      "label": "Text on Dark",
+      "foreground": {
+        "hex": "#E5F4F0",
+        "oklch": {
+          "l": 0.958142,
+          "c": 0.019724,
+          "h": 47.831506
+        },
+        "displayP3": {
+          "r": 0.908901,
+          "g": 0.954979,
+          "b": 0.941519
+        }
+      },
+      "background": {
+        "hex": "#0B332E",
+        "oklch": {
+          "l": 0.293551,
+          "c": 0.026611,
+          "h": 173.519384
+        },
+        "displayP3": {
+          "r": 0.090632,
+          "g": 0.196799,
+          "b": 0.180404
+        }
+      },
+      "sampleText": "Aa"
+    },
+    {
+      "id": "text-on-hue",
+      "label": "Text on Hue",
+      "foreground": {
+        "hex": "#051D1A",
+        "oklch": {
+          "l": 0.211622,
+          "c": 0.01842,
+          "h": 173.966337
+        },
+        "displayP3": {
+          "r": 0.044146,
+          "g": 0.111661,
+          "b": 0.10189
+        }
+      },
+      "background": {
+        "hex": "#2F9E8F",
+        "oklch": {
+          "l": 0.63741,
+          "c": 0.059502,
+          "h": 172.491163
+        },
+        "displayP3": {
+          "r": 0.321026,
+          "g": 0.61097,
+          "b": 0.561345
+        }
+      },
+      "sampleText": "Aa"
+    },
+    {
+      "id": "hue-on-dark",
+      "label": "Hue on Dark",
+      "foreground": {
+        "hex": "#2F9E8F",
+        "oklch": {
+          "l": 0.63741,
+          "c": 0.059502,
+          "h": 172.491163
+        },
+        "displayP3": {
+          "r": 0.321026,
+          "g": 0.61097,
+          "b": 0.561345
+        }
+      },
+      "background": {
+        "hex": "#0B332E",
+        "oklch": {
+          "l": 0.293551,
+          "c": 0.026611,
+          "h": 173.519384
+        },
+        "displayP3": {
+          "r": 0.090632,
+          "g": 0.196799,
+          "b": 0.180404
+        }
+      },
+      "sampleText": "Aa"
+    }
+  ]
+}

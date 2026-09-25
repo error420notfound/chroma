@@ -1,0 +1,245 @@
+{
+  "id": "scale-kshetra-hari",
+  "type": "scale",
+  "name": "Kshetra Hari",
+  "slug": "kshetra-hari",
+  "tags": ["02-Sheet-2-Sheet-2-Table-1"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Hari Mist",
+      "color": {
+        "hex": "#EEF5E6",
+        "oklch": {
+          "l": 0.96386,
+          "c": 0.034326,
+          "h": 46.157857
+        },
+        "displayP3": {
+          "r": 0.938336,
+          "g": 0.959882,
+          "b": 0.906848
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Hari Veil",
+      "color": {
+        "hex": "#DDEACC",
+        "oklch": {
+          "l": 0.922189,
+          "c": 0.040646,
+          "h": 58.60784
+        },
+        "displayP3": {
+          "r": 0.876052,
+          "g": 0.916007,
+          "b": 0.810388
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Hari Sprout",
+      "color": {
+        "hex": "#BBD59E",
+        "oklch": {
+          "l": 0.842385,
+          "c": 0.051748,
+          "h": 75.731251
+        },
+        "displayP3": {
+          "r": 0.752805,
+          "g": 0.832162,
+          "b": 0.64052
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Hari Field",
+      "color": {
+        "hex": "#99BF70",
+        "oklch": {
+          "l": 0.760547,
+          "c": 0.063688,
+          "h": 86.927416
+        },
+        "displayP3": {
+          "r": 0.629869,
+          "g": 0.744676,
+          "b": 0.47388
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Hari Growth",
+      "color": {
+        "hex": "#7FA64E",
+        "oklch": {
+          "l": 0.678656,
+          "c": 0.067274,
+          "h": 89.947473
+        },
+        "displayP3": {
+          "r": 0.529409,
+          "g": 0.646626,
+          "b": 0.350172
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Kshetra Hari",
+      "color": {
+        "hex": "#5E8C31",
+        "oklch": {
+          "l": 0.58893,
+          "c": 0.066363,
+          "h": 98.058067
+        },
+        "displayP3": {
+          "r": 0.408124,
+          "g": 0.544199,
+          "b": 0.244896
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Hari Core",
+      "color": {
+        "hex": "#50772A",
+        "oklch": {
+          "l": 0.524403,
+          "c": 0.058317,
+          "h": 97.654391
+        },
+        "displayP3": {
+          "r": 0.347058,
+          "g": 0.462562,
+          "b": 0.20846
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Hari Depth",
+      "color": {
+        "hex": "#436222",
+        "oklch": {
+          "l": 0.458373,
+          "c": 0.050422,
+          "h": 95.99022
+        },
+        "displayP3": {
+          "r": 0.288883,
+          "g": 0.381009,
+          "b": 0.169417
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Hari Earth",
+      "color": {
+        "hex": "#344C1A",
+        "oklch": {
+          "l": 0.385648,
+          "c": 0.041634,
+          "h": 95.081411
+        },
+        "displayP3": {
+          "r": 0.223992,
+          "g": 0.29546,
+          "b": 0.129481
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Hari Terrain",
+      "color": {
+        "hex": "#243412",
+        "oklch": {
+          "l": 0.302563,
+          "c": 0.031047,
+          "h": 92.802199
+        },
+        "displayP3": {
+          "r": 0.154302,
+          "g": 0.20217,
+          "b": 0.08824
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Hari Origin",
+      "color": {
+        "hex": "#121C09",
+        "oklch": {
+          "l": 0.21145,
+          "c": 0.019829,
+          "h": 93.252253
+        },
+        "displayP3": {
+          "r": 0.078764,
+          "g": 0.108705,
+          "b": 0.044159
+        }
+      },
+      "textColor": "auto"
+    }
+  ],
+  "referenceColors": [
+    {
+      "id": "hari-ivory",
+      "label": "Hari Ivory",
+      "color": {
+        "hex": "#F8FBF4",
+        "oklch": {
+          "l": 0.987061,
+          "c": 0.032317,
+          "h": 37.263906
+        },
+        "displayP3": {
+          "r": 0.974706,
+          "g": 0.983919,
+          "b": 0.959064
+        }
+      },
+      "description": "Typography on green fields"
+    },
+    {
+      "id": "hari-ink",
+      "label": "Hari Ink",
+      "color": {
+        "hex": "#1C2414",
+        "oklch": {
+          "l": 0.247996,
+          "c": 0.018158,
+          "h": 83.716399
+        },
+        "displayP3": {
+          "r": 0.11598,
+          "g": 0.140244,
+          "b": 0.084948
+        }
+      },
+      "description": "Primary typography on light green tints"
+    }
+  ]
+}

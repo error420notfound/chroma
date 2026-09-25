@@ -1,0 +1,22 @@
+{
+  "id": "engineered-prussian-blue",
+  "type": "engineered",
+  "name": "Prussian Blue",
+  "slug": "prussian-blue",
+  "description": "Industrial, chemically produced dark blue",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#003153",
+    "oklch": {
+      "l": 0.304962,
+      "c": 0.075439,
+      "h": 214.652733
+    },
+    "displayP3": {
+      "r": 0.065274,
+      "g": 0.188702,
+      "b": 0.315149
+    }
+  },
+  "textColor": "auto"
+}

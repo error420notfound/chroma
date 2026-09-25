@@ -1,0 +1,22 @@
+{
+  "id": "engineered-safety-yellow",
+  "type": "engineered",
+  "name": "Safety Yellow",
+  "slug": "safety-yellow",
+  "description": "High-visibility, cautionary yellow",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#FFD600",
+    "oklch": {
+      "l": 0.885768,
+      "c": 0.141323,
+      "h": 53.984071
+    },
+    "displayP3": {
+      "r": 0.974047,
+      "g": 0.845207,
+      "b": 0.284435
+    }
+  },
+  "textColor": "auto"
+}

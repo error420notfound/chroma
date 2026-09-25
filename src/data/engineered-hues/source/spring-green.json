@@ -1,0 +1,22 @@
+{
+  "id": "engineered-spring-green",
+  "type": "engineered",
+  "name": "Spring Green",
+  "slug": "spring-green",
+  "description": "Constructed blue-green/green",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#00FF7F",
+    "oklch": {
+      "l": 0.879261,
+      "c": 0.113285,
+      "h": 133.699211
+    },
+    "displayP3": {
+      "r": 0.458397,
+      "g": 0.985255,
+      "b": 0.552212
+    }
+  },
+  "textColor": "auto"
+}

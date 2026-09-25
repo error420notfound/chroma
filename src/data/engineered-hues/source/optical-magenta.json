@@ -1,0 +1,22 @@
+{
+  "id": "engineered-optical-magenta",
+  "type": "engineered",
+  "name": "Optical Magenta",
+  "slug": "optical-magenta",
+  "description": "A vivid red-violet bridge between Fuchsia and Signal Violet, with a distinctly digital character.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#D900FF",
+    "oklch": {
+      "l": 0.648858,
+      "c": 0.150244,
+      "h": 302.699239
+    },
+    "displayP3": {
+      "r": 0.780178,
+      "g": 0.164242,
+      "b": 0.964971
+    }
+  },
+  "textColor": "auto"
+}

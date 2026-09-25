@@ -1,0 +1,437 @@
+{
+  "id": "scale-mint",
+  "type": "scale",
+  "name": "Mint",
+  "slug": "mint",
+  "tags": ["01-Sheet-1-Sheet-1-Orange"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Almost-white mint",
+      "color": {
+        "hex": "#F3FBF8",
+        "oklch": {
+          "l": 0.984519,
+          "c": 0.025242,
+          "h": 37.807017
+        },
+        "displayP3": {
+          "r": 0.958663,
+          "g": 0.983286,
+          "b": 0.972984
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Soft frost mint",
+      "color": {
+        "hex": "#E6F6F1",
+        "oklch": {
+          "l": 0.963172,
+          "c": 0.019965,
+          "h": 50.069725
+        },
+        "displayP3": {
+          "r": 0.913568,
+          "g": 0.962702,
+          "b": 0.945731
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Light glass mint",
+      "color": {
+        "hex": "#CBEDE2",
+        "oklch": {
+          "l": 0.921902,
+          "c": 0.016597,
+          "h": 97.624428
+        },
+        "displayP3": {
+          "r": 0.821893,
+          "g": 0.925379,
+          "b": 0.887972
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Muted mint",
+      "color": {
+        "hex": "#A3DDCB",
+        "oklch": {
+          "l": 0.856103,
+          "c": 0.027937,
+          "h": 140.954131
+        },
+        "displayP3": {
+          "r": 0.686961,
+          "g": 0.860338,
+          "b": 0.799061
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Expressive mint",
+      "color": {
+        "hex": "#72C7AE",
+        "oklch": {
+          "l": 0.772008,
+          "c": 0.045521,
+          "h": 155.168956
+        },
+        "displayP3": {
+          "r": 0.526922,
+          "g": 0.772178,
+          "b": 0.686874
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Base mint (cool, balanced)",
+      "color": {
+        "hex": "#44AE94",
+        "oklch": {
+          "l": 0.685564,
+          "c": 0.056741,
+          "h": 161.895425
+        },
+        "displayP3": {
+          "r": 0.385146,
+          "g": 0.673466,
+          "b": 0.5849
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Confident mint",
+      "color": {
+        "hex": "#34927B",
+        "oklch": {
+          "l": 0.60117,
+          "c": 0.051452,
+          "h": 161.919052
+        },
+        "displayP3": {
+          "r": 0.311916,
+          "g": 0.564834,
+          "b": 0.486434
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Deep cool mint",
+      "color": {
+        "hex": "#2A7663",
+        "oklch": {
+          "l": 0.51591,
+          "c": 0.043449,
+          "h": 161.434888
+        },
+        "displayP3": {
+          "r": 0.250829,
+          "g": 0.456441,
+          "b": 0.39165
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Dark muted mint",
+      "color": {
+        "hex": "#1F5A4B",
+        "oklch": {
+          "l": 0.426631,
+          "c": 0.035499,
+          "h": 161.041074
+        },
+        "displayP3": {
+          "r": 0.187775,
+          "g": 0.34801,
+          "b": 0.296842
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Near-black mint",
+      "color": {
+        "hex": "#153F34",
+        "oklch": {
+          "l": 0.336137,
+          "c": 0.027057,
+          "h": 160.305023
+        },
+        "displayP3": {
+          "r": 0.12832,
+          "g": 0.243479,
+          "b": 0.205941
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Mint-black",
+      "color": {
+        "hex": "#0C241E",
+        "oklch": {
+          "l": 0.23995,
+          "c": 0.01713,
+          "h": 160.991716
+        },
+        "displayP3": {
+          "r": 0.071513,
+          "g": 0.13901,
+          "b": 0.118615
+        }
+      },
+      "textColor": "auto"
+    }
+  ],
+  "referenceColors": [
+    {
+      "id": "text-on-light",
+      "label": "50",
+      "color": {
+        "hex": "#F3FBF8",
+        "oklch": {
+          "l": 0.984519,
+          "c": 0.025242,
+          "h": 37.807017
+        },
+        "displayP3": {
+          "r": 0.958663,
+          "g": 0.983286,
+          "b": 0.972984
+        }
+      }
+    },
+    {
+      "id": "text-on-dark",
+      "label": "900",
+      "color": {
+        "hex": "#153F34",
+        "oklch": {
+          "l": 0.336137,
+          "c": 0.027057,
+          "h": 160.305023
+        },
+        "displayP3": {
+          "r": 0.12832,
+          "g": 0.243479,
+          "b": 0.205941
+        }
+      }
+    },
+    {
+      "id": "text-on-hue",
+      "label": "500",
+      "color": {
+        "hex": "#44AE94",
+        "oklch": {
+          "l": 0.685564,
+          "c": 0.056741,
+          "h": 161.895425
+        },
+        "displayP3": {
+          "r": 0.385146,
+          "g": 0.673466,
+          "b": 0.5849
+        }
+      }
+    },
+    {
+      "id": "hue-on-dark",
+      "label": "900",
+      "color": {
+        "hex": "#153F34",
+        "oklch": {
+          "l": 0.336137,
+          "c": 0.027057,
+          "h": 160.305023
+        },
+        "displayP3": {
+          "r": 0.12832,
+          "g": 0.243479,
+          "b": 0.205941
+        }
+      }
+    },
+    {
+      "id": "native-black",
+      "label": "950",
+      "color": {
+        "hex": "#0C241E",
+        "oklch": {
+          "l": 0.23995,
+          "c": 0.01713,
+          "h": 160.991716
+        },
+        "displayP3": {
+          "r": 0.071513,
+          "g": 0.13901,
+          "b": 0.118615
+        }
+      }
+    },
+    {
+      "id": "native-white",
+      "label": "100",
+      "color": {
+        "hex": "#E6F6F1",
+        "oklch": {
+          "l": 0.963172,
+          "c": 0.019965,
+          "h": 50.069725
+        },
+        "displayP3": {
+          "r": 0.913568,
+          "g": 0.962702,
+          "b": 0.945731
+        }
+      }
+    }
+  ],
+  "contrastExamples": [
+    {
+      "id": "text-on-light",
+      "label": "Text on Light",
+      "foreground": {
+        "hex": "#0C241E",
+        "oklch": {
+          "l": 0.23995,
+          "c": 0.01713,
+          "h": 160.991716
+        },
+        "displayP3": {
+          "r": 0.071513,
+          "g": 0.13901,
+          "b": 0.118615
+        }
+      },
+      "background": {
+        "hex": "#F3FBF8",
+        "oklch": {
+          "l": 0.984519,
+          "c": 0.025242,
+          "h": 37.807017
+        },
+        "displayP3": {
+          "r": 0.958663,
+          "g": 0.983286,
+          "b": 0.972984
+        }
+      },
+      "sampleText": "Aa"
+    },
+    {
+      "id": "text-on-dark",
+      "label": "Text on Dark",
+      "foreground": {
+        "hex": "#E6F6F1",
+        "oklch": {
+          "l": 0.963172,
+          "c": 0.019965,
+          "h": 50.069725
+        },
+        "displayP3": {
+          "r": 0.913568,
+          "g": 0.962702,
+          "b": 0.945731
+        }
+      },
+      "background": {
+        "hex": "#153F34",
+        "oklch": {
+          "l": 0.336137,
+          "c": 0.027057,
+          "h": 160.305023
+        },
+        "displayP3": {
+          "r": 0.12832,
+          "g": 0.243479,
+          "b": 0.205941
+        }
+      },
+      "sampleText": "Aa"
+    },
+    {
+      "id": "text-on-hue",
+      "label": "Text on Hue",
+      "foreground": {
+        "hex": "#0C241E",
+        "oklch": {
+          "l": 0.23995,
+          "c": 0.01713,
+          "h": 160.991716
+        },
+        "displayP3": {
+          "r": 0.071513,
+          "g": 0.13901,
+          "b": 0.118615
+        }
+      },
+      "background": {
+        "hex": "#44AE94",
+        "oklch": {
+          "l": 0.685564,
+          "c": 0.056741,
+          "h": 161.895425
+        },
+        "displayP3": {
+          "r": 0.385146,
+          "g": 0.673466,
+          "b": 0.5849
+        }
+      },
+      "sampleText": "Aa"
+    },
+    {
+      "id": "hue-on-dark",
+      "label": "Hue on Dark",
+      "foreground": {
+        "hex": "#44AE94",
+        "oklch": {
+          "l": 0.685564,
+          "c": 0.056741,
+          "h": 161.895425
+        },
+        "displayP3": {
+          "r": 0.385146,
+          "g": 0.673466,
+          "b": 0.5849
+        }
+      },
+      "background": {
+        "hex": "#153F34",
+        "oklch": {
+          "l": 0.336137,
+          "c": 0.027057,
+          "h": 160.305023
+        },
+        "displayP3": {
+          "r": 0.12832,
+          "g": 0.243479,
+          "b": 0.205941
+        }
+      },
+      "sampleText": "Aa"
+    }
+  ]
+}

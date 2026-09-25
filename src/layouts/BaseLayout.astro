@@ -1,0 +1,9 @@
+---
+import '../styles/global.css';
+const { title = 'Chroma — HS108 Colour Catalogue' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const path = Astro.url.pathname.replace(base, '') || '/';
+const links = [['Catalogue','/'],['Scales','/scales'],['Engineered','/engineered'],['Compare','/compare'],['Gradients','/gradients'],['Contrast','/contrast']];
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content="HS108 static colour catalogue and studio tools."/><title>{title}</title></head>
+<body><div class="shell"><header class="site-header"><a class="brand" href={`${base}/`}>CHROMA</a><nav class="nav" aria-label="Main navigation">{links.map(([label, href]) => <a href={`${base}${href}`} aria-current={path === href || (href !== '/' && path.startsWith(href)) ? 'page' : undefined}>{label}</a>)}</nav></header><main class="page"><slot /></main></div></body></html>

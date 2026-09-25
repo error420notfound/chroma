@@ -1,0 +1,22 @@
+{
+  "id": "engineered-international-orange",
+  "type": "engineered",
+  "name": "International Orange",
+  "slug": "international-orange",
+  "description": "High-visibility, industrial, aviation orange",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#FF4F00",
+    "oklch": {
+      "l": 0.669469,
+      "c": 0.220733,
+      "h": 21.869142
+    },
+    "displayP3": {
+      "r": 0.924357,
+      "g": 0.363631,
+      "b": 0.163086
+    }
+  },
+  "textColor": "auto"
+}

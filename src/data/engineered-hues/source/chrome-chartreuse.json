@@ -1,0 +1,22 @@
+{
+  "id": "engineered-chrome-chartreuse",
+  "type": "engineered",
+  "name": "Chrome Chartreuse",
+  "slug": "chrome-chartreuse",
+  "description": "A slightly yellower, more controlled chartreuse; distinct from Acid Yellow while staying highly noticeable.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#C7F000",
+    "oklch": {
+      "l": 0.895839,
+      "c": 0.118266,
+      "h": 83.197755
+    },
+    "displayP3": {
+      "r": 0.812077,
+      "g": 0.936405,
+      "b": 0.299195
+    }
+  },
+  "textColor": "auto"
+}

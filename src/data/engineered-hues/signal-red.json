@@ -1,0 +1,11 @@
+{
+  "id": "signal-red",
+  "slug": "signal-red",
+  "name": "Signal Red",
+  "description": "An immediate, unambiguous red for warnings and critical interface moments.",
+  "tags": ["warning", "critical", "warm"],
+  "hex": "#E93624",
+  "oklch": "oklch(0.6 0.22 32)",
+  "p3": "color(display-p3 0.87 0.15 0.08)",
+  "textColor": "auto"
+}

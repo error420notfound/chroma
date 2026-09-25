@@ -1,0 +1,22 @@
+{
+  "id": "engineered-chartreuse",
+  "type": "engineered",
+  "name": "Chartreuse",
+  "slug": "chartreuse",
+  "description": "Yellow-green boundary hue",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#DFFF00",
+    "oklch": {
+      "l": 0.945705,
+      "c": 0.126029,
+      "h": 79.062939
+    },
+    "displayP3": {
+      "r": 0.898544,
+      "g": 0.996158,
+      "b": 0.322732
+    }
+  },
+  "textColor": "auto"
+}

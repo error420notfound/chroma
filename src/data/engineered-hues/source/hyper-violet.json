@@ -1,0 +1,22 @@
+{
+  "id": "engineered-hyper-violet",
+  "type": "engineered",
+  "name": "Hyper Violet",
+  "slug": "hyper-violet",
+  "description": "Saturated violet-blue that reads clearly on screen and adds a brighter counterpoint to Ultramarine.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#6C2BFF",
+    "oklch": {
+      "l": 0.527561,
+      "c": 0.24299,
+      "h": 226.8543
+    },
+    "displayP3": {
+      "r": 0.392459,
+      "g": 0.18399,
+      "b": 0.961486
+    }
+  },
+  "textColor": "auto"
+}

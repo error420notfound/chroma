@@ -1,0 +1,22 @@
+{
+  "id": "engineered-lime-green",
+  "type": "engineered",
+  "name": "Lime Green",
+  "slug": "lime-green",
+  "description": "Artificial, high-energy green",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#32CD32",
+    "oklch": {
+      "l": 0.745151,
+      "c": 0.107645,
+      "h": 121.765337
+    },
+    "displayP3": {
+      "r": 0.402492,
+      "g": 0.792549,
+      "b": 0.301085
+    }
+  },
+  "textColor": "auto"
+}

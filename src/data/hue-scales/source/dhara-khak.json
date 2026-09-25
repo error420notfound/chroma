@@ -1,0 +1,245 @@
+{
+  "id": "scale-dhara-khak",
+  "type": "scale",
+  "name": "Dhara Khak",
+  "slug": "dhara-khak",
+  "tags": ["02-Sheet-2-Sheet-2-Table-1"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Khak Sand",
+      "color": {
+        "hex": "#F4F2E6",
+        "oklch": {
+          "l": 0.962402,
+          "c": 0.03928,
+          "h": 37.77181
+        },
+        "displayP3": {
+          "r": 0.95553,
+          "g": 0.949274,
+          "b": 0.906361
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Khak Veil",
+      "color": {
+        "hex": "#E9E4CC",
+        "oklch": {
+          "l": 0.919117,
+          "c": 0.048947,
+          "h": 42.881668
+        },
+        "displayP3": {
+          "r": 0.910337,
+          "g": 0.894771,
+          "b": 0.809325
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Khak Grain",
+      "color": {
+        "hex": "#D8D1A6",
+        "oklch": {
+          "l": 0.857773,
+          "c": 0.061981,
+          "h": 49.388791
+        },
+        "displayP3": {
+          "r": 0.842319,
+          "g": 0.820532,
+          "b": 0.668932
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Khak Field",
+      "color": {
+        "hex": "#C7BE80",
+        "oklch": {
+          "l": 0.796231,
+          "c": 0.073954,
+          "h": 53.796663
+        },
+        "displayP3": {
+          "r": 0.774324,
+          "g": 0.746299,
+          "b": 0.530669
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Khak Harvest",
+      "color": {
+        "hex": "#B9B060",
+        "oklch": {
+          "l": 0.748954,
+          "c": 0.082545,
+          "h": 57.564749
+        },
+        "displayP3": {
+          "r": 0.71943,
+          "g": 0.6914,
+          "b": 0.418491
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Dhara Khak",
+      "color": {
+        "hex": "#B2A76F",
+        "oklch": {
+          "l": 0.72603,
+          "c": 0.069986,
+          "h": 52.305528
+        },
+        "displayP3": {
+          "r": 0.690675,
+          "g": 0.656388,
+          "b": 0.461696
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Khak Earth",
+      "color": {
+        "hex": "#9C9261",
+        "oklch": {
+          "l": 0.658179,
+          "c": 0.063316,
+          "h": 51.996538
+        },
+        "displayP3": {
+          "r": 0.605075,
+          "g": 0.573902,
+          "b": 0.403459
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Khak Root",
+      "color": {
+        "hex": "#857B52",
+        "oklch": {
+          "l": 0.582889,
+          "c": 0.056471,
+          "h": 50.655419
+        },
+        "displayP3": {
+          "r": 0.514912,
+          "g": 0.483716,
+          "b": 0.340911
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Khak Soil",
+      "color": {
+        "hex": "#6A623F",
+        "oklch": {
+          "l": 0.49565,
+          "c": 0.048871,
+          "h": 51.390433
+        },
+        "displayP3": {
+          "r": 0.410357,
+          "g": 0.385403,
+          "b": 0.263744
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Khak Terrain",
+      "color": {
+        "hex": "#4E482E",
+        "oklch": {
+          "l": 0.401303,
+          "c": 0.038845,
+          "h": 51.105012
+        },
+        "displayP3": {
+          "r": 0.301882,
+          "g": 0.283169,
+          "b": 0.192659
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Khak Ancestral",
+      "color": {
+        "hex": "#2C2818",
+        "oklch": {
+          "l": 0.276942,
+          "c": 0.026752,
+          "h": 50.413964
+        },
+        "displayP3": {
+          "r": 0.169888,
+          "g": 0.157408,
+          "b": 0.101653
+        }
+      },
+      "textColor": "auto"
+    }
+  ],
+  "referenceColors": [
+    {
+      "id": "khak-ivory",
+      "label": "Khak Ivory",
+      "color": {
+        "hex": "#FBF9F2",
+        "oklch": {
+          "l": 0.984824,
+          "c": 0.036481,
+          "h": 34.123897
+        },
+        "displayP3": {
+          "r": 0.982982,
+          "g": 0.976725,
+          "b": 0.951568
+        }
+      },
+      "description": "Typography on brown fields"
+    },
+    {
+      "id": "khak-ink",
+      "label": "Khak Ink",
+      "color": {
+        "hex": "#2A2618",
+        "oklch": {
+          "l": 0.269238,
+          "c": 0.025026,
+          "h": 48.835762
+        },
+        "displayP3": {
+          "r": 0.162048,
+          "g": 0.149566,
+          "b": 0.100583
+        }
+      },
+      "description": "Primary typography on light khaki"
+    }
+  ]
+}

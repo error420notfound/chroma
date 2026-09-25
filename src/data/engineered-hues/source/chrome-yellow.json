@@ -1,0 +1,22 @@
+{
+  "id": "engineered-chrome-yellow",
+  "type": "engineered",
+  "name": "Chrome Yellow",
+  "slug": "chrome-yellow",
+  "description": "Hard, industrial yellow-orange",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#FFA700",
+    "oklch": {
+      "l": 0.796561,
+      "c": 0.160874,
+      "h": 39.077772
+    },
+    "displayP3": {
+      "r": 0.950561,
+      "g": 0.670256,
+      "b": 0.234959
+    }
+  },
+  "textColor": "auto"
+}

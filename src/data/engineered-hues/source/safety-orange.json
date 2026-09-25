@@ -1,0 +1,22 @@
+{
+  "id": "engineered-safety-orange",
+  "type": "engineered",
+  "name": "Safety Orange",
+  "slug": "safety-orange",
+  "description": "Regulatory, warning, utilitarian orange",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#FF6700",
+    "oklch": {
+      "l": 0.696919,
+      "c": 0.204222,
+      "h": 25.053266
+    },
+    "displayP3": {
+      "r": 0.929314,
+      "g": 0.442125,
+      "b": 0.178891
+    }
+  },
+  "textColor": "auto"
+}

@@ -1,0 +1,245 @@
+{
+  "id": "scale-rakta-tattva",
+  "type": "scale",
+  "name": "Rakta Tattva",
+  "slug": "rakta-tattva",
+  "tags": ["02-Sheet-2-Sheet-2-Table-1"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Rakta Whisper",
+      "color": {
+        "hex": "#F6E8E6",
+        "oklch": {
+          "l": 0.944384,
+          "c": 0.042989,
+          "h": 25.217536
+        },
+        "displayP3": {
+          "r": 0.955317,
+          "g": 0.91169,
+          "b": 0.903565
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Rakta Veil",
+      "color": {
+        "hex": "#EDD1CD",
+        "oklch": {
+          "l": 0.885349,
+          "c": 0.056261,
+          "h": 23.042045
+        },
+        "displayP3": {
+          "r": 0.911235,
+          "g": 0.82356,
+          "b": 0.807352
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Rakta Dust",
+      "color": {
+        "hex": "#DBA39B",
+        "oklch": {
+          "l": 0.767507,
+          "c": 0.085597,
+          "h": 20.777411
+        },
+        "displayP3": {
+          "r": 0.825371,
+          "g": 0.648102,
+          "b": 0.615546
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Rakta Bloom",
+      "color": {
+        "hex": "#C97669",
+        "oklch": {
+          "l": 0.654157,
+          "c": 0.117699,
+          "h": 20.171466
+        },
+        "displayP3": {
+          "r": 0.743609,
+          "g": 0.47834,
+          "b": 0.425818
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Rakta Pulse",
+      "color": {
+        "hex": "#B85645",
+        "oklch": {
+          "l": 0.571914,
+          "c": 0.136628,
+          "h": 20.256994
+        },
+        "displayP3": {
+          "r": 0.673229,
+          "g": 0.35893,
+          "b": 0.291498
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Rakta Tattva",
+      "color": {
+        "hex": "#B23A1F",
+        "oklch": {
+          "l": 0.51929,
+          "c": 0.161357,
+          "h": 20.628374
+        },
+        "displayP3": {
+          "r": 0.645087,
+          "g": 0.2617,
+          "b": 0.164663
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Rakta Core",
+      "color": {
+        "hex": "#9F331C",
+        "oklch": {
+          "l": 0.478055,
+          "c": 0.148108,
+          "h": 20.465562
+        },
+        "displayP3": {
+          "r": 0.575841,
+          "g": 0.230773,
+          "b": 0.146848
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Rakta Depth",
+      "color": {
+        "hex": "#8C2F23",
+        "oklch": {
+          "l": 0.440948,
+          "c": 0.130017,
+          "h": 19.123531
+        },
+        "displayP3": {
+          "r": 0.507206,
+          "g": 0.209641,
+          "b": 0.159418
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Rakta Earth",
+      "color": {
+        "hex": "#6E241B",
+        "oklch": {
+          "l": 0.372222,
+          "c": 0.108187,
+          "h": 18.983627
+        },
+        "displayP3": {
+          "r": 0.397892,
+          "g": 0.161022,
+          "b": 0.122724
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Rakta Ritual",
+      "color": {
+        "hex": "#4E1913",
+        "oklch": {
+          "l": 0.296448,
+          "c": 0.082737,
+          "h": 18.818946
+        },
+        "displayP3": {
+          "r": 0.281467,
+          "g": 0.111654,
+          "b": 0.085614
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Rakta Ancestral",
+      "color": {
+        "hex": "#2A0E0A",
+        "oklch": {
+          "l": 0.207881,
+          "c": 0.04981,
+          "h": 19.551377
+        },
+        "displayP3": {
+          "r": 0.15095,
+          "g": 0.061146,
+          "b": 0.044708
+        }
+      },
+      "textColor": "auto"
+    }
+  ],
+  "referenceColors": [
+    {
+      "id": "rakta-ivory",
+      "label": "Rakta Ivory",
+      "color": {
+        "hex": "#FFF4F2",
+        "oklch": {
+          "l": 0.978178,
+          "c": 0.041106,
+          "h": 26.259756
+        },
+        "displayP3": {
+          "r": 0.992579,
+          "g": 0.958329,
+          "b": 0.9504
+        }
+      },
+      "description": "Typography on red fields"
+    },
+    {
+      "id": "rakta-ink",
+      "label": "Rakta Ink",
+      "color": {
+        "hex": "#2A0F0B",
+        "oklch": {
+          "l": 0.210081,
+          "c": 0.048365,
+          "h": 19.707749
+        },
+        "displayP3": {
+          "r": 0.151246,
+          "g": 0.064668,
+          "b": 0.048335
+        }
+      },
+      "description": "Primary typography on light red tints"
+    }
+  ]
+}

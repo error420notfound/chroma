@@ -1,0 +1,22 @@
+{
+  "id": "engineered-optical-lime",
+  "type": "engineered",
+  "name": "Optical Lime",
+  "slug": "optical-lime",
+  "description": "A sharper yellow-green than Acid Green, with strong visual pop against dark backgrounds.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#A8FF00",
+    "oklch": {
+      "l": 0.912017,
+      "c": 0.121609,
+      "h": 98.274159
+    },
+    "displayP3": {
+      "r": 0.735119,
+      "g": 0.99106,
+      "b": 0.311545
+    }
+  },
+  "textColor": "auto"
+}

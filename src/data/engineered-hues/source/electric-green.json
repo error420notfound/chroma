@@ -1,0 +1,22 @@
+{
+  "id": "engineered-electric-green",
+  "type": "engineered",
+  "name": "Electric Green",
+  "slug": "electric-green",
+  "description": "Maximum digital/synthetic green",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#00FF00",
+    "oklch": {
+      "l": 0.870402,
+      "c": 0.138088,
+      "h": 122.680487
+    },
+    "displayP3": {
+      "r": 0.458397,
+      "g": 0.985255,
+      "b": 0.298291
+    }
+  },
+  "textColor": "auto"
+}

@@ -1,0 +1,207 @@
+{
+  "id": "scale-veda-neel",
+  "type": "scale",
+  "name": "Veda Neel",
+  "slug": "veda-neel",
+  "tags": ["02-Sheet-2-Sheet-2-Table-1"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Neel Air",
+      "color": {
+        "hex": "#E9EEFA",
+        "oklch": {
+          "l": 0.952079,
+          "c": 0.017151,
+          "h": 11.59743
+        },
+        "displayP3": {
+          "r": 0.917298,
+          "g": 0.932684,
+          "b": 0.975897
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Neel Veil",
+      "color": {
+        "hex": "#D4DDF5",
+        "oklch": {
+          "l": 0.901319,
+          "c": 0.010883,
+          "h": 310.064466
+        },
+        "displayP3": {
+          "r": 0.837828,
+          "g": 0.865519,
+          "b": 0.952248
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Neel Script",
+      "color": {
+        "hex": "#A9BCEA",
+        "oklch": {
+          "l": 0.799899,
+          "c": 0.036309,
+          "h": 242.804246
+        },
+        "displayP3": {
+          "r": 0.676792,
+          "g": 0.734932,
+          "b": 0.902399
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Neel Flow",
+      "color": {
+        "hex": "#7D9BDD",
+        "oklch": {
+          "l": 0.696368,
+          "c": 0.073088,
+          "h": 231.269628
+        },
+        "displayP3": {
+          "r": 0.513644,
+          "g": 0.604394,
+          "b": 0.846372
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Neel Field",
+      "color": {
+        "hex": "#567BCC",
+        "oklch": {
+          "l": 0.596018,
+          "c": 0.107984,
+          "h": 226.211277
+        },
+        "displayP3": {
+          "r": 0.368282,
+          "g": 0.478388,
+          "b": 0.777012
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Veda Neel",
+      "color": {
+        "hex": "#1F3A8A",
+        "oklch": {
+          "l": 0.380292,
+          "c": 0.135268,
+          "h": 220.568703
+        },
+        "displayP3": {
+          "r": 0.146367,
+          "g": 0.22479,
+          "b": 0.521673
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Neel Core",
+      "color": {
+        "hex": "#1A3275",
+        "oklch": {
+          "l": 0.342652,
+          "c": 0.115453,
+          "h": 221.022371
+        },
+        "displayP3": {
+          "r": 0.124003,
+          "g": 0.193713,
+          "b": 0.442238
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Neel Depth",
+      "color": {
+        "hex": "#162A61",
+        "oklch": {
+          "l": 0.30539,
+          "c": 0.095924,
+          "h": 221.828441
+        },
+        "displayP3": {
+          "r": 0.104344,
+          "g": 0.162706,
+          "b": 0.366565
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Neel Archive",
+      "color": {
+        "hex": "#101F48",
+        "oklch": {
+          "l": 0.254241,
+          "c": 0.07323,
+          "h": 222.846213
+        },
+        "displayP3": {
+          "r": 0.076012,
+          "g": 0.120039,
+          "b": 0.271861
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Neel Shastra",
+      "color": {
+        "hex": "#0B1530",
+        "oklch": {
+          "l": 0.204798,
+          "c": 0.048455,
+          "h": 225.044316
+        },
+        "displayP3": {
+          "r": 0.05163,
+          "g": 0.081294,
+          "b": 0.181054
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Neel Eternal",
+      "color": {
+        "hex": "#050A18",
+        "oklch": {
+          "l": 0.148238,
+          "c": 0.025874,
+          "h": 227.070761
+        },
+        "displayP3": {
+          "r": 0.023091,
+          "g": 0.038564,
+          "b": 0.090142
+        }
+      },
+      "textColor": "auto"
+    }
+  ]
+}

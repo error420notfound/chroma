@@ -1,0 +1,22 @@
+{
+  "id": "engineered-laser-blue",
+  "type": "engineered",
+  "name": "Laser Blue",
+  "slug": "laser-blue",
+  "description": "Brighter and slightly more violet than Cobalt; a strong, recognizable digital blue.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#245BFF",
+    "oklch": {
+      "l": 0.547404,
+      "c": 0.281193,
+      "h": 215.519668
+    },
+    "displayP3": {
+      "r": 0.199937,
+      "g": 0.352085,
+      "b": 0.963134
+    }
+  },
+  "textColor": "auto"
+}

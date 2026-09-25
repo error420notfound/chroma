@@ -1,0 +1,245 @@
+{
+  "id": "scale-gau-amrit",
+  "type": "scale",
+  "name": "Gau Amrit",
+  "slug": "gau-amrit",
+  "tags": ["02-Sheet-2-Sheet-2-Table-1"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Amrit Mist",
+      "color": {
+        "hex": "#F7ECE8",
+        "oklch": {
+          "l": 0.953523,
+          "c": 0.041674,
+          "h": 27.777734
+        },
+        "displayP3": {
+          "r": 0.96121,
+          "g": 0.926958,
+          "b": 0.91191
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Amrit Veil",
+      "color": {
+        "hex": "#EED6CF",
+        "oklch": {
+          "l": 0.89642,
+          "c": 0.054337,
+          "h": 25.829191
+        },
+        "displayP3": {
+          "r": 0.917601,
+          "g": 0.842559,
+          "b": 0.815988
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Amrit Sandal",
+      "color": {
+        "hex": "#DCB2A6",
+        "oklch": {
+          "l": 0.799692,
+          "c": 0.073315,
+          "h": 24.544412
+        },
+        "displayP3": {
+          "r": 0.836617,
+          "g": 0.704326,
+          "b": 0.658829
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Amrit Warmth",
+      "color": {
+        "hex": "#C98E7D",
+        "oklch": {
+          "l": 0.70168,
+          "c": 0.092908,
+          "h": 23.829815
+        },
+        "displayP3": {
+          "r": 0.753813,
+          "g": 0.566563,
+          "b": 0.502375
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Amrit Glow",
+      "color": {
+        "hex": "#B56B57",
+        "oklch": {
+          "l": 0.605734,
+          "c": 0.110788,
+          "h": 22.853302
+        },
+        "displayP3": {
+          "r": 0.669818,
+          "g": 0.433391,
+          "b": 0.357978
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Gau Amrit",
+      "color": {
+        "hex": "#9A4A32",
+        "oklch": {
+          "l": 0.505398,
+          "c": 0.119318,
+          "h": 22.930063
+        },
+        "displayP3": {
+          "r": 0.563852,
+          "g": 0.307351,
+          "b": 0.219513
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Amrit Core",
+      "color": {
+        "hex": "#863F2A",
+        "oklch": {
+          "l": 0.455742,
+          "c": 0.108362,
+          "h": 22.827191
+        },
+        "displayP3": {
+          "r": 0.49003,
+          "g": 0.262371,
+          "b": 0.18544
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Amrit Depth",
+      "color": {
+        "hex": "#723524",
+        "oklch": {
+          "l": 0.406739,
+          "c": 0.095624,
+          "h": 22.520998
+        },
+        "displayP3": {
+          "r": 0.416514,
+          "g": 0.220931,
+          "b": 0.158076
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Amrit Earth",
+      "color": {
+        "hex": "#5A291C",
+        "oklch": {
+          "l": 0.345765,
+          "c": 0.080007,
+          "h": 22.287747
+        },
+        "displayP3": {
+          "r": 0.328297,
+          "g": 0.171207,
+          "b": 0.122748
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Amrit Ritual",
+      "color": {
+        "hex": "#3F1D14",
+        "oklch": {
+          "l": 0.276921,
+          "c": 0.059629,
+          "h": 22.428375
+        },
+        "displayP3": {
+          "r": 0.229549,
+          "g": 0.120634,
+          "b": 0.086885
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Amrit Ancestral",
+      "color": {
+        "hex": "#231008",
+        "oklch": {
+          "l": 0.1989,
+          "c": 0.038855,
+          "h": 25.970382
+        },
+        "displayP3": {
+          "r": 0.127051,
+          "g": 0.066322,
+          "b": 0.037115
+        }
+      },
+      "textColor": "auto"
+    }
+  ],
+  "referenceColors": [
+    {
+      "id": "gau-ivory",
+      "label": "Gau Ivory",
+      "color": {
+        "hex": "#FFF6F2",
+        "oklch": {
+          "l": 0.98205,
+          "c": 0.04063,
+          "h": 28.549187
+        },
+        "displayP3": {
+          "r": 0.993911,
+          "g": 0.965898,
+          "b": 0.950976
+        }
+      },
+      "description": "Typography on Gau fields"
+    },
+    {
+      "id": "gau-ink",
+      "label": "Gau Ink",
+      "color": {
+        "hex": "#2A1510",
+        "oklch": {
+          "l": 0.224169,
+          "c": 0.040077,
+          "h": 22.154374
+        },
+        "displayP3": {
+          "r": 0.153319,
+          "g": 0.086241,
+          "b": 0.067116
+        }
+      },
+      "description": "Primary typography on light Amrit tints"
+    }
+  ]
+}

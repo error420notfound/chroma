@@ -1,0 +1,22 @@
+{
+  "id": "engineered-manganese-blue",
+  "type": "engineered",
+  "name": "Manganese Blue",
+  "slug": "manganese-blue",
+  "description": "Artificial mineral/pigment blue",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#03A9D9",
+    "oklch": {
+      "l": 0.689291,
+      "c": 0.117055,
+      "h": 206.807633
+    },
+    "displayP3": {
+      "r": 0.295821,
+      "g": 0.652737,
+      "b": 0.832492
+    }
+  },
+  "textColor": "auto"
+}

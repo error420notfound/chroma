@@ -1,0 +1,207 @@
+{
+  "id": "scale-tapas-indigo",
+  "type": "scale",
+  "name": "Tapas Indigo",
+  "slug": "tapas-indigo",
+  "tags": ["02-Sheet-2-Sheet-2-Table-1"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Indigo Haze",
+      "color": {
+        "hex": "#EFE9FA",
+        "oklch": {
+          "l": 0.946814,
+          "c": 0.025187,
+          "h": 3.216518
+        },
+        "displayP3": {
+          "r": 0.933188,
+          "g": 0.914513,
+          "b": 0.974952
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Indigo Veil",
+      "color": {
+        "hex": "#DDD2F4",
+        "oklch": {
+          "l": 0.886206,
+          "c": 0.025306,
+          "h": 328.829235
+        },
+        "displayP3": {
+          "r": 0.859265,
+          "g": 0.825003,
+          "b": 0.946472
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Indigo Aura",
+      "color": {
+        "hex": "#BBA6E8",
+        "oklch": {
+          "l": 0.769523,
+          "c": 0.044426,
+          "h": 285.498871
+        },
+        "displayP3": {
+          "r": 0.719643,
+          "g": 0.653928,
+          "b": 0.891484
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Indigo Field",
+      "color": {
+        "hex": "#9879DB",
+        "oklch": {
+          "l": 0.649688,
+          "c": 0.076388,
+          "h": 264.561767
+        },
+        "displayP3": {
+          "r": 0.576884,
+          "g": 0.479181,
+          "b": 0.834544
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Indigo Pulse",
+      "color": {
+        "hex": "#744DD0",
+        "oklch": {
+          "l": 0.535599,
+          "c": 0.123797,
+          "h": 245.766015
+        },
+        "displayP3": {
+          "r": 0.432557,
+          "g": 0.308555,
+          "b": 0.787307
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Tapas Indigo",
+      "color": {
+        "hex": "#4C1D95",
+        "oklch": {
+          "l": 0.380273,
+          "c": 0.122576,
+          "h": 240.54332
+        },
+        "displayP3": {
+          "r": 0.275372,
+          "g": 0.124623,
+          "b": 0.561748
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Indigo Core",
+      "color": {
+        "hex": "#40197F",
+        "oklch": {
+          "l": 0.340826,
+          "c": 0.107617,
+          "h": 240.797582
+        },
+        "displayP3": {
+          "r": 0.231821,
+          "g": 0.106738,
+          "b": 0.478609
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Indigo Depth",
+      "color": {
+        "hex": "#341569",
+        "oklch": {
+          "l": 0.30035,
+          "c": 0.092071,
+          "h": 241.131402
+        },
+        "displayP3": {
+          "r": 0.188311,
+          "g": 0.088931,
+          "b": 0.395479
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Indigo Obsidian",
+      "color": {
+        "hex": "#26104E",
+        "oklch": {
+          "l": 0.249858,
+          "c": 0.070796,
+          "h": 242.887002
+        },
+        "displayP3": {
+          "r": 0.137523,
+          "g": 0.067095,
+          "b": 0.293492
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Indigo Nocturne",
+      "color": {
+        "hex": "#190A34",
+        "oklch": {
+          "l": 0.197939,
+          "c": 0.04926,
+          "h": 246.925449
+        },
+        "displayP3": {
+          "r": 0.089965,
+          "g": 0.042037,
+          "b": 0.195255
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Indigo Eternal",
+      "color": {
+        "hex": "#0C051A",
+        "oklch": {
+          "l": 0.143073,
+          "c": 0.026294,
+          "h": 256.2337
+        },
+        "displayP3": {
+          "r": 0.042489,
+          "g": 0.020534,
+          "b": 0.097082
+        }
+      },
+      "textColor": "auto"
+    }
+  ]
+}

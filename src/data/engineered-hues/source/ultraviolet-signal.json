@@ -1,0 +1,22 @@
+{
+  "id": "engineered-ultraviolet-signal",
+  "type": "engineered",
+  "name": "Ultraviolet Signal",
+  "slug": "ultraviolet-signal",
+  "description": "Brighter and more blue-violet than Signal Violet; gives a strong transition from magenta to blue.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#8A00FF",
+    "oklch": {
+      "l": 0.542166,
+      "c": 0.196836,
+      "h": 241.450052
+    },
+    "displayP3": {
+      "r": 0.494585,
+      "g": 0.089271,
+      "b": 0.9615
+    }
+  },
+  "textColor": "auto"
+}

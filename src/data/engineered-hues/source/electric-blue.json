@@ -1,0 +1,22 @@
+{
+  "id": "engineered-electric-blue",
+  "type": "engineered",
+  "name": "Electric Blue",
+  "slug": "electric-blue",
+  "description": "Digitally intensified blue",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#0066FF",
+    "oklch": {
+      "l": 0.562965,
+      "c": 0.270762,
+      "h": 215.031129
+    },
+    "displayP3": {
+      "r": 0.166418,
+      "g": 0.393641,
+      "b": 0.96394
+    }
+  },
+  "textColor": "auto"
+}

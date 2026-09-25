@@ -1,0 +1,437 @@
+{
+  "id": "scale-yellow",
+  "type": "scale",
+  "name": "Yellow",
+  "slug": "yellow",
+  "tags": ["01-Sheet-1-Sheet-1-Orange"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Soft cream, warm base",
+      "color": {
+        "hex": "#FFFBE5",
+        "oklch": {
+          "l": 0.988309,
+          "c": 0.048534,
+          "h": 41.809122
+        },
+        "displayP3": {
+          "r": 0.997295,
+          "g": 0.984833,
+          "b": 0.906422
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Pale banana cream",
+      "color": {
+        "hex": "#FFF9CC",
+        "oklch": {
+          "l": 0.978284,
+          "c": 0.065383,
+          "h": 48.991083
+        },
+        "displayP3": {
+          "r": 0.995933,
+          "g": 0.977257,
+          "b": 0.818312
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Pastel canary",
+      "color": {
+        "hex": "#FFF699",
+        "oklch": {
+          "l": 0.962338,
+          "c": 0.095843,
+          "h": 56.867775
+        },
+        "displayP3": {
+          "r": 0.993911,
+          "g": 0.965898,
+          "b": 0.645123
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Light lemon zest",
+      "color": {
+        "hex": "#FFF366",
+        "oklch": {
+          "l": 0.949552,
+          "c": 0.11859,
+          "h": 60.586034
+        },
+        "displayP3": {
+          "r": 0.991917,
+          "g": 0.954546,
+          "b": 0.487799
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Bright lemon",
+      "color": {
+        "hex": "#FFF133",
+        "oklch": {
+          "l": 0.94177,
+          "c": 0.132078,
+          "h": 62.401125
+        },
+        "displayP3": {
+          "r": 0.990603,
+          "g": 0.946982,
+          "b": 0.366997
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Vivid pure yellow",
+      "color": {
+        "hex": "#FFF600",
+        "oklch": {
+          "l": 0.950875,
+          "c": 0.136393,
+          "h": 64.931707
+        },
+        "displayP3": {
+          "r": 0.993911,
+          "g": 0.965898,
+          "b": 0.320502
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Slightly deeper yellow",
+      "color": {
+        "hex": "#E6DD00",
+        "oklch": {
+          "l": 0.877734,
+          "c": 0.126203,
+          "h": 64.62083
+        },
+        "displayP3": {
+          "r": 0.895879,
+          "g": 0.867862,
+          "b": 0.284647
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Golden olive",
+      "color": {
+        "hex": "#BFB800",
+        "oklch": {
+          "l": 0.76482,
+          "c": 0.109758,
+          "h": 64.869346
+        },
+        "displayP3": {
+          "r": 0.744285,
+          "g": 0.722496,
+          "b": 0.23101
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Dark mustard green",
+      "color": {
+        "hex": "#8A8400",
+        "oklch": {
+          "l": 0.600189,
+          "c": 0.086454,
+          "h": 64.385908
+        },
+        "displayP3": {
+          "r": 0.537126,
+          "g": 0.518446,
+          "b": 0.156145
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Deep earthy olive",
+      "color": {
+        "hex": "#555100",
+        "oklch": {
+          "l": 0.425712,
+          "c": 0.061362,
+          "h": 64.301642
+        },
+        "displayP3": {
+          "r": 0.330634,
+          "g": 0.31818,
+          "b": 0.082429
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Yellow-black for contrast",
+      "color": {
+        "hex": "#1F1A0B",
+        "oklch": {
+          "l": 0.21962,
+          "c": 0.02548,
+          "h": 49.20549
+        },
+        "displayP3": {
+          "r": 0.118322,
+          "g": 0.102666,
+          "b": 0.05102
+        }
+      },
+      "textColor": "auto"
+    }
+  ],
+  "referenceColors": [
+    {
+      "id": "text-on-light",
+      "label": "50",
+      "color": {
+        "hex": "#FFFBE5",
+        "oklch": {
+          "l": 0.988309,
+          "c": 0.048534,
+          "h": 41.809122
+        },
+        "displayP3": {
+          "r": 0.997295,
+          "g": 0.984833,
+          "b": 0.906422
+        }
+      }
+    },
+    {
+      "id": "text-on-dark",
+      "label": "900",
+      "color": {
+        "hex": "#555100",
+        "oklch": {
+          "l": 0.425712,
+          "c": 0.061362,
+          "h": 64.301642
+        },
+        "displayP3": {
+          "r": 0.330634,
+          "g": 0.31818,
+          "b": 0.082429
+        }
+      }
+    },
+    {
+      "id": "text-on-hue",
+      "label": "500",
+      "color": {
+        "hex": "#FFF600",
+        "oklch": {
+          "l": 0.950875,
+          "c": 0.136393,
+          "h": 64.931707
+        },
+        "displayP3": {
+          "r": 0.993911,
+          "g": 0.965898,
+          "b": 0.320502
+        }
+      }
+    },
+    {
+      "id": "hue-on-dark",
+      "label": "900",
+      "color": {
+        "hex": "#555100",
+        "oklch": {
+          "l": 0.425712,
+          "c": 0.061362,
+          "h": 64.301642
+        },
+        "displayP3": {
+          "r": 0.330634,
+          "g": 0.31818,
+          "b": 0.082429
+        }
+      }
+    },
+    {
+      "id": "native-black",
+      "label": "950",
+      "color": {
+        "hex": "#1F1A0B",
+        "oklch": {
+          "l": 0.21962,
+          "c": 0.02548,
+          "h": 49.20549
+        },
+        "displayP3": {
+          "r": 0.118322,
+          "g": 0.102666,
+          "b": 0.05102
+        }
+      }
+    },
+    {
+      "id": "native-white",
+      "label": "100",
+      "color": {
+        "hex": "#FFF9CC",
+        "oklch": {
+          "l": 0.978284,
+          "c": 0.065383,
+          "h": 48.991083
+        },
+        "displayP3": {
+          "r": 0.995933,
+          "g": 0.977257,
+          "b": 0.818312
+        }
+      }
+    }
+  ],
+  "contrastExamples": [
+    {
+      "id": "text-on-light",
+      "label": "Text on Light",
+      "foreground": {
+        "hex": "#1F1A0B",
+        "oklch": {
+          "l": 0.21962,
+          "c": 0.02548,
+          "h": 49.20549
+        },
+        "displayP3": {
+          "r": 0.118322,
+          "g": 0.102666,
+          "b": 0.05102
+        }
+      },
+      "background": {
+        "hex": "#FFFBE5",
+        "oklch": {
+          "l": 0.988309,
+          "c": 0.048534,
+          "h": 41.809122
+        },
+        "displayP3": {
+          "r": 0.997295,
+          "g": 0.984833,
+          "b": 0.906422
+        }
+      },
+      "sampleText": "Aa"
+    },
+    {
+      "id": "text-on-dark",
+      "label": "Text on Dark",
+      "foreground": {
+        "hex": "#FFF9CC",
+        "oklch": {
+          "l": 0.978284,
+          "c": 0.065383,
+          "h": 48.991083
+        },
+        "displayP3": {
+          "r": 0.995933,
+          "g": 0.977257,
+          "b": 0.818312
+        }
+      },
+      "background": {
+        "hex": "#555100",
+        "oklch": {
+          "l": 0.425712,
+          "c": 0.061362,
+          "h": 64.301642
+        },
+        "displayP3": {
+          "r": 0.330634,
+          "g": 0.31818,
+          "b": 0.082429
+        }
+      },
+      "sampleText": "Aa"
+    },
+    {
+      "id": "text-on-hue",
+      "label": "Text on Hue",
+      "foreground": {
+        "hex": "#1F1A0B",
+        "oklch": {
+          "l": 0.21962,
+          "c": 0.02548,
+          "h": 49.20549
+        },
+        "displayP3": {
+          "r": 0.118322,
+          "g": 0.102666,
+          "b": 0.05102
+        }
+      },
+      "background": {
+        "hex": "#FFF600",
+        "oklch": {
+          "l": 0.950875,
+          "c": 0.136393,
+          "h": 64.931707
+        },
+        "displayP3": {
+          "r": 0.993911,
+          "g": 0.965898,
+          "b": 0.320502
+        }
+      },
+      "sampleText": "Aa"
+    },
+    {
+      "id": "hue-on-dark",
+      "label": "Hue on Dark",
+      "foreground": {
+        "hex": "#FFF600",
+        "oklch": {
+          "l": 0.950875,
+          "c": 0.136393,
+          "h": 64.931707
+        },
+        "displayP3": {
+          "r": 0.993911,
+          "g": 0.965898,
+          "b": 0.320502
+        }
+      },
+      "background": {
+        "hex": "#555100",
+        "oklch": {
+          "l": 0.425712,
+          "c": 0.061362,
+          "h": 64.301642
+        },
+        "displayP3": {
+          "r": 0.330634,
+          "g": 0.31818,
+          "b": 0.082429
+        }
+      },
+      "sampleText": "Aa"
+    }
+  ]
+}

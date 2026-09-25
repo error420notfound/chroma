@@ -1,0 +1,22 @@
+{
+  "id": "engineered-electric-cyan",
+  "type": "engineered",
+  "name": "Electric Cyan",
+  "slug": "electric-cyan",
+  "description": "Pure synthetic/digital cyan",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#00FFFF",
+    "oklch": {
+      "l": 0.910425,
+      "c": 0.10718,
+      "h": 185.720739
+    },
+    "displayP3": {
+      "r": 0.458397,
+      "g": 0.985255,
+      "b": 0.992355
+    }
+  },
+  "textColor": "auto"
+}

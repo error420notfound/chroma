@@ -1,0 +1,22 @@
+{
+  "id": "engineered-fuchsia",
+  "type": "engineered",
+  "name": "Fuchsia",
+  "slug": "fuchsia",
+  "description": "Pure synthetic/digital magenta",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#FF00FF",
+    "oklch": {
+      "l": 0.704865,
+      "c": 0.174419,
+      "h": 323.854773
+    },
+    "displayP3": {
+      "r": 0.917552,
+      "g": 0.200304,
+      "b": 0.967377
+    }
+  },
+  "textColor": "auto"
+}

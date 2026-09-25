@@ -1,0 +1,245 @@
+{
+  "id": "scale-jal-teal",
+  "type": "scale",
+  "name": "Jal Teal",
+  "slug": "jal-teal",
+  "tags": ["02-Sheet-2-Sheet-2-Table-1"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Teal Mist",
+      "color": {
+        "hex": "#E6F8F7",
+        "oklch": {
+          "l": 0.968952,
+          "c": 0.015482,
+          "h": 49.960436
+        },
+        "displayP3": {
+          "r": 0.915071,
+          "g": 0.970307,
+          "b": 0.967731
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Teal Veil",
+      "color": {
+        "hex": "#CCF1EF",
+        "oklch": {
+          "l": 0.934747,
+          "c": 0.011439,
+          "h": 129.008018
+        },
+        "displayP3": {
+          "r": 0.828275,
+          "g": 0.94074,
+          "b": 0.935612
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Teal Breeze",
+      "color": {
+        "hex": "#99E3E1",
+        "oklch": {
+          "l": 0.870662,
+          "c": 0.038643,
+          "h": 176.459476
+        },
+        "displayP3": {
+          "r": 0.663989,
+          "g": 0.882493,
+          "b": 0.878981
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Teal Flow",
+      "color": {
+        "hex": "#66D5D3",
+        "oklch": {
+          "l": 0.811811,
+          "c": 0.06392,
+          "h": 182.35987
+        },
+        "displayP3": {
+          "r": 0.514205,
+          "g": 0.825354,
+          "b": 0.822925
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Teal Current",
+      "color": {
+        "hex": "#4ED0CD",
+        "oklch": {
+          "l": 0.79036,
+          "c": 0.073051,
+          "h": 182.796741
+        },
+        "displayP3": {
+          "r": 0.454906,
+          "g": 0.804999,
+          "b": 0.799335
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Jal Teal",
+      "color": {
+        "hex": "#40C9C6",
+        "oklch": {
+          "l": 0.767532,
+          "c": 0.075674,
+          "h": 183.159486
+        },
+        "displayP3": {
+          "r": 0.418045,
+          "g": 0.777493,
+          "b": 0.771856
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Teal Core",
+      "color": {
+        "hex": "#36A9A7",
+        "oklch": {
+          "l": 0.675289,
+          "c": 0.066143,
+          "h": 183.517325
+        },
+        "displayP3": {
+          "r": 0.350505,
+          "g": 0.653654,
+          "b": 0.650822
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Teal Depth",
+      "color": {
+        "hex": "#2D8987",
+        "oklch": {
+          "l": 0.57969,
+          "c": 0.055319,
+          "h": 183.045337
+        },
+        "displayP3": {
+          "r": 0.28493,
+          "g": 0.529853,
+          "b": 0.52621
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Teal Ocean",
+      "color": {
+        "hex": "#226B69",
+        "oklch": {
+          "l": 0.485632,
+          "c": 0.04581,
+          "h": 182.520679
+        },
+        "displayP3": {
+          "r": 0.21878,
+          "g": 0.413702,
+          "b": 0.409342
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Teal Abyss",
+      "color": {
+        "hex": "#184C4B",
+        "oklch": {
+          "l": 0.384202,
+          "c": 0.035215,
+          "h": 183.077162
+        },
+        "displayP3": {
+          "r": 0.153179,
+          "g": 0.293734,
+          "b": 0.292202
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Teal Origin",
+      "color": {
+        "hex": "#0D2A29",
+        "oklch": {
+          "l": 0.264078,
+          "c": 0.021743,
+          "h": 181.284023
+        },
+        "displayP3": {
+          "r": 0.081757,
+          "g": 0.162173,
+          "b": 0.159792
+        }
+      },
+      "textColor": "auto"
+    }
+  ],
+  "referenceColors": [
+    {
+      "id": "teal-ivory",
+      "label": "Teal Ivory",
+      "color": {
+        "hex": "#F2FFFE",
+        "oklch": {
+          "l": 0.993472,
+          "c": 0.020014,
+          "h": 40.954396
+        },
+        "displayP3": {
+          "r": 0.958386,
+          "g": 0.998355,
+          "b": 0.995489
+        }
+      },
+      "description": "Typography on teal"
+    },
+    {
+      "id": "teal-ink",
+      "label": "Teal Ink",
+      "color": {
+        "hex": "#0F1F1E",
+        "oklch": {
+          "l": 0.225711,
+          "c": 0.011999,
+          "h": 175.488521
+        },
+        "displayP3": {
+          "r": 0.073258,
+          "g": 0.119966,
+          "b": 0.117142
+        }
+      },
+      "description": "Primary typography on light teal"
+    }
+  ]
+}

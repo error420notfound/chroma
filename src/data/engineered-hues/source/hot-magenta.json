@@ -1,0 +1,22 @@
+{
+  "id": "engineered-hot-magenta",
+  "type": "engineered",
+  "name": "Hot Magenta",
+  "slug": "hot-magenta",
+  "description": "Artificial high-chroma pink",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#FF00AA",
+    "oklch": {
+      "l": 0.661585,
+      "c": 0.208039,
+      "h": 353.635962
+    },
+    "displayP3": {
+      "r": 0.917552,
+      "g": 0.200304,
+      "b": 0.652275
+    }
+  },
+  "textColor": "auto"
+}

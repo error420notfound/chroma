@@ -1,0 +1,245 @@
+{
+  "id": "scale-rasa-blush",
+  "type": "scale",
+  "name": "Rasa Blush",
+  "slug": "rasa-blush",
+  "tags": ["02-Sheet-2-Sheet-2-Table-1"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Blush Whisper",
+      "color": {
+        "hex": "#FDEEEE",
+        "oklch": {
+          "l": 0.963874,
+          "c": 0.043252,
+          "h": 23.440102
+        },
+        "displayP3": {
+          "r": 0.982109,
+          "g": 0.935358,
+          "b": 0.93429
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Blush Veil",
+      "color": {
+        "hex": "#FBDCDC",
+        "oklch": {
+          "l": 0.92268,
+          "c": 0.057792,
+          "h": 20.209095
+        },
+        "displayP3": {
+          "r": 0.964255,
+          "g": 0.867141,
+          "b": 0.864931
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Blush Petal",
+      "color": {
+        "hex": "#F6BABA",
+        "oklch": {
+          "l": 0.845397,
+          "c": 0.086508,
+          "h": 17.300473
+        },
+        "displayP3": {
+          "r": 0.92863,
+          "g": 0.738842,
+          "b": 0.734217
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Blush Bloom",
+      "color": {
+        "hex": "#F19C9C",
+        "oklch": {
+          "l": 0.779194,
+          "c": 0.113535,
+          "h": 16.217799
+        },
+        "displayP3": {
+          "r": 0.89756,
+          "g": 0.626706,
+          "b": 0.619454
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Blush Warmth",
+      "color": {
+        "hex": "#EC7F7F",
+        "oklch": {
+          "l": 0.718655,
+          "c": 0.140822,
+          "h": 15.868146
+        },
+        "displayP3": {
+          "r": 0.869112,
+          "g": 0.520007,
+          "b": 0.509447
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Rasa Blush",
+      "color": {
+        "hex": "#F28C8C",
+        "oklch": {
+          "l": 0.749848,
+          "c": 0.132625,
+          "h": 15.931842
+        },
+        "displayP3": {
+          "r": 0.894696,
+          "g": 0.568508,
+          "b": 0.559105
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Blush Core",
+      "color": {
+        "hex": "#D87373",
+        "oklch": {
+          "l": 0.670984,
+          "c": 0.132568,
+          "h": 15.865732
+        },
+        "displayP3": {
+          "r": 0.794948,
+          "g": 0.471431,
+          "b": 0.461603
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Blush Depth",
+      "color": {
+        "hex": "#B85C5C",
+        "oklch": {
+          "l": 0.58596,
+          "c": 0.123602,
+          "h": 15.861272
+        },
+        "displayP3": {
+          "r": 0.675057,
+          "g": 0.380154,
+          "b": 0.370871
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Blush Earth",
+      "color": {
+        "hex": "#8F4444",
+        "oklch": {
+          "l": 0.482878,
+          "c": 0.105204,
+          "h": 15.868938
+        },
+        "displayP3": {
+          "r": 0.523265,
+          "g": 0.282789,
+          "b": 0.275074
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Blush Ritual",
+      "color": {
+        "hex": "#6A2F2F",
+        "oklch": {
+          "l": 0.38624,
+          "c": 0.087031,
+          "h": 15.884077
+        },
+        "displayP3": {
+          "r": 0.386504,
+          "g": 0.197291,
+          "b": 0.191092
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Blush Ancestral",
+      "color": {
+        "hex": "#3A1919",
+        "oklch": {
+          "l": 0.261925,
+          "c": 0.054364,
+          "h": 15.859911
+        },
+        "displayP3": {
+          "r": 0.210681,
+          "g": 0.104918,
+          "b": 0.101619
+        }
+      },
+      "textColor": "auto"
+    }
+  ],
+  "referenceColors": [
+    {
+      "id": "blush-ivory",
+      "label": "Blush Ivory",
+      "color": {
+        "hex": "#FFF6F6",
+        "oklch": {
+          "l": 0.983186,
+          "c": 0.038173,
+          "h": 25.268359
+        },
+        "displayP3": {
+          "r": 0.993911,
+          "g": 0.965898,
+          "b": 0.965231
+        }
+      },
+      "description": "Typography on blush"
+    },
+    {
+      "id": "blush-ink",
+      "label": "Blush Ink",
+      "color": {
+        "hex": "#2A1414",
+        "oklch": {
+          "l": 0.223163,
+          "c": 0.038837,
+          "h": 15.947506
+        },
+        "displayP3": {
+          "r": 0.152938,
+          "g": 0.082602,
+          "b": 0.080589
+        }
+      },
+      "description": "Primary typography on light blush"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "engineered-cobalt-blue",
+  "type": "engineered",
+  "name": "Cobalt Blue",
+  "slug": "cobalt-blue",
+  "description": "Strong manufactured pigment blue",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#0047AB",
+    "oklch": {
+      "l": 0.42865,
+      "c": 0.188216,
+      "h": 215.687562
+    },
+    "displayP3": {
+      "r": 0.107258,
+      "g": 0.273771,
+      "b": 0.646289
+    }
+  },
+  "textColor": "auto"
+}

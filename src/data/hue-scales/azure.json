@@ -1,0 +1,102 @@
+{
+  "id": "azure",
+  "slug": "azure",
+  "name": "Azure",
+  "family": "Blue",
+  "description": "A lucid blue scale calibrated for interface hierarchy.",
+  "tags": ["interface", "cool", "primary"],
+  "referenceColors": [{ "name": "Studio blue", "hex": "#2558D9" }],
+  "contrastExamples": [
+    { "foreground": "#FFFFFF", "background": "#2558D9", "label": "White on Azure 600" }
+  ],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Mist",
+      "hex": "#EFF6FF",
+      "oklch": "oklch(0.97 0.014 254)",
+      "p3": "color(display-p3 0.93 0.96 1)",
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Pale",
+      "hex": "#DCEBFF",
+      "oklch": "oklch(0.92 0.042 254)",
+      "p3": "color(display-p3 0.84 0.91 1)",
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Sky",
+      "hex": "#B9D5FF",
+      "oklch": "oklch(0.84 0.085 254)",
+      "p3": "color(display-p3 0.68 0.82 1)",
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Clear",
+      "hex": "#85B8FF",
+      "oklch": "oklch(0.75 0.134 254)",
+      "p3": "color(display-p3 0.48 0.7 1)",
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Bright",
+      "hex": "#5795F8",
+      "oklch": "oklch(0.66 0.171 255)",
+      "p3": "color(display-p3 0.32 0.56 0.96)",
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Azure",
+      "hex": "#3776E6",
+      "oklch": "oklch(0.57 0.18 257)",
+      "p3": "color(display-p3 0.19 0.43 0.89)",
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Studio",
+      "hex": "#2558D9",
+      "oklch": "oklch(0.47 0.192 262)",
+      "p3": "color(display-p3 0.12 0.31 0.83)",
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Deep",
+      "hex": "#2047B6",
+      "oklch": "oklch(0.4 0.164 263)",
+      "p3": "color(display-p3 0.1 0.24 0.69)",
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Ink",
+      "hex": "#203D90",
+      "oklch": "oklch(0.34 0.126 263)",
+      "p3": "color(display-p3 0.1 0.2 0.54)",
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Night",
+      "hex": "#202F68",
+      "oklch": "oklch(0.27 0.088 263)",
+      "p3": "color(display-p3 0.1 0.14 0.39)",
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Abyss",
+      "hex": "#182143",
+      "oklch": "oklch(0.19 0.053 264)",
+      "p3": "color(display-p3 0.07 0.09 0.25)",
+      "textColor": "auto"
+    }
+  ]
+}

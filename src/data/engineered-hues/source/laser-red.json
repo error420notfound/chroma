@@ -1,0 +1,22 @@
+{
+  "id": "engineered-laser-red",
+  "type": "engineered",
+  "name": "Laser Red",
+  "slug": "laser-red",
+  "description": "Bright, pink-leaning red that stands apart from industrial reds; strong for digital emphasis.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#FF1744",
+    "oklch": {
+      "l": 0.637742,
+      "c": 0.238733,
+      "h": 13.922932
+    },
+    "displayP3": {
+      "r": 0.918301,
+      "g": 0.225134,
+      "b": 0.294047
+    }
+  },
+  "textColor": "auto"
+}

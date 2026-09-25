@@ -1,0 +1,22 @@
+{
+  "id": "engineered-hyper-teal",
+  "type": "engineered",
+  "name": "Hyper Teal",
+  "slug": "hyper-teal",
+  "description": "A forceful green-cyan that sits between Turquoise and Spring Green without becoming pure cyan.",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#00BFA5",
+    "oklch": {
+      "l": 0.723974,
+      "c": 0.07767,
+      "h": 169.574223
+    },
+    "displayP3": {
+      "r": 0.336262,
+      "g": 0.737782,
+      "b": 0.650134
+    }
+  },
+  "textColor": "auto"
+}

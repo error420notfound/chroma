@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import { hueScales } from '../../lib/catalogue'; const base=import.meta.env.BASE_URL.replace(/\/$/,'');
+---
+<BaseLayout title="Hue scales — Chroma"><div class="eyebrow">Hue scales</div><h1>Systems with<br/>a measured range.</h1><div class="catalogue-grid">{hueScales.map(scale=><a class="catalogue-cell" href={`${base}/scales/${scale.slug}`}><div class="swatch" style={{background:scale.steps[5].hex,color:'#fff'}}><strong style="font-size:28px">{scale.name}</strong><span>{scale.family}</span></div><div class="meta"><span>{scale.description}</span><span class="hex">11 steps</span></div></a>)}</div></BaseLayout>

@@ -1,0 +1,182 @@
+{
+  "catalogue": "chroma-hue-scales",
+  "version": 1,
+  "generatedFrom": ["01-Sheet-1-Sheet-1-Orange.csv", "02-Sheet-2-Sheet-2-Table-1.csv"],
+  "note": "Display-P3 values are equivalent conversions from supplied sRGB hex values, not separately authored wide-gamut colours.",
+  "scales": [
+    {
+      "id": "scale-agni-ember",
+      "name": "Agni Ember",
+      "slug": "agni-ember",
+      "file": "./agni-ember.json"
+    },
+    {
+      "id": "scale-amber",
+      "name": "Amber",
+      "slug": "amber",
+      "file": "./amber.json"
+    },
+    {
+      "id": "scale-blue",
+      "name": "Blue",
+      "slug": "blue",
+      "file": "./blue.json"
+    },
+    {
+      "id": "scale-brown",
+      "name": "Brown",
+      "slug": "brown",
+      "file": "./brown.json"
+    },
+    {
+      "id": "scale-cool-set",
+      "name": "Cool Set",
+      "slug": "cool-set",
+      "file": "./cool-set.json"
+    },
+    {
+      "id": "scale-cyan",
+      "name": "Cyan",
+      "slug": "cyan",
+      "file": "./cyan.json"
+    },
+    {
+      "id": "scale-dhara-khak",
+      "name": "Dhara Khak",
+      "slug": "dhara-khak",
+      "file": "./dhara-khak.json"
+    },
+    {
+      "id": "scale-gau-amrit",
+      "name": "Gau Amrit",
+      "slug": "gau-amrit",
+      "file": "./gau-amrit.json"
+    },
+    {
+      "id": "scale-green",
+      "name": "Green",
+      "slug": "green",
+      "file": "./green.json"
+    },
+    {
+      "id": "scale-indigo",
+      "name": "Indigo",
+      "slug": "indigo",
+      "file": "./indigo.json"
+    },
+    {
+      "id": "scale-jal-teal",
+      "name": "Jal Teal",
+      "slug": "jal-teal",
+      "file": "./jal-teal.json"
+    },
+    {
+      "id": "scale-kshetra-hari",
+      "name": "Kshetra Hari",
+      "slug": "kshetra-hari",
+      "file": "./kshetra-hari.json"
+    },
+    {
+      "id": "scale-lime",
+      "name": "Lime",
+      "slug": "lime",
+      "file": "./lime.json"
+    },
+    {
+      "id": "scale-mint",
+      "name": "Mint",
+      "slug": "mint",
+      "file": "./mint.json"
+    },
+    {
+      "id": "scale-neutral-set",
+      "name": "Neutral Set",
+      "slug": "neutral-set",
+      "file": "./neutral-set.json"
+    },
+    {
+      "id": "scale-orange",
+      "name": "Orange",
+      "slug": "orange",
+      "file": "./orange.json"
+    },
+    {
+      "id": "scale-pink",
+      "name": "Pink",
+      "slug": "pink",
+      "file": "./pink.json"
+    },
+    {
+      "id": "scale-prana-verde",
+      "name": "Prana Verde",
+      "slug": "prana-verde",
+      "file": "./prana-verde.json"
+    },
+    {
+      "id": "scale-purple",
+      "name": "Purple",
+      "slug": "purple",
+      "file": "./purple.json"
+    },
+    {
+      "id": "scale-rakta-tattva",
+      "name": "Rakta Tattva",
+      "slug": "rakta-tattva",
+      "file": "./rakta-tattva.json"
+    },
+    {
+      "id": "scale-rasa-blush",
+      "name": "Rasa Blush",
+      "slug": "rasa-blush",
+      "file": "./rasa-blush.json"
+    },
+    {
+      "id": "scale-red",
+      "name": "Red",
+      "slug": "red",
+      "file": "./red.json"
+    },
+    {
+      "id": "scale-rose",
+      "name": "Rose",
+      "slug": "rose",
+      "file": "./rose.json"
+    },
+    {
+      "id": "scale-tapas-indigo",
+      "name": "Tapas Indigo",
+      "slug": "tapas-indigo",
+      "file": "./tapas-indigo.json"
+    },
+    {
+      "id": "scale-teal",
+      "name": "Teal",
+      "slug": "teal",
+      "file": "./teal.json"
+    },
+    {
+      "id": "scale-veda-neel",
+      "name": "Veda Neel",
+      "slug": "veda-neel",
+      "file": "./veda-neel.json"
+    },
+    {
+      "id": "scale-vermilion",
+      "name": "Vermilion",
+      "slug": "vermilion",
+      "file": "./vermilion.json"
+    },
+    {
+      "id": "scale-warm-set",
+      "name": "Warm Set",
+      "slug": "warm-set",
+      "file": "./warm-set.json"
+    },
+    {
+      "id": "scale-yellow",
+      "name": "Yellow",
+      "slug": "yellow",
+      "file": "./yellow.json"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "engineered-acid-green",
+  "type": "engineered",
+  "name": "Acid Green",
+  "slug": "acid-green",
+  "description": "Electric, synthetic green",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#B0FF00",
+    "oklch": {
+      "l": 0.916302,
+      "c": 0.121369,
+      "h": 95.682261
+    },
+    "displayP3": {
+      "r": 0.757743,
+      "g": 0.991689,
+      "b": 0.312946
+    }
+  },
+  "textColor": "auto"
+}

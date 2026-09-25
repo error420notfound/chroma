@@ -1,0 +1,22 @@
+{
+  "id": "engineered-international-klein-blue",
+  "type": "engineered",
+  "name": "International Klein Blue",
+  "slug": "international-klein-blue",
+  "description": "Deliberately engineered, iconic blue",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#002FA7",
+    "oklch": {
+      "l": 0.375262,
+      "c": 0.247053,
+      "h": 211.659861
+    },
+    "displayP3": {
+      "r": 0.061458,
+      "g": 0.180969,
+      "b": 0.629302
+    }
+  },
+  "textColor": "auto"
+}

@@ -1,0 +1,245 @@
+{
+  "id": "scale-agni-ember",
+  "type": "scale",
+  "name": "Agni Ember",
+  "slug": "agni-ember",
+  "tags": ["02-Sheet-2-Sheet-2-Table-1"],
+  "steps": [
+    {
+      "step": 50,
+      "label": "Ember Light",
+      "color": {
+        "hex": "#FFF4E6",
+        "oklch": {
+          "l": 0.974873,
+          "c": 0.048654,
+          "h": 34.333615
+        },
+        "displayP3": {
+          "r": 0.992579,
+          "g": 0.958329,
+          "b": 0.907782
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 100,
+      "label": "Ember Veil",
+      "color": {
+        "hex": "#FFE6CC",
+        "oklch": {
+          "l": 0.941023,
+          "c": 0.067719,
+          "h": 34.936862
+        },
+        "displayP3": {
+          "r": 0.98359,
+          "g": 0.905437,
+          "b": 0.811809
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 200,
+      "label": "Ember Glow",
+      "color": {
+        "hex": "#FFD1A6",
+        "oklch": {
+          "l": 0.892042,
+          "c": 0.095307,
+          "h": 34.862992
+        },
+        "displayP3": {
+          "r": 0.971226,
+          "g": 0.826441,
+          "b": 0.672904
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 300,
+      "label": "Ember Aura",
+      "color": {
+        "hex": "#FFB266",
+        "oklch": {
+          "l": 0.823166,
+          "c": 0.136818,
+          "h": 35.178986
+        },
+        "displayP3": {
+          "r": 0.955449,
+          "g": 0.710862,
+          "b": 0.449533
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 400,
+      "label": "Ember Rise",
+      "color": {
+        "hex": "#FF9333",
+        "oklch": {
+          "l": 0.763979,
+          "c": 0.168369,
+          "h": 31.760059
+        },
+        "displayP3": {
+          "r": 0.942616,
+          "g": 0.597192,
+          "b": 0.289913
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 500,
+      "label": "Agni Ember",
+      "color": {
+        "hex": "#FFA500",
+        "oklch": {
+          "l": 0.792999,
+          "c": 0.162008,
+          "h": 38.516188
+        },
+        "displayP3": {
+          "r": 0.949711,
+          "g": 0.662902,
+          "b": 0.232976
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 600,
+      "label": "Ember Core",
+      "color": {
+        "hex": "#FF7A00",
+        "oklch": {
+          "l": 0.722953,
+          "c": 0.190471,
+          "h": 28.352165
+        },
+        "displayP3": {
+          "r": 0.934369,
+          "g": 0.507822,
+          "b": 0.193697
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 700,
+      "label": "Ember Depth",
+      "color": {
+        "hex": "#E55300",
+        "oklch": {
+          "l": 0.631635,
+          "c": 0.194566,
+          "h": 23.650189
+        },
+        "displayP3": {
+          "r": 0.832222,
+          "g": 0.364991,
+          "b": 0.150186
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 800,
+      "label": "Ember Earth",
+      "color": {
+        "hex": "#B84200",
+        "oklch": {
+          "l": 0.537405,
+          "c": 0.164448,
+          "h": 23.831324
+        },
+        "displayP3": {
+          "r": 0.668145,
+          "g": 0.290418,
+          "b": 0.112847
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 900,
+      "label": "Ember Ritual",
+      "color": {
+        "hex": "#7A2C00",
+        "oklch": {
+          "l": 0.402212,
+          "c": 0.11929,
+          "h": 24.707092
+        },
+        "displayP3": {
+          "r": 0.442421,
+          "g": 0.192485,
+          "b": 0.062432
+        }
+      },
+      "textColor": "auto"
+    },
+    {
+      "step": 950,
+      "label": "Ember Ancestral",
+      "color": {
+        "hex": "#401600",
+        "oklch": {
+          "l": 0.262406,
+          "c": 0.073939,
+          "h": 26.217128
+        },
+        "displayP3": {
+          "r": 0.230999,
+          "g": 0.096304,
+          "b": 0.018822
+        }
+      },
+      "textColor": "auto"
+    }
+  ],
+  "referenceColors": [
+    {
+      "id": "ember-ivory",
+      "label": "Ember Ivory",
+      "color": {
+        "hex": "#FFF8F0",
+        "oklch": {
+          "l": 0.985378,
+          "c": 0.041513,
+          "h": 32.316548
+        },
+        "displayP3": {
+          "r": 0.995256,
+          "g": 0.97347,
+          "b": 0.944447
+        }
+      },
+      "description": "Text on Ember"
+    },
+    {
+      "id": "ember-ink",
+      "label": "Ember Ink",
+      "color": {
+        "hex": "#1F0E05",
+        "oklch": {
+          "l": 0.186426,
+          "c": 0.036846,
+          "h": 28.756428
+        },
+        "displayP3": {
+          "r": 0.11237,
+          "g": 0.058061,
+          "b": 0.024981
+        }
+      },
+      "description": "Fine typography on warm fields"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "engineered-synthetic-pink",
+  "type": "engineered",
+  "name": "Synthetic Pink",
+  "slug": "synthetic-pink",
+  "description": "Intensified, artificial pink",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#FF1493",
+    "oklch": {
+      "l": 0.656404,
+      "c": 0.21471,
+      "h": 359.791313
+    },
+    "displayP3": {
+      "r": 0.918164,
+      "g": 0.220809,
+      "b": 0.568666
+    }
+  },
+  "textColor": "auto"
+}

@@ -1,0 +1,259 @@
+{
+  "catalogue": "chroma-engineered-hues",
+  "version": 1,
+  "note": "Display-P3 values are equivalent conversions from supplied sRGB hex values, not separately authored wide-gamut colours.",
+  "hues": [
+    {
+      "id": "engineered-acid-green",
+      "name": "Acid Green",
+      "slug": "acid-green",
+      "file": "./acid-green.json"
+    },
+    {
+      "id": "engineered-acid-yellow",
+      "name": "Acid Yellow",
+      "slug": "acid-yellow",
+      "file": "./acid-yellow.json"
+    },
+    {
+      "id": "engineered-cerulean-blue",
+      "name": "Cerulean Blue",
+      "slug": "cerulean-blue",
+      "file": "./cerulean-blue.json"
+    },
+    {
+      "id": "engineered-chartreuse",
+      "name": "Chartreuse",
+      "slug": "chartreuse",
+      "file": "./chartreuse.json"
+    },
+    {
+      "id": "engineered-chrome-chartreuse",
+      "name": "Chrome Chartreuse",
+      "slug": "chrome-chartreuse",
+      "file": "./chrome-chartreuse.json"
+    },
+    {
+      "id": "engineered-chrome-yellow",
+      "name": "Chrome Yellow",
+      "slug": "chrome-yellow",
+      "file": "./chrome-yellow.json"
+    },
+    {
+      "id": "engineered-cobalt-blue",
+      "name": "Cobalt Blue",
+      "slug": "cobalt-blue",
+      "file": "./cobalt-blue.json"
+    },
+    {
+      "id": "engineered-dioxazine-violet",
+      "name": "Dioxazine Violet",
+      "slug": "dioxazine-violet",
+      "file": "./dioxazine-violet.json"
+    },
+    {
+      "id": "engineered-electric-blue",
+      "name": "Electric Blue",
+      "slug": "electric-blue",
+      "file": "./electric-blue.json"
+    },
+    {
+      "id": "engineered-electric-cyan",
+      "name": "Electric Cyan",
+      "slug": "electric-cyan",
+      "file": "./electric-cyan.json"
+    },
+    {
+      "id": "engineered-electric-green",
+      "name": "Electric Green",
+      "slug": "electric-green",
+      "file": "./electric-green.json"
+    },
+    {
+      "id": "engineered-fluorescent-amber",
+      "name": "Fluorescent Amber",
+      "slug": "fluorescent-amber",
+      "file": "./fluorescent-amber.json"
+    },
+    {
+      "id": "engineered-fluorescent-rose",
+      "name": "Fluorescent Rose",
+      "slug": "fluorescent-rose",
+      "file": "./fluorescent-rose.json"
+    },
+    {
+      "id": "engineered-fuchsia",
+      "name": "Fuchsia",
+      "slug": "fuchsia",
+      "file": "./fuchsia.json"
+    },
+    {
+      "id": "engineered-hot-magenta",
+      "name": "Hot Magenta",
+      "slug": "hot-magenta",
+      "file": "./hot-magenta.json"
+    },
+    {
+      "id": "engineered-hyper-teal",
+      "name": "Hyper Teal",
+      "slug": "hyper-teal",
+      "file": "./hyper-teal.json"
+    },
+    {
+      "id": "engineered-hyper-violet",
+      "name": "Hyper Violet",
+      "slug": "hyper-violet",
+      "file": "./hyper-violet.json"
+    },
+    {
+      "id": "engineered-international-klein-blue",
+      "name": "International Klein Blue",
+      "slug": "international-klein-blue",
+      "file": "./international-klein-blue.json"
+    },
+    {
+      "id": "engineered-international-orange",
+      "name": "International Orange",
+      "slug": "international-orange",
+      "file": "./international-orange.json"
+    },
+    {
+      "id": "engineered-laser-blue",
+      "name": "Laser Blue",
+      "slug": "laser-blue",
+      "file": "./laser-blue.json"
+    },
+    {
+      "id": "engineered-laser-red",
+      "name": "Laser Red",
+      "slug": "laser-red",
+      "file": "./laser-red.json"
+    },
+    {
+      "id": "engineered-lime-green",
+      "name": "Lime Green",
+      "slug": "lime-green",
+      "file": "./lime-green.json"
+    },
+    {
+      "id": "engineered-manganese-blue",
+      "name": "Manganese Blue",
+      "slug": "manganese-blue",
+      "file": "./manganese-blue.json"
+    },
+    {
+      "id": "engineered-optical-azure",
+      "name": "Optical Azure",
+      "slug": "optical-azure",
+      "file": "./optical-azure.json"
+    },
+    {
+      "id": "engineered-optical-lime",
+      "name": "Optical Lime",
+      "slug": "optical-lime",
+      "file": "./optical-lime.json"
+    },
+    {
+      "id": "engineered-optical-magenta",
+      "name": "Optical Magenta",
+      "slug": "optical-magenta",
+      "file": "./optical-magenta.json"
+    },
+    {
+      "id": "engineered-prussian-blue",
+      "name": "Prussian Blue",
+      "slug": "prussian-blue",
+      "file": "./prussian-blue.json"
+    },
+    {
+      "id": "engineered-quinacridone-magenta",
+      "name": "Quinacridone Magenta",
+      "slug": "quinacridone-magenta",
+      "file": "./quinacridone-magenta.json"
+    },
+    {
+      "id": "engineered-safety-orange",
+      "name": "Safety Orange",
+      "slug": "safety-orange",
+      "file": "./safety-orange.json"
+    },
+    {
+      "id": "engineered-safety-yellow",
+      "name": "Safety Yellow",
+      "slug": "safety-yellow",
+      "file": "./safety-yellow.json"
+    },
+    {
+      "id": "engineered-signal-cyan",
+      "name": "Signal Cyan",
+      "slug": "signal-cyan",
+      "file": "./signal-cyan.json"
+    },
+    {
+      "id": "engineered-signal-green",
+      "name": "Signal Green",
+      "slug": "signal-green",
+      "file": "./signal-green.json"
+    },
+    {
+      "id": "engineered-signal-red",
+      "name": "Signal Red",
+      "slug": "signal-red",
+      "file": "./signal-red.json"
+    },
+    {
+      "id": "engineered-signal-vermilion",
+      "name": "Signal Vermilion",
+      "slug": "signal-vermilion",
+      "file": "./signal-vermilion.json"
+    },
+    {
+      "id": "engineered-signal-violet",
+      "name": "Signal Violet",
+      "slug": "signal-violet",
+      "file": "./signal-violet.json"
+    },
+    {
+      "id": "engineered-spring-green",
+      "name": "Spring Green",
+      "slug": "spring-green",
+      "file": "./spring-green.json"
+    },
+    {
+      "id": "engineered-synthetic-pink",
+      "name": "Synthetic Pink",
+      "slug": "synthetic-pink",
+      "file": "./synthetic-pink.json"
+    },
+    {
+      "id": "engineered-turquoise",
+      "name": "Turquoise",
+      "slug": "turquoise",
+      "file": "./turquoise.json"
+    },
+    {
+      "id": "engineered-ultramarine",
+      "name": "Ultramarine",
+      "slug": "ultramarine",
+      "file": "./ultramarine.json"
+    },
+    {
+      "id": "engineered-ultraviolet-signal",
+      "name": "Ultraviolet Signal",
+      "slug": "ultraviolet-signal",
+      "file": "./ultraviolet-signal.json"
+    },
+    {
+      "id": "engineered-vermilion",
+      "name": "Vermilion",
+      "slug": "vermilion",
+      "file": "./vermilion.json"
+    },
+    {
+      "id": "engineered-viridian",
+      "name": "Viridian",
+      "slug": "viridian",
+      "file": "./viridian.json"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "engineered-turquoise",
+  "type": "engineered",
+  "name": "Turquoise",
+  "slug": "turquoise",
+  "description": "Artificial-feeling cyan-green",
+  "tags": ["engineered", "high-contrast", "high-visibility", "vibrant"],
+  "color": {
+    "hex": "#40E0D0",
+    "oklch": {
+      "l": 0.826639,
+      "c": 0.080403,
+      "h": 175.895657
+    },
+    "displayP3": {
+      "r": 0.454733,
+      "g": 0.86629,
+      "b": 0.814686
+    }
+  },
+  "textColor": "auto"
+}

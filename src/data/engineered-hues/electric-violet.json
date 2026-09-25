@@ -1,0 +1,11 @@
+{
+  "id": "electric-violet",
+  "slug": "electric-violet",
+  "name": "Electric Violet",
+  "description": "A saturated violet held at maximum display impact for expressive accents.",
+  "tags": ["p3", "expressive", "accent"],
+  "hex": "#8B2CFF",
+  "oklch": "oklch(0.54 0.28 298)",
+  "p3": "color(display-p3 0.5 0.08 1)",
+  "textColor": "auto"
+}

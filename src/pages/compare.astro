@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'; import { catalogueItems } from '../lib/catalogue'; import { CompareWorkspace } from '../components/compare/CompareWorkspace';
+---
+<BaseLayout title="Compare colours — Chroma"><div class="eyebrow">Comparison workspace</div><h1>Hold colour<br/>decisions together.</h1><p>Choose two to eight saved catalogue values. Selections remain in this browser only.</p><hr class="rule"/><CompareWorkspace client:load items={catalogueItems}/></BaseLayout>
