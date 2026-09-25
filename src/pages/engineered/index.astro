@@ -1,4 +1,4 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import { engineeredHues } from '../../lib/catalogue'; import { bestTextColor } from '../../lib/colour'; const base=import.meta.env.BASE_URL.replace(/\/$/,'');
+import BaseLayout from '../../layouts/BaseLayout.astro'; import { engineeredHues } from '../../lib/catalogue'; import EngineeredBrowser from '../../components/engineered/EngineeredBrowser.tsx'; const base=import.meta.env.BASE_URL.replace(/\/$/,'');
 ---
-<BaseLayout title="Engineered hues — Chroma"><div class="eyebrow">Engineered hues</div><h1>Colours for<br/>immediate impact.</h1><div class="catalogue-grid">{engineeredHues.map(hue=><a class="catalogue-cell" href={`${base}/engineered/${hue.slug}`}><div class="swatch" style={{background:hue.hex,color:bestTextColor(hue.hex)}}><strong style="font-size:27px">Aa</strong><span>{hue.name}</span></div><div class="meta"><span class="hex">{hue.hex}</span><span>{hue.tags[0]}</span></div></a>)}</div></BaseLayout>
+<BaseLayout title="Engineered hues — Chroma"><div class="eyebrow">Engineered hues</div><h1>Colours for<br/>immediate impact.</h1><EngineeredBrowser client:load hues={engineeredHues} base={base}/></BaseLayout>
