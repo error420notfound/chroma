@@ -4,6 +4,7 @@ import type { CatalogueItem } from '../../lib/catalogue';
 import { bestTextColor } from '../../lib/colour';
 import { readStored, saveStored } from '../../lib/storage';
 import { CopyButton } from '../colour/CopyButton';
+import { Maximize2 } from 'lucide-react';
 type Mode = 'original' | 'lightness' | 'chroma';
 export default function CompareWorkspace({ items }: { items: CatalogueItem[] }) {
   const lookup = useMemo(() => new Map(items.map((item) => [item.id, item])), [items]);
@@ -114,6 +115,7 @@ export default function CompareWorkspace({ items }: { items: CatalogueItem[] }) 
                 className="swatch"
                 style={{ background: value, color: bestTextColor(value), minHeight: 170 }}
               >
+                <button className="fullscreen-trigger" type="button" aria-label={`View ${item.name} fullscreen`}><Maximize2 size={16} /></button>
                 <strong style={{ fontSize: 26 }}>{item.name}</strong>
                 <span>{mode === 'original' ? item.hex : value}</span>
               </div>

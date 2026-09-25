@@ -5,6 +5,7 @@ import { fallbackSRGB, inSRGB } from '../../lib/colour';
 import { gradientCss, type GradientStop } from '../../lib/gradients';
 import { readStored, saveStored } from '../../lib/storage';
 import { CopyButton } from '../colour/CopyButton';
+import { Maximize2 } from 'lucide-react';
 const id = () => Math.random().toString(36).slice(2);
 export default function GradientBuilder({ items }: { items: CatalogueItem[] }) {
   const fallback: GradientStop[] = [
@@ -50,6 +51,7 @@ export default function GradientBuilder({ items }: { items: CatalogueItem[] }) {
     <div className="tool-grid">
       <section className="panel" style={{ gridColumn: '1 / -1' }}>
         <div className="swatch gradient-preview" data-gradient-animation={playing ? 'playing' : 'paused'} style={{ minHeight: 210, color: '#fff' }}>
+          <button className="fullscreen-trigger" type="button" aria-label="View gradient fullscreen"><Maximize2 size={16} /></button>
           <div ref={trackRef} className="gradient-track" aria-hidden="true">
             <div className="gradient-frame" style={{ background: css }} />
             <div className="gradient-frame" style={{ background: css }} />

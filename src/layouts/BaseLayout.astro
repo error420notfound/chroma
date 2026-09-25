@@ -19,13 +19,13 @@ const links = [['Catalogue','/'],['Scales','/scales'],['Engineered','/engineered
       const compareGrid = source.closest('.tool-grid');
       const swatches = compareGrid?.querySelectorAll(':scope > .panel > .swatch');
       const selected = swatches?.length >= 2 && source.closest('.compare-page') ? [...swatches] : [source];
-      content.replaceChildren(...selected.map((swatch) => { const clone = swatch.cloneNode(true); clone.classList.add('fullscreen-swatch'); return clone; })); content.classList.remove('is-paused'); play.textContent = 'Pause'; play.setAttribute('aria-label', 'Pause gradient');
+      content.replaceChildren(...selected.map((swatch) => { const clone = swatch.cloneNode(true); clone.classList.add('fullscreen-swatch'); clone.querySelector('.fullscreen-trigger')?.remove(); return clone; })); content.classList.remove('is-paused'); play.textContent = 'Pause'; play.setAttribute('aria-label', 'Pause gradient');
       overlay.classList.add('is-open'); overlay.setAttribute('aria-hidden', 'false');
       const requestFullscreen = overlay.requestFullscreen || overlay.webkitRequestFullscreen;
       requestFullscreen?.call(overlay).catch?.(() => {});
     };
     play.addEventListener('click', () => { const paused = content.classList.toggle('is-paused'); play.textContent = paused ? 'Play' : 'Pause'; play.setAttribute('aria-label', `${paused ? 'Play' : 'Pause'} gradient`); });
-    document.addEventListener('click', (event) => { const target = event.target.closest?.('.swatch'); if (!target) return; if (event.metaKey || event.ctrlKey || event.shiftKey) return; event.preventDefault(); open(target); });
+    document.addEventListener('click', (event) => { const trigger = event.target.closest?.('.fullscreen-trigger'); if (!trigger || trigger.closest('.swatch-fullscreen')) return; const target = trigger.closest('.swatch'); if (!target) return; event.preventDefault(); event.stopPropagation(); open(target); });
     close.addEventListener('click', exit); overlay.addEventListener('click', (event) => { if (event.target === overlay) exit(); }); const fullscreenChanged = () => { if (!document.fullscreenElement && !document.webkitFullscreenElement && overlay.classList.contains('is-open')) exit(); }; document.addEventListener('fullscreenchange', fullscreenChanged); document.addEventListener('webkitfullscreenchange', fullscreenChanged); document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && overlay.classList.contains('is-open')) exit(); });
   })();
 </script></body></html>
