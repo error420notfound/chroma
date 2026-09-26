@@ -1,0 +1,14 @@
+interface:
+  display_name: Apple-Informed Web Experience Design
+  short_description: Design persuasive, accessible business websites
+  default_prompt: Use $apple-informed-web-experience-design to design a responsive
+    website with clear copy, purposeful motion, and a focused conversion path.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
