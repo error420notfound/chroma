@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import Color from 'colorjs.io';
 import type { CatalogueItem } from '../../lib/catalogue';
-import { bestTextColor } from '../../lib/colour';
-import { readStored, saveStored } from '../../lib/storage';
+import { contrastSurfaceStyle } from '../../lib/colour';
+import { clearStored, readStored, saveStored } from '../../lib/storage';
 import { CopyButton } from '../colour/CopyButton';
 import { Maximize2 } from 'lucide-react';
 type Mode = 'original' | 'lightness' | 'chroma';
@@ -14,12 +14,13 @@ export default function CompareWorkspace({ items }: { items: CatalogueItem[] }) 
         ? []
         : (new URLSearchParams(window.location.search).get('ids')?.split(',').filter(Boolean) ??
           []);
-    return shared.length
+    const initial = shared.length
       ? shared
       : readStored(
           'chroma.compare.v1',
           items.slice(0, 2).map((item) => item.id),
         );
+    return [...new Set(initial.filter((id) => items.some((item) => item.id === id)))].slice(0, 8);
   });
   const [mode, setMode] = useState<Mode>('original');
   useEffect(() => {
@@ -98,6 +99,15 @@ export default function CompareWorkspace({ items }: { items: CatalogueItem[] }) 
         <button className="button" onClick={() => setIds([])}>
           Clear
         </button>
+        <button
+          className="button"
+          onClick={() => {
+            clearStored();
+            setIds([]);
+          }}
+        >
+          Reset local data
+        </button>
         <CopyButton value={exportJson()} label="Export JSON" />
         <CopyButton value={exportCss()} label="Export CSS" />
       </div>
@@ -112,10 +122,16 @@ export default function CompareWorkspace({ items }: { items: CatalogueItem[] }) 
           return (
             <article className="panel" key={item.id}>
               <div
-                className="swatch"
-                style={{ background: value, color: bestTextColor(value), minHeight: 170 }}
+                className="swatch contrast-surface"
+                style={contrastSurfaceStyle(value, { minHeight: 170 })}
               >
-                <button className="fullscreen-trigger" type="button" aria-label={`View ${item.name} fullscreen`}><Maximize2 size={16} /></button>
+                <button
+                  className="fullscreen-trigger"
+                  type="button"
+                  aria-label={`View ${item.name} fullscreen`}
+                >
+                  <Maximize2 size={16} />
+                </button>
                 <strong style={{ fontSize: 26 }}>{item.name}</strong>
                 <span>{mode === 'original' ? item.hex : value}</span>
               </div>
@@ -140,20 +156,22 @@ export default function CompareWorkspace({ items }: { items: CatalogueItem[] }) 
                 </button>
               </div>
               <div className="preview-grid" style={{ marginTop: 12 }}>
-                <div className="preview" style={{ background: '#f6f4f0', color: value }}>
+                <div className="preview contrast-surface" style={contrastSurfaceStyle('#f6f4f0')}>
                   Text
                   <br />
                   <span
-                    style={{ background: value, color: bestTextColor(value), padding: '4px 7px' }}
+                    className="contrast-surface"
+                    style={contrastSurfaceStyle(value, { padding: '4px 7px' })}
                   >
                     Accent
                   </span>
                 </div>
-                <div className="preview" style={{ background: '#1f2328', color: value }}>
+                <div className="preview contrast-surface" style={contrastSurfaceStyle('#1f2328')}>
                   Text
                   <br />
                   <span
-                    style={{ background: value, color: bestTextColor(value), padding: '4px 7px' }}
+                    className="contrast-surface"
+                    style={contrastSurfaceStyle(value, { padding: '4px 7px' })}
                   >
                     Accent
                   </span>

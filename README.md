@@ -28,9 +28,9 @@ npm run preview
 
 ## Catalogue data
 
-Source data lives under `src/data/hue-scales/` and `src/data/engineered-hues/`. Each directory has an `index.json` manifest and individual records. The build validates every imported record with Zod; hue scales must contain exactly the eleven steps 50 through 950, and each colour stores HEX, OKLCH, Display-P3, and `textColor: "auto"`.
+The active catalogue source of truth is the individual JSON records under `src/data/hue-scales/source/` and `src/data/engineered-hues/source/`. `src/lib/catalogue.ts` imports those records and validates them with Zod during the build; hue scales must contain exactly eleven steps, and each colour stores HEX, OKLCH, Display-P3, and `textColor: "auto"`. The root-level JSON files in each data directory and the `source/index.json` manifests are currently not read by the build. Treat them as legacy snapshots/manifests and do not edit them as active records; add new catalogue content under `source/` so validation includes it.
 
-Replace the included starter records with the records from the catalogue source when available. Keep the manifests and update `src/lib/catalogue.ts` imports when adding a record so its schema is validated and it appears in the static catalogue.
+Browser-only comparison selections and gradient drafts use versioned `chroma:` local-storage keys. They are scoped to this browser profile, can be cleared from each workspace, and do not sync across devices. Invalid or obsolete values return to safe defaults. Shared comparison selections travel in the `ids` URL parameter; invalid catalogue IDs are discarded.
 
 ## GitHub Pages deployment
 

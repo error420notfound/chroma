@@ -1,5 +1,42 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'; import { catalogueItems } from '../lib/catalogue'; import CatalogueBrowser from '../components/catalogue/CatalogueBrowser.tsx';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { catalogueItems } from '../lib/catalogue';
+import CatalogueBrowser from '../components/catalogue/CatalogueBrowser.tsx';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<BaseLayout><div class="eyebrow">HS108 colour catalogue</div><h1>A working library<br/>for colour systems.</h1><p style="max-width:600px">Inspect, compare and carry existing colour decisions through studio work. Source records are validated at build time.</p><hr class="rule"/><CatalogueBrowser client:load items={catalogueItems} base={base}/></BaseLayout>
+
+<BaseLayout title="Chroma — Colour library & studio"
+  ><section class="home-intro">
+    <div>
+      <div class="eyebrow">Colour library / studio tools</div><h1>
+        Colour, ready<br />for the work.
+      </h1><p>
+        Browse calibrated hue scales and engineered colours. Inspect values, compare choices, and
+        carry them into a gradient or contrast check.
+      </p><div class="home-actions">
+        <a class="button primary" href="#library"
+          >Browse the library <span aria-hidden="true">↓</span></a
+        ><a class="text-link" href={`${base}/compare`}
+          >Open the workbench <span aria-hidden="true">→</span></a
+        >
+      </div>
+    </div><aside class="home-index" aria-label="Chroma contents">
+      <span class="eyebrow">Inside Chroma</span><a href={`${base}/scales`}
+        ><span>01</span><strong>Hue scales</strong><small>Eleven steps, from light to deep</small
+        ></a
+      ><a href={`${base}/engineered`}
+        ><span>02</span><strong>Engineered hues</strong><small
+          >Distinct colours for focused use</small
+        ></a
+      ><a href={`${base}/compare`}
+        ><span>03</span><strong>Workbench</strong><small>Compare, build, and check</small></a
+      >
+    </aside>
+  </section><hr class="rule" /><section id="library">
+    <div class="section-heading">
+      <div><div class="eyebrow">The library</div><h2>Find a useful starting point</h2></div><span
+        class="hex">{catalogueItems.length} colour entries</span
+      >
+    </div><CatalogueBrowser client:load items={catalogueItems} base={base} />
+  </section></BaseLayout
+>

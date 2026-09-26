@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import type { CatalogueItem } from '../../lib/catalogue';
 import { fallbackSRGB, inSRGB } from '../../lib/colour';
 import { gradientCss, type GradientStop } from '../../lib/gradients';
-import { readStored, saveStored } from '../../lib/storage';
+import { clearStored, readStored, saveStored } from '../../lib/storage';
 import { CopyButton } from '../colour/CopyButton';
 import { Maximize2 } from 'lucide-react';
 const id = () => Math.random().toString(36).slice(2);
@@ -18,7 +18,24 @@ export default function GradientBuilder({ items }: { items: CatalogueItem[] }) {
     },
   ];
   const [stops, setStops] = useState<GradientStop[]>(() =>
-    readStored('chroma.gradient.v1', fallback),
+    readStored(
+      'chroma.gradient.v1',
+      fallback,
+      (value): value is GradientStop[] =>
+        Array.isArray(value) &&
+        value.length >= 2 &&
+        value.length <= 8 &&
+        value.every(
+          (stop) =>
+            stop &&
+            typeof stop.id === 'string' &&
+            typeof stop.name === 'string' &&
+            typeof stop.color === 'string' &&
+            Number.isFinite(stop.position) &&
+            stop.position >= 0 &&
+            stop.position <= 100,
+        ),
+    ),
   );
   const [space, setSpace] = useState('oklch');
   const [direction, setDirection] = useState('shorter hue');
@@ -31,13 +48,21 @@ export default function GradientBuilder({ items }: { items: CatalogueItem[] }) {
   const catalogueMatches = useMemo(() => {
     const query = catalogueQuery.trim().toLowerCase();
     if (!query) return items.slice(0, 6);
-    return items.filter((item) => `${item.name} ${item.hex} ${item.tags.join(' ')}`.toLowerCase().includes(query)).slice(0, 8);
+    return items
+      .filter((item) =>
+        `${item.name} ${item.hex} ${item.tags.join(' ')}`.toLowerCase().includes(query),
+      )
+      .slice(0, 8);
   }, [catalogueQuery, items]);
   useLayoutEffect(() => {
     const element = trackRef.current;
     if (!element) return;
     const context = gsap.context(() => {
-      gsap.fromTo(element, { yPercent: 0 }, { yPercent: -50, duration: 4.5, ease: 'none', repeat: -1, paused: !playing });
+      gsap.fromTo(
+        element,
+        { yPercent: 0 },
+        { yPercent: -50, duration: 4.5, ease: 'none', repeat: -1, paused: !playing },
+      );
     }, element);
     return () => context.revert();
   }, [css, playing]);
@@ -50,8 +75,18 @@ export default function GradientBuilder({ items }: { items: CatalogueItem[] }) {
   return (
     <div className="tool-grid">
       <section className="panel" style={{ gridColumn: '1 / -1' }}>
-        <div className="swatch gradient-preview" data-gradient-animation={playing ? 'playing' : 'paused'} style={{ minHeight: 210, color: '#fff' }}>
-          <button className="fullscreen-trigger" type="button" aria-label="View gradient fullscreen"><Maximize2 size={16} /></button>
+        <div
+          className="swatch gradient-preview"
+          data-gradient-animation={playing ? 'playing' : 'paused'}
+          style={{ minHeight: 210, color: '#fff' }}
+        >
+          <button
+            className="fullscreen-trigger"
+            type="button"
+            aria-label="View gradient fullscreen"
+          >
+            <Maximize2 size={16} />
+          </button>
           <div ref={trackRef} className="gradient-track" aria-hidden="true">
             <div className="gradient-frame" style={{ background: css }} />
             <div className="gradient-frame" style={{ background: css }} />
@@ -73,6 +108,16 @@ export default function GradientBuilder({ items }: { items: CatalogueItem[] }) {
           <CopyButton value={css} label="Copy CSS" />
           <button className="button" type="button" onClick={() => setPlaying((value) => !value)}>
             {playing ? 'Pause animation' : 'Play animation'}
+          </button>
+          <button
+            className="button"
+            type="button"
+            onClick={() => {
+              clearStored();
+              setStops(fallback);
+            }}
+          >
+            Reset local data
           </button>
         </div>
       </section>
@@ -127,17 +172,65 @@ export default function GradientBuilder({ items }: { items: CatalogueItem[] }) {
           <h2>Stops</h2>
         </div>
         <div className="catalogue-stop-picker">
-          <label className="eyebrow" htmlFor="catalogue-stop-search">Add a catalogue hue</label>
-          <input id="catalogue-stop-search" className="input" value={catalogueQuery} onChange={(event) => setCatalogueQuery(event.target.value)} placeholder="Search by name, tag, or HEX" disabled={stops.length >= 8} />
-          <div className="catalogue-stop-results">{catalogueMatches.map((item) => <button type="button" key={item.id} className="catalogue-stop-option" onClick={() => addStop(item)} disabled={stops.length >= 8}><span style={{ background: item.hex }} /><strong>{item.name}{item.step ? ` ${item.step}` : ''}</strong><small>{item.hex}</small></button>)}</div>
+          <label className="eyebrow" htmlFor="catalogue-stop-search">
+            Add a catalogue hue
+          </label>
+          <input
+            id="catalogue-stop-search"
+            className="input"
+            value={catalogueQuery}
+            onChange={(event) => setCatalogueQuery(event.target.value)}
+            placeholder="Search by name, tag, or HEX"
+            disabled={stops.length >= 8}
+          />
+          <div className="catalogue-stop-results">
+            {catalogueMatches.map((item) => (
+              <button
+                type="button"
+                key={item.id}
+                className="catalogue-stop-option"
+                onClick={() => addStop(item)}
+                disabled={stops.length >= 8}
+              >
+                <span style={{ background: item.hex }} />
+                <strong>
+                  {item.name}
+                  {item.step ? ` ${item.step}` : ''}
+                </strong>
+                <small>{item.hex}</small>
+              </button>
+            ))}
+          </div>
         </div>
         {stops.map((stop, index) => (
-          <div
-            key={stop.id}
-            className="gradient-stop-row"
-          >
-            <span className="gradient-stop-colour" style={{ background: stop.color }} aria-hidden="true" />
-            <label><span className="visually-hidden">Stop {index + 1} colour</span><select className="select" value={`${stop.name}|${stop.color}`} onChange={(event) => { const [name, color] = event.target.value.split('|'); setStops(stops.map((entry) => entry.id === stop.id ? { ...entry, name, color } : entry)); }}>{items.map((item) => <option key={item.id} value={`${item.name}|${item.hex}`}>{item.name}{item.step ? ` ${item.step}` : ''} — {item.hex}</option>)}</select></label>
+          <div key={stop.id} className="gradient-stop-row">
+            <span
+              className="gradient-stop-colour"
+              style={{ background: stop.color }}
+              aria-hidden="true"
+            />
+            <label>
+              <span className="visually-hidden">Stop {index + 1} colour</span>
+              <select
+                className="select"
+                value={`${stop.name}|${stop.color}`}
+                onChange={(event) => {
+                  const [name, color] = event.target.value.split('|');
+                  setStops(
+                    stops.map((entry) =>
+                      entry.id === stop.id ? { ...entry, name, color } : entry,
+                    ),
+                  );
+                }}
+              >
+                {items.map((item) => (
+                  <option key={item.id} value={`${item.name}|${item.hex}`}>
+                    {item.name}
+                    {item.step ? ` ${item.step}` : ''} — {item.hex}
+                  </option>
+                ))}
+              </select>
+            </label>
             <input
               aria-label={`Stop ${index + 1} position`}
               type="range"
