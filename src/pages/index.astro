@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { catalogueItems } from '../lib/catalogue';
-import CatalogueBrowser from '../components/catalogue/CatalogueBrowser.tsx';
+import { HomeLibrary } from '../components/catalogue/RemoteCatalogueViews';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
@@ -33,10 +32,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       >
     </aside>
   </section><hr class="rule" /><section id="library">
-    <div class="section-heading">
-      <div><div class="eyebrow">The library</div><h2>Find a useful starting point</h2></div><span
-        class="hex">{catalogueItems.length} colour entries</span
-      >
-    </div><CatalogueBrowser client:load items={catalogueItems} base={base} />
+    <HomeLibrary client:load base={base} />
   </section></BaseLayout
 >

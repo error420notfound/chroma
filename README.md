@@ -28,9 +28,11 @@ npm run preview
 
 ## Catalogue data
 
-The active catalogue source of truth is the individual JSON records under `src/data/hue-scales/source/` and `src/data/engineered-hues/source/`. `src/lib/catalogue.ts` imports those records and validates them with Zod during the build; hue scales must contain exactly eleven steps, and each colour stores HEX, OKLCH, Display-P3, and `textColor: "auto"`. The root-level JSON files in each data directory and the `source/index.json` manifests are currently not read by the build. Treat them as legacy snapshots/manifests and do not edit them as active records; add new catalogue content under `source/` so validation includes it.
+The published source of truth is `error420notfound/chroma-catalogue`, on its `main` branch. Chroma fetches `data/index.json`, the scale and engineered-hue indexes, and the JSON records referenced by those indexes when a page loads. The browser validates each document and adapts optional catalogue fields for Chroma's colour tools. Refresh a page to see published edits, additions, and removals; an already open page does not poll for updates. GitHub's file delivery cache may delay a published change briefly.
 
-Browser-only comparison selections and gradient drafts use versioned `chroma:` local-storage keys. They are scoped to this browser profile, can be cleared from each workspace, and do not sync across devices. Invalid or obsolete values return to safe defaults. Shared comparison selections travel in the `ids` URL parameter; invalid catalogue IDs are discarded.
+When the live source cannot be reached, Chroma uses the last successful catalogue saved in that browser. A new browser profile falls back to the JSON snapshot under `src/data/`. Treat that snapshot as an offline fallback only; edit catalogue records and indexes in `chroma-catalogue`. New record links use shared pages such as `/chroma/scales/view?slug=amber` and `/chroma/engineered/view?slug=acid-green`, so new entries do not require a Chroma build.
+
+Comparison selections and gradient drafts remain in this browser's versioned local storage. Removed catalogue IDs are ignored by comparison tools, while existing gradient stops retain their saved colour values.
 
 ## GitHub Pages deployment
 

@@ -1,4 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useCatalogue } from '../../lib/useCatalogue';
+import { CatalogueStatus } from '../catalogue/RemoteCatalogueViews';
 import { gsap } from 'gsap';
 import type { CatalogueItem } from '../../lib/catalogue';
 import { fallbackSRGB, inSRGB } from '../../lib/colour';
@@ -7,15 +9,14 @@ import { clearStored, readStored, saveStored } from '../../lib/storage';
 import { CopyButton } from '../colour/CopyButton';
 import { Maximize2 } from 'lucide-react';
 const id = () => Math.random().toString(36).slice(2);
-export default function GradientBuilder({ items }: { items: CatalogueItem[] }) {
+export default function GradientBuilder() {
+  const { catalogueItems: items, loading, source } = useCatalogue();
+  const first = items[Math.min(4, Math.max(0, items.length - 1))];
+  const last = items[items.length - 1] ?? first ?? { hex: '#777777', name: 'Neutral' };
+  const start = first ?? last;
   const fallback: GradientStop[] = [
-    { id: id(), color: items[4].hex, position: 0, name: items[4].name },
-    {
-      id: id(),
-      color: items[items.length - 1].hex,
-      position: 100,
-      name: items[items.length - 1].name,
-    },
+    { id: id(), color: start.hex, position: 0, name: start.name },
+    { id: id(), color: last.hex, position: 100, name: last.name },
   ];
   const [stops, setStops] = useState<GradientStop[]>(() =>
     readStored(
@@ -74,6 +75,7 @@ export default function GradientBuilder({ items }: { items: CatalogueItem[] }) {
   };
   return (
     <div className="tool-grid">
+      <CatalogueStatus loading={loading} source={source} />
       <section className="panel" style={{ gridColumn: '1 / -1' }}>
         <div
           className="swatch gradient-preview"

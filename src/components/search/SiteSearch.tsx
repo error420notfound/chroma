@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
-import { catalogueItems, engineeredHues, hueScales } from '../../lib/catalogue';
+import { useCatalogue } from '../../lib/useCatalogue';
 
 type SearchResult = { type: string; title: string; detail: string; href: string };
 
 export default function SiteSearch({ base }: { base: string }) {
   const [query, setQuery] = useState('');
   const [activeIndex, setActiveIndex] = useState(-1);
+  const { catalogueItems, engineeredHues, hueScales } = useCatalogue();
   const normalized = query.trim().toLowerCase();
   const results = useMemo<SearchResult[]>(() => {
     if (!normalized) return [];
@@ -16,7 +17,7 @@ export default function SiteSearch({ base }: { base: string }) {
         type: 'Scale',
         title: item.name,
         detail: item.family,
-        href: `${base}/scales/${item.slug}`,
+        href: `${base}/scales/view?slug=${encodeURIComponent(item.slug)}`,
       }));
     const engineered = engineeredHues
       .filter((item) => matches(`${item.name} ${item.description} ${item.tags.join(' ')}`))
@@ -24,7 +25,7 @@ export default function SiteSearch({ base }: { base: string }) {
         type: 'Engineered hue',
         title: item.name,
         detail: item.hex,
-        href: `${base}/engineered/${item.slug}`,
+        href: `${base}/engineered/view?slug=${encodeURIComponent(item.slug)}`,
       }));
     const colours = catalogueItems
       .filter((item) =>
@@ -35,10 +36,10 @@ export default function SiteSearch({ base }: { base: string }) {
         type: 'Colour',
         title: `${item.name} ${item.step ?? ''}`.trim(),
         detail: item.hex,
-        href: `${base}/${item.type === 'scale' ? `scales/${item.slug}` : `engineered/${item.slug}`}`,
+        href: `${base}/${item.type === 'scale' ? `scales/view?slug=${encodeURIComponent(item.slug)}` : `engineered/view?slug=${encodeURIComponent(item.slug)}`}`,
       }));
     return [...scales, ...engineered, ...colours].slice(0, 20);
-  }, [base, normalized]);
+  }, [base, catalogueItems, engineeredHues, hueScales, normalized]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -64,7 +65,7 @@ export default function SiteSearch({ base }: { base: string }) {
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, []);
+  }, [activeIndex, results]);
 
   return (
     <div className="site-search">

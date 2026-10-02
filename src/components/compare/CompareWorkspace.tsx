@@ -1,4 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useCatalogue } from '../../lib/useCatalogue';
+import { CatalogueStatus } from '../catalogue/RemoteCatalogueViews';
 import Color from 'colorjs.io';
 import type { CatalogueItem } from '../../lib/catalogue';
 import { contrastSurfaceStyle } from '../../lib/colour';
@@ -6,7 +8,8 @@ import { clearStored, readStored, saveStored } from '../../lib/storage';
 import { CopyButton } from '../colour/CopyButton';
 import { Maximize2 } from 'lucide-react';
 type Mode = 'original' | 'lightness' | 'chroma';
-export default function CompareWorkspace({ items }: { items: CatalogueItem[] }) {
+export default function CompareWorkspace() {
+  const { catalogueItems: items, loading, source } = useCatalogue();
   const lookup = useMemo(() => new Map(items.map((item) => [item.id, item])), [items]);
   const [ids, setIds] = useState<string[]>(() => {
     const shared =
@@ -20,16 +23,19 @@ export default function CompareWorkspace({ items }: { items: CatalogueItem[] }) 
           'chroma.compare.v1',
           items.slice(0, 2).map((item) => item.id),
         );
-    return [...new Set(initial.filter((id) => items.some((item) => item.id === id)))].slice(0, 8);
+    return [...new Set(initial)].slice(0, 8);
   });
   const [mode, setMode] = useState<Mode>('original');
   useEffect(() => {
+    if (loading) return;
+    const validIds = source === 'remote' ? ids.filter((id) => items.some((item) => item.id === id)) : ids;
+    if (validIds.length !== ids.length) { setIds(validIds); return; }
     saveStored('chroma.compare.v1', ids);
     const query = new URLSearchParams(window.location.search);
     if (ids.length) query.set('ids', ids.join(','));
     else query.delete('ids');
     history.replaceState(null, '', `${window.location.pathname}${query.size ? `?${query}` : ''}`);
-  }, [ids]);
+  }, [ids, items, loading]);
   const selected = ids.map((id) => lookup.get(id)).filter(Boolean) as CatalogueItem[];
   const add = (id: string) => {
     if (ids.length < 8 && !ids.includes(id)) setIds([...ids, id]);
@@ -54,6 +60,7 @@ export default function CompareWorkspace({ items }: { items: CatalogueItem[] }) 
       .join('\n');
   return (
     <>
+      <CatalogueStatus loading={loading} source={source} />
       <div className="panel toolbar">
         <label className="visually-hidden" htmlFor="add-colour">
           Add colour

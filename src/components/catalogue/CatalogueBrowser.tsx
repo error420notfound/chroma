@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useCatalogue } from '../../lib/useCatalogue';
 import { gsap } from 'gsap';
 import type { CatalogueItem } from '../../lib/catalogue';
 import { contrastSurfaceStyle, inSRGB } from '../../lib/colour';
@@ -101,12 +102,14 @@ function ColourWheel({
 }
 
 export default function CatalogueBrowser({
-  items,
+  items: initialItems,
   base,
 }: {
-  items: CatalogueItem[];
+  items?: CatalogueItem[];
   base: string;
 }) {
+  const { catalogueItems: remoteItems } = useCatalogue();
+  const items = initialItems ?? remoteItems;
   const [selected, setSelected] = useState<CatalogueItem | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
   const [view, setView] = useState<HueView>('all');
@@ -389,7 +392,7 @@ export default function CatalogueBrowser({
         <div className="catalogue-grid">
           {visible.map((item) => (
             <article className="catalogue-cell" key={item.id}>
-              <a href={`${base}/${item.type === 'scale' ? 'scales' : 'engineered'}/${item.slug}`}>
+              <a href={`${base}/${item.type === 'scale' ? 'scales/view' : 'engineered/view'}?slug=${encodeURIComponent(item.slug)}`}>
                 <div
                   className="swatch contrast-surface"
                   style={contrastSurfaceStyle(item.hex)}
@@ -439,7 +442,7 @@ export default function CatalogueBrowser({
               <h2>{selected.name}</h2><p>{selected.description}</p>
               <p className="hex">{selected.oklch}</p><p className="hex">{selected.p3}</p>
               <div className="toolbar">
-                <a className="button" href={`${base}/${selected.type === 'scale' ? 'scales' : 'engineered'}/${selected.slug}`}>Open full page</a>
+                <a className="button" href={`${base}/${selected.type === 'scale' ? 'scales/view' : 'engineered/view'}?slug=${encodeURIComponent(selected.slug)}`}>Open full page</a>
                 <button className="button primary" type="button" onClick={() => setSelected(null)}>Done</button>
               </div>
             </div>

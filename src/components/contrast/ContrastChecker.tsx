@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react';
-import type { CatalogueItem } from '../../lib/catalogue';
+import { useEffect, useMemo, useState } from 'react';
+import { useCatalogue } from '../../lib/useCatalogue';
+import { CatalogueStatus } from '../catalogue/RemoteCatalogueViews';
 import { contrastRatio, contrastSurfaceStyle, parseColour } from '../../lib/colour';
 import { Maximize2 } from 'lucide-react';
 const checks = [
@@ -9,11 +10,13 @@ const checks = [
   ['Large text AAA', 4.5],
   ['Non-text UI', 3],
 ] as const;
-export default function ContrastChecker({ items }: { items: CatalogueItem[] }) {
+export default function ContrastChecker() {
+  const { catalogueItems: items, loading, source } = useCatalogue();
   const [foreground, setForeground] = useState(
-    items.find((i) => i.hex === '#FFFFFF')?.id ?? items[0].id,
+    items.find((i) => i.hex === '#FFFFFF')?.id ?? items[0]?.id ?? '',
   );
-  const [background, setBackground] = useState(items[6].id);
+  const [background, setBackground] = useState(items[6]?.id ?? items[0]?.id ?? '');
+  useEffect(() => { if (!loading) { if (!items.some((item) => item.id === foreground)) setForeground(items[0]?.id ?? ''); if (!items.some((item) => item.id === background)) setBackground(items[6]?.id ?? items[0]?.id ?? ''); } }, [loading, items, foreground, background]);
   const [customFg, setCustomFg] = useState('');
   const [customBg, setCustomBg] = useState('');
   const fg = customFg || items.find((i) => i.id === foreground)?.hex || '#1f2328';
@@ -26,6 +29,7 @@ export default function ContrastChecker({ items }: { items: CatalogueItem[] }) {
   );
   return (
     <div className="tool-grid">
+      <CatalogueStatus loading={loading} source={source} />
       <section className="panel">
         <h2>Foreground</h2>
         <label className="visually-hidden" htmlFor="contrast-fg">
