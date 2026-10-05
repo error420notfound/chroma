@@ -1,3 +1,4 @@
+import { applyCatalogueFoundation } from './foundation';
 import { useEffect, useState } from 'react';
 import { loadCatalogue, snapshotCatalogue, type RemoteCatalogue } from './remoteCatalogue';
 
@@ -6,8 +7,16 @@ export function useCatalogue(): RemoteCatalogue & { loading: boolean } {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     let active = true;
-    loadCatalogue().then((value) => { if (active) { setCatalogue(value); setLoading(false); } });
-    return () => { active = false; };
+    loadCatalogue().then((value) => {
+      if (active) {
+        applyCatalogueFoundation(value.hueScales);
+        setCatalogue(value);
+        setLoading(false);
+      }
+    });
+    return () => {
+      active = false;
+    };
   }, []);
   return { ...catalogue, loading };
 }

@@ -4,34 +4,9 @@ import { HomeLibrary } from '../components/catalogue/RemoteCatalogueViews';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<BaseLayout title="Chroma — Colour library & studio"
-  ><section class="home-intro">
-    <div>
-      <div class="eyebrow">Colour library / studio tools</div><h1>
-        Colour, ready<br />for the work.
-      </h1><p>
-        Browse calibrated hue scales and engineered colours. Inspect values, compare choices, and
-        carry them into a gradient or contrast check.
-      </p><div class="home-actions">
-        <a class="button primary" href="#library"
-          >Browse the library <span aria-hidden="true">↓</span></a
-        ><a class="text-link" href={`${base}/compare`}
-          >Open the workbench <span aria-hidden="true">→</span></a
-        >
-      </div>
-    </div><aside class="home-index" aria-label="Chroma contents">
-      <span class="eyebrow">Inside Chroma</span><a href={`${base}/scales`}
-        ><span>01</span><strong>Hue scales</strong><small>Eleven steps, from light to deep</small
-        ></a
-      ><a href={`${base}/engineered`}
-        ><span>02</span><strong>Engineered hues</strong><small
-          >Distinct colours for focused use</small
-        ></a
-      ><a href={`${base}/compare`}
-        ><span>03</span><strong>Workbench</strong><small>Compare, build, and check</small></a
-      >
-    </aside>
-  </section><hr class="rule" /><section id="library">
+<BaseLayout title="Chroma — Colour library & studio">
+  <section id="library" aria-label="Colour library">
+    <h1 class="visually-hidden">Chroma colour library</h1>
     <HomeLibrary client:load base={base} />
-  </section></BaseLayout
->
+  </section>
+</BaseLayout>

@@ -1,4 +1,5 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { motionSeconds } from '../../lib/foundation';
+import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useCatalogue } from '../../lib/useCatalogue';
 import { gsap } from 'gsap';
 import type { CatalogueItem } from '../../lib/catalogue';
@@ -27,86 +28,136 @@ const sortOptions: [SortMode, string][] = [
   ['nameDesc', 'Name (Z → A)'],
 ];
 
-function ColourWheel({
-  hue,
-  chroma,
-  lightness,
-  harmony,
-  onChange,
-}: {
-  hue: number;
-  chroma: number;
-  lightness: number;
-  harmony: HarmonyMode;
-  onChange: (hue: number, chroma: number) => void;
-}) {
-  const size = 240;
-  const center = size / 2;
-  const radius = 96;
-  const point = (angle: number, distance = radius) => ({
-    x: center + Math.cos(((angle - 90) * Math.PI) / 180) * distance,
-    y: center + Math.sin(((angle - 90) * Math.PI) / 180) * distance,
-  });
+function HueWheel({ hue, onChange }: { hue: number; onChange: (hue: number) => void }) {
+  const angle = (hue * Math.PI) / 180;
   const update = (event: React.PointerEvent<SVGSVGElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
-    const x = event.clientX - rect.left - center;
-    const y = event.clientY - rect.top - center;
+    const x = ((event.clientX - rect.left) / rect.width) * 240 - 120;
+    const y = ((event.clientY - rect.top) / rect.height) * 240 - 120;
+    if (Math.hypot(x, y) < 2) return;
+    onChange(Math.round((Math.atan2(x, -y) * 180) / Math.PI + 360) % 360);
+  };
+  return (
+    <svg
+      className="colour-wheel"
+      viewBox="0 0 240 240"
+      role="slider"
+      tabIndex={0}
+      aria-label="Base hue for harmony"
+      aria-valuemin={0}
+      aria-valuemax={359}
+      aria-valuenow={hue}
+      aria-valuetext={`${hue} degrees`}
+      onPointerDown={(event) => {
+        event.currentTarget.setPointerCapture(event.pointerId);
+        update(event);
+      }}
+      onPointerMove={(event) => {
+        if (event.currentTarget.hasPointerCapture(event.pointerId)) update(event);
+      }}
+      onKeyDown={(event) => {
+        const offsets: Record<string, number> = {
+          ArrowRight: 1,
+          ArrowUp: 1,
+          ArrowLeft: -1,
+          ArrowDown: -1,
+          PageUp: 10,
+          PageDown: -10,
+        };
+        if (event.key in offsets) {
+          event.preventDefault();
+          onChange((hue + offsets[event.key] + 360) % 360);
+        } else if (event.key === 'Home' || event.key === 'End') {
+          event.preventDefault();
+          onChange(event.key === 'Home' ? 0 : 359);
+        }
+      }}
+    >
+      <circle className="wheel-spectrum" cx={120} cy={120} r={120} />
+      <circle
+        className="wheel-marker-halo"
+        cx={120 + Math.sin(angle) * 96}
+        cy={120 - Math.cos(angle) * 96}
+        r={9}
+      />
+      <circle
+        className="wheel-marker"
+        cx={120 + Math.sin(angle) * 96}
+        cy={120 - Math.cos(angle) * 96}
+        r={9}
+      />
+    </svg>
+  );
+}
+
+function RangeRail({
+  label,
+  value,
+  max,
+  onChange,
+}: {
+  label: string;
+  value: [number, number];
+  max: number;
+  onChange: (value: [number, number]) => void;
+}) {
+  const update = (index: number, next: number) => {
+    if (!Number.isFinite(next)) return;
+    const bounded = Math.max(0, Math.min(max, next));
     onChange(
-      ((Math.atan2(x, -y) * 180) / Math.PI + 360) % 360,
-      Math.min(0.4, (Math.hypot(x, y) / radius) * 0.4),
+      index === 0
+        ? [Math.min(bounded, value[1]), value[1]]
+        : [value[0], Math.max(bounded, value[0])],
     );
   };
-  const marker = point(hue, Math.max(8, (chroma / 0.4) * radius));
   return (
-    <div className="colour-wheel-wrap">
-      <svg
-        className="colour-wheel"
-        viewBox={`0 0 ${size} ${size}`}
-        aria-label="Interactive colour wheel"
-        role="img"
-        onPointerDown={(event) => {
-          event.currentTarget.setPointerCapture(event.pointerId);
-          update(event);
-        }}
-        onPointerMove={(event) => event.buttons && update(event)}
-      >
-        <defs>
-          <radialGradient id="wheel-core">
-            <stop stopColor="white" />
-            <stop offset="1" stopColor="transparent" />
-          </radialGradient>
-        </defs>
-        <circle className="wheel-spectrum" cx={center} cy={center} r={radius} />
-        <circle cx={center} cy={center} r={radius} fill="url(#wheel-core)" />
-        {harmonyHues(hue, harmony).map((angle) => {
-          const p = point(angle);
-          return <circle key={angle} className="harmony-handle" cx={p.x} cy={p.y} r="6" />;
-        })}
-        <circle className="wheel-marker" cx={marker.x} cy={marker.y} r="9" />
-      </svg>
-      <div className="wheel-readout">
-        <span style={{ background: `oklch(${lightness} ${chroma} ${hue})` }} />
-        <label>
-          Hue{' '}
-          <input
-            type="number"
-            min="0"
-            max="359"
-            value={Math.round(hue)}
-            onChange={(e) => onChange(Number(e.target.value), chroma)}
-          />
-        </label>
+    <details className="filter-rail range-rail">
+      <summary>
+        {label}
+        <span className="rail-value">
+          {value[0].toFixed(2)}–{value[1].toFixed(2)}
+        </span>
+      </summary>
+      <div className="vertical-ranges">
+        {value.map((current, index) => (
+          <label key={index} className="vertical-range">
+            <span>{index === 0 ? 'Min' : 'Max'}</span>
+            <input
+              type="range"
+              aria-orientation="vertical"
+              min={0}
+              max={max}
+              step={0.01}
+              value={current}
+              aria-label={`${label} ${index === 0 ? 'minimum' : 'maximum'}`}
+              aria-valuetext={current.toFixed(2)}
+              onChange={(event) => update(index, Number(event.target.value))}
+            />
+            <input
+              className="range-number"
+              type="number"
+              min={0}
+              max={max}
+              step={0.01}
+              value={current}
+              aria-label={`${label} ${index === 0 ? 'minimum' : 'maximum'} value`}
+              onChange={(event) => update(index, Number(event.target.value))}
+            />
+          </label>
+        ))}
       </div>
-    </div>
+    </details>
   );
 }
 
 export default function CatalogueBrowser({
   items: initialItems,
   base,
+  status,
 }: {
   items?: CatalogueItem[];
   base: string;
+  status?: React.ReactNode;
 }) {
   const { catalogueItems: remoteItems } = useCatalogue();
   const items = initialItems ?? remoteItems;
@@ -118,21 +169,25 @@ export default function CatalogueBrowser({
   const [lightness, setLightness] = useState<[number, number]>([0, 1]);
   const [chroma, setChroma] = useState<[number, number]>([0, 0.4]);
   const [hue, setHue] = useState(210);
-  const [wheelChroma, setWheelChroma] = useState(0.16);
-  const [lightnessValue] = useState(0.65);
+  const [hueOpen, setHueOpen] = useState(false);
   const [harmony, setHarmony] = useState<HarmonyMode>('none');
-  const [open, setOpen] = useState('');
   const families = useMemo(
     () => [...new Set(items.map((item) => item.family).filter(Boolean))],
     [items],
   );
-  const counts = useMemo(
+  const chipColours = useMemo(
     () =>
       Object.fromEntries(
-        hueViews.map((entry) => [
-          entry.id,
-          items.filter((item) => inHueView(item, entry.id)).length,
-        ]),
+        hueViews
+          .filter((entry) => entry.id !== 'all')
+          .map((entry) => {
+            const candidates = items.filter((item) => inHueView(item, entry.id));
+            const representative = candidates.toSorted(
+              (a, b) =>
+                Math.abs(parseOklch(a.oklch).l - 0.6) - Math.abs(parseOklch(b.oklch).l - 0.6),
+            )[0];
+            return [entry.id, representative?.hex];
+          }),
       ),
     [items],
   );
@@ -156,9 +211,6 @@ export default function CatalogueBrowser({
     [items, view, collection, sort, lightness, chroma, harmony, hue],
   );
   const palette = harmonyHues(hue, harmony).flatMap((target) => nearestColours(items, target));
-  useEffect(() => {
-    /* Controls remain available while scrolling; no direction-based hiding. */
-  }, []);
   const reset = () => {
     setView('all');
     setCollection('all');
@@ -166,204 +218,172 @@ export default function CatalogueBrowser({
     setLightness([0, 1]);
     setChroma([0, 0.4]);
     setHarmony('none');
+    setHue(210);
   };
-  useEffect(() => {
-    const handler = (event: Event) => {
-      const link = (event.target as HTMLElement).closest('.catalogue-cell > a');
-      if (!link) return;
-      const name = link
-        .closest('.catalogue-cell')
-        ?.querySelector('.meta strong')
-        ?.textContent?.trim();
-      const item = items.find((entry) => entry.name === name);
-      if (item) {
-        event.preventDefault();
-        setSelected(item);
-      }
-    };
-    document.addEventListener('click', handler);
-    return () => document.removeEventListener('click', handler);
-  }, [items]);
   useLayoutEffect(() => {
-    if (!selected || !modalRef.current) return;
+    if (
+      !selected ||
+      !modalRef.current ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    )
+      return;
     const context = gsap.context(() => {
-      gsap.fromTo(modalRef.current, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.18 });
+      gsap.fromTo(
+        modalRef.current,
+        { autoAlpha: 0 },
+        { autoAlpha: 1, duration: motionSeconds('fast') },
+      );
       gsap.fromTo(
         '.engineered-modal-card',
         { y: 24, scale: 0.98 },
-        { y: 0, scale: 1, duration: 0.3, ease: 'power3.out' },
+        { y: 0, scale: 1, duration: motionSeconds('standard'), ease: 'power3.out' },
       );
     }, modalRef);
     return () => context.revert();
   }, [selected]);
-  const disclosure = (id: string, label: string, children: React.ReactNode) => (
-    <>
-      <button className="filter-disclosure" onClick={() => setOpen(open === id ? '' : id)}>
-        {label}
-        <span>⌄</span>
-      </button>
-      {open === id && <div className="filter-content">{children}</div>}
-    </>
-  );
-  const controls = (
-    <>
-      <div className="filter-section">
-        <h3>View</h3>
-        {hueViews.map((entry) => (
-          <button
-            className={view === entry.id ? 'filter-choice active' : 'filter-choice'}
-            key={entry.id}
-            onClick={() => setView(entry.id)}
-          >
-            <span>{entry.label}</span>
-            <small>{counts[entry.id]}</small>
-          </button>
-        ))}
-      </div>
-      <div className="filter-section">
-        <h3>Filter</h3>
-        {disclosure(
-          'hue',
-          'Hue',
-          <>
-            <ColourWheel
-              hue={hue}
-              chroma={wheelChroma}
-              lightness={lightnessValue}
-              harmony={harmony}
-              onChange={(nextHue, nextChroma) => {
-                setHue(nextHue);
-                setWheelChroma(nextChroma);
-                setView('all');
-              }}
-            />
-            <select
-              className="select"
-              value={harmony}
-              onChange={(e) => setHarmony(e.target.value as HarmonyMode)}
-            >
-              {Object.keys(harmonyModes).map((mode) => (
-                <option key={mode} value={mode}>
-                  {mode === 'none' ? 'Nearest hues only' : mode}
-                </option>
-              ))}
-            </select>
-          </>,
-        )}
-        {disclosure(
-          'lightness',
-          'Lightness',
-          <div className="range-pair">
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step=".01"
-              value={lightness[0]}
-              onChange={(e) => setLightness([+e.target.value, lightness[1]])}
-            />
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step=".01"
-              value={lightness[1]}
-              onChange={(e) => setLightness([lightness[0], +e.target.value])}
-            />
-          </div>,
-        )}
-        {disclosure(
-          'chroma',
-          'Saturation',
-          <div className="range-pair">
-            <input
-              type="range"
-              min="0"
-              max=".4"
-              step=".01"
-              value={chroma[0]}
-              onChange={(e) => setChroma([+e.target.value, chroma[1]])}
-            />
-            <input
-              type="range"
-              min="0"
-              max=".4"
-              step=".01"
-              value={chroma[1]}
-              onChange={(e) => setChroma([chroma[0], +e.target.value])}
-            />
-          </div>,
-        )}
-        {disclosure(
-          'collection',
-          'Collection',
-          <select
-            className="select"
-            value={collection}
-            onChange={(e) => setCollection(e.target.value)}
-          >
-            <option value="all">All collections</option>
-            <option value="scale">Hue scales</option>
-            <option value="engineered">Engineered hues</option>
-            {families.map((family) => (
-              <option key={family} value={family}>
-                {family}
-              </option>
-            ))}
-          </select>,
-        )}
-      </div>
-      <div className="filter-section">
-        <h3>Sort</h3>
-        {sortOptions.map(([id, label]) => (
-          <label className="sort-choice" key={id}>
-            <input type="radio" checked={sort === id} onChange={() => setSort(id)} />
-            {label}
-          </label>
-        ))}
-      </div>
-      <button className="reset-filter" onClick={reset}>
-        Reset
-      </button>
-    </>
-  );
+  const changeHue = (next: number) => {
+    if (Number.isFinite(next)) setHue(Math.max(0, Math.min(359, Math.round(next))));
+  };
   return (
     <div className="catalogue-browser">
-      <aside className="rail">{controls}</aside>
-      <div className="mobile-filter-bar">
-        <label>
-          View{' '}
-          <select value={view} onChange={(e) => setView(e.target.value as HueView)}>
-            {hueViews.map((entry) => (
-              <option key={entry.id} value={entry.id}>
-                {entry.label}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Collection{' '}
-          <select value={collection} onChange={(e) => setCollection(e.target.value)}>
-            <option value="all">All</option>
-            <option value="scale">Scales</option>
-            <option value="engineered">Engineered</option>
-          </select>
-        </label>
-        <label>
-          Sort{' '}
-          <select value={sort} onChange={(e) => setSort(e.target.value as SortMode)}>
-            {sortOptions.map(([id, label]) => (
-              <option key={id} value={id}>
-                {label}
-              </option>
-            ))}
-          </select>
-        </label>
-        <button onClick={() => setOpen(open === 'hue' ? '' : 'hue')} aria-expanded={open === 'hue'}>
-          Colour wheel
-        </button>
+      <div className="catalogue-controls">
+        <section className="view-section" aria-labelledby="view-heading">
+          <h2 id="view-heading" className="eyebrow">
+            View
+          </h2>
+          <div className="view-chips">
+            {hueViews
+              .filter((entry) => entry.id !== 'all')
+              .map((entry) => (
+                <button
+                  type="button"
+                  className="view-chip"
+                  key={entry.id}
+                  aria-pressed={view === entry.id}
+                  onClick={() => setView(view === entry.id ? 'all' : entry.id)}
+                >
+                  <span
+                    className="colour-dot"
+                    aria-hidden="true"
+                    style={{ background: chipColours[entry.id] ?? 'var(--muted)' }}
+                  />
+                  {entry.label}
+                </button>
+              ))}
+          </div>
+        </section>
+        <section className="filters-section" aria-labelledby="filters-heading">
+          <h2 id="filters-heading" className="eyebrow">
+            Filters
+          </h2>
+          <div className="filter-rails">
+            <div className="filter-rail hue-rail" data-open={hueOpen}>
+              <div className="hue-rail-header">
+                <button
+                  type="button"
+                  className="hue-disclosure"
+                  aria-expanded={hueOpen}
+                  aria-controls="hue-wheel-panel"
+                  onClick={() => setHueOpen(!hueOpen)}
+                >
+                  <span aria-hidden="true">{hueOpen ? '▾' : '▸'}</span> Hue
+                </button>
+                <span
+                  className="colour-dot"
+                  aria-hidden="true"
+                  style={{ background: nearestColours(items, hue)[0]?.hex ?? 'var(--blue)' }}
+                />
+                <div className="hue-stepper">
+                  <button
+                    type="button"
+                    aria-label="Decrease hue"
+                    onClick={() => changeHue((hue + 359) % 360)}
+                  >
+                    −
+                  </button>
+                  <input
+                    id="filter-hue"
+                    type="number"
+                    min={0}
+                    max={359}
+                    step={1}
+                    value={hue}
+                    aria-label="Base hue in degrees for harmony"
+                    onChange={(event) => changeHue(Number(event.target.value))}
+                  />
+                  <button
+                    type="button"
+                    aria-label="Increase hue"
+                    onClick={() => changeHue((hue + 1) % 360)}
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <div id="hue-wheel-panel" className="hue-wheel-panel" hidden={!hueOpen}>
+                <HueWheel hue={hue} onChange={changeHue} />
+              </div>
+            </div>
+            <RangeRail label="Saturation" value={chroma} max={0.4} onChange={setChroma} />
+            <RangeRail label="Lightness" value={lightness} max={1} onChange={setLightness} />
+            <details className="filter-rail more-rail">
+              <summary>More filters</summary>
+              <div className="more-filter-controls">
+                <label>
+                  Collection
+                  <select
+                    className="select"
+                    value={collection}
+                    onChange={(event) => setCollection(event.target.value)}
+                  >
+                    <option value="all">All collections</option>
+                    <option value="scale">Hue scales</option>
+                    <option value="engineered">Engineered hues</option>
+                    {families.map((family) => (
+                      <option key={family} value={family}>
+                        {family}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label>
+                  Sort
+                  <select
+                    className="select"
+                    value={sort}
+                    onChange={(event) => setSort(event.target.value as SortMode)}
+                  >
+                    {sortOptions.map(([id, label]) => (
+                      <option key={id} value={id}>
+                        {label}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label>
+                  Harmony
+                  <select
+                    className="select"
+                    value={harmony}
+                    onChange={(event) => setHarmony(event.target.value as HarmonyMode)}
+                  >
+                    {Object.keys(harmonyModes).map((mode) => (
+                      <option key={mode} value={mode}>
+                        {mode === 'none' ? 'None' : mode}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+            </details>
+            <button className="filter-reset" type="button" onClick={reset}>
+              Reset
+            </button>
+          </div>
+        </section>
       </div>
       <section className="catalogue-results">
+        {status}
         {harmony !== 'none' && (
           <div className="palette-panel">
             <div className="toolbar">
@@ -377,7 +397,14 @@ export default function CatalogueBrowser({
                   key={item.id}
                   style={contrastSurfaceStyle(item.hex)}
                 >
-                  <strong>{item.name}</strong>
+                  <strong className="colour-name">
+                    <span
+                      className="colour-dot"
+                      aria-hidden="true"
+                      style={{ background: item.hex }}
+                    />
+                    {item.name}
+                  </strong>
                   <span>{item.hex}</span>
                   <small>Harmony colour</small>
                 </div>
@@ -386,24 +413,32 @@ export default function CatalogueBrowser({
           </div>
         )}
         <div className="toolbar result-toolbar">
-          <span className="eyebrow">{visible.length} colours found</span>
+          <span className="eyebrow" role="status">
+            {visible.length} colours found
+          </span>
           <span className="hex">sRGB and P3 metadata</span>
         </div>
         <div className="catalogue-grid">
           {visible.map((item) => (
             <article className="catalogue-cell" key={item.id}>
-              <a href={`${base}/${item.type === 'scale' ? 'scales/view' : 'engineered/view'}?slug=${encodeURIComponent(item.slug)}`}>
-                <div
-                  className="swatch contrast-surface"
-                  style={contrastSurfaceStyle(item.hex)}
-                >
-                  <button className="fullscreen-trigger" type="button" aria-label={`View ${item.name} fullscreen`}>
+              <a
+                href={`${base}/${item.type === 'scale' ? 'scales/view' : 'engineered/view'}?slug=${encodeURIComponent(item.slug)}`}
+                onClick={(event) => {
+                  if (!(event.target as HTMLElement).closest('.fullscreen-trigger')) {
+                    event.preventDefault();
+                    setSelected(item);
+                  }
+                }}
+              >
+                <div className="swatch contrast-surface" style={contrastSurfaceStyle(item.hex)}>
+                  <button
+                    className="fullscreen-trigger"
+                    type="button"
+                    aria-label={`View ${item.name} fullscreen`}
+                  >
                     <Maximize2 size={16} />
                   </button>
-                  <span style={{ fontSize: 30, fontWeight: 650 }}>Aa</span>
-                  <span className="hex" style={{ color: 'inherit', opacity: 0.74 }}>
-                    {item.type === 'scale' ? item.step : 'engineered'}
-                  </span>
+                  <span className="swatch-sample">Aa</span>
                 </div>
               </a>
               <div className="meta">
@@ -412,6 +447,7 @@ export default function CatalogueBrowser({
                   <br />
                   <span className="hex">
                     {item.hex}
+                    {item.type === 'scale' ? ` / ${item.step}` : ''}
                     {!inSRGB(item.p3) ? ' · P3' : ''}
                   </span>
                 </span>
@@ -432,18 +468,48 @@ export default function CatalogueBrowser({
           onClick={(event) => event.target === event.currentTarget && setSelected(null)}
         >
           <section className="engineered-modal-card">
-            <button className="modal-close" type="button" onClick={() => setSelected(null)} aria-label="Close colour detail"><X size={20} /></button>
-            <div className="swatch contrast-surface" style={contrastSurfaceStyle(selected.hex, { minHeight: 280 })}>
-              <button className="fullscreen-trigger" type="button" aria-label={`View ${selected.name} fullscreen`}><Maximize2 size={18} /></button>
-              <span style={{ fontSize: 84 }}>Aa</span><strong>{selected.hex}</strong>
+            <button
+              className="modal-close"
+              type="button"
+              onClick={() => setSelected(null)}
+              aria-label="Close colour detail"
+            >
+              <X size={20} />
+            </button>
+            <div
+              className="swatch contrast-surface"
+              style={contrastSurfaceStyle(selected.hex, { minHeight: 280 })}
+            >
+              <button
+                className="fullscreen-trigger"
+                type="button"
+                aria-label={`View ${selected.name} fullscreen`}
+              >
+                <Maximize2 size={18} />
+              </button>
+              <span style={{ fontSize: 84 }}>Aa</span>
+              <strong>{selected.hex}</strong>
             </div>
             <div className="engineered-modal-copy">
-              <div className="eyebrow">{selected.type === 'scale' ? `${selected.family ?? 'Hue'} scale${selected.step ? ` · ${selected.step}` : ''}` : 'Engineered hue'}</div>
-              <h2>{selected.name}</h2><p>{selected.description}</p>
-              <p className="hex">{selected.oklch}</p><p className="hex">{selected.p3}</p>
+              <div className="eyebrow">
+                {selected.type === 'scale'
+                  ? `${selected.family ?? 'Hue'} scale${selected.step ? ` · ${selected.step}` : ''}`
+                  : 'Engineered hue'}
+              </div>
+              <h2>{selected.name}</h2>
+              <p>{selected.description}</p>
+              <p className="hex">{selected.oklch}</p>
+              <p className="hex">{selected.p3}</p>
               <div className="toolbar">
-                <a className="button" href={`${base}/${selected.type === 'scale' ? 'scales/view' : 'engineered/view'}?slug=${encodeURIComponent(selected.slug)}`}>Open full page</a>
-                <button className="button primary" type="button" onClick={() => setSelected(null)}>Done</button>
+                <a
+                  className="button"
+                  href={`${base}/${selected.type === 'scale' ? 'scales/view' : 'engineered/view'}?slug=${encodeURIComponent(selected.slug)}`}
+                >
+                  Open full page
+                </a>
+                <button className="button primary" type="button" onClick={() => setSelected(null)}>
+                  Done
+                </button>
               </div>
             </div>
           </section>

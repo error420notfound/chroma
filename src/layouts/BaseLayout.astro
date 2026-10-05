@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { foundationStyle } from '../lib/foundation';
 import SiteSearch from '../components/search/SiteSearch.tsx';
 const {
   title = 'Chroma — Colour library & studio',
@@ -20,7 +21,7 @@ const toolLinks = [
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" style={foundationStyle}>
   <head
     ><meta charset="utf-8" /><meta
       name="viewport"
@@ -73,8 +74,16 @@ const toolLinks = [
       <button class="swatch-fullscreen-close" type="button" aria-label="Close fullscreen">×</button
       ><button class="swatch-fullscreen-play" type="button" aria-label="Pause gradient"
         >Pause</button
-      ><button class="swatch-fullscreen-nav swatch-fullscreen-prev" type="button" aria-label="Previous hue">‹</button>
-      <button class="swatch-fullscreen-nav swatch-fullscreen-next" type="button" aria-label="Next hue">›</button>
+      ><button
+        class="swatch-fullscreen-nav swatch-fullscreen-prev"
+        type="button"
+        aria-label="Previous hue">‹</button
+      >
+      <button
+        class="swatch-fullscreen-nav swatch-fullscreen-next"
+        type="button"
+        aria-label="Next hue">›</button
+      >
       <span class="swatch-fullscreen-status visually-hidden" aria-live="polite"></span>
       <div class="swatch-fullscreen-content"></div>
     </div><script is:inline>
@@ -164,7 +173,8 @@ const toolLinks = [
         previous.addEventListener('click', () => moveScale(-1));
         next.addEventListener('click', () => moveScale(1));
         content.addEventListener('pointerdown', (event) => {
-          swipeStart = event.pointerType === 'mouse' ? null : { x: event.clientX, y: event.clientY };
+          swipeStart =
+            event.pointerType === 'mouse' ? null : { x: event.clientX, y: event.clientY };
         });
         content.addEventListener('pointerup', (event) => {
           if (!swipeStart) return;
@@ -176,15 +186,19 @@ const toolLinks = [
             moveScale(dx < 0 ? 1 : -1);
           }
         });
-        document.addEventListener('click', (event) => {
-          const trigger = event.target.closest?.('.fullscreen-trigger');
-          if (!trigger || trigger.closest('.swatch-fullscreen')) return;
-          const target = trigger.closest('.swatch');
-          if (!target) return;
-          event.preventDefault();
-          event.stopPropagation();
-          open(target);
-        }, true);
+        document.addEventListener(
+          'click',
+          (event) => {
+            const trigger = event.target.closest?.('.fullscreen-trigger');
+            if (!trigger || trigger.closest('.swatch-fullscreen')) return;
+            const target = trigger.closest('.swatch');
+            if (!target) return;
+            event.preventDefault();
+            event.stopPropagation();
+            open(target);
+          },
+          true,
+        );
         close.addEventListener('click', exit);
         overlay.addEventListener('click', (event) => {
           if (event.target === overlay) exit();
