@@ -1,109 +1,25 @@
-import { motionSeconds } from '../../lib/foundation';
-import { useLayoutEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
 import type { EngineeredHue } from '../../lib/catalogue';
 import { contrastSurfaceStyle } from '../../lib/colour';
-import { Maximize2, X } from 'lucide-react';
 
 export default function EngineeredBrowser({ hues, base }: { hues: EngineeredHue[]; base: string }) {
-  const [selected, setSelected] = useState<EngineeredHue | null>(null);
-  const modalRef = useRef<HTMLDivElement>(null);
-  const open = (hue: EngineeredHue) => {
-    setSelected(hue);
-    history.pushState(
-      { hue: hue.slug },
-      '',
-      `${base}/engineered/view?slug=${encodeURIComponent(hue.slug)}`,
-    );
-  };
-  const close = () => {
-    setSelected(null);
-    history.replaceState(null, '', `${base}/engineered`);
-  };
-  useLayoutEffect(() => {
-    if (
-      !selected ||
-      !modalRef.current ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    )
-      return;
-    const context = gsap.context(() => {
-      gsap.fromTo(
-        modalRef.current,
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: motionSeconds('fast'), ease: 'power1.out' },
-      );
-      gsap.fromTo(
-        '.engineered-modal-card',
-        { y: 24, scale: 0.98 },
-        { y: 0, scale: 1, duration: motionSeconds('standard'), ease: 'power3.out' },
-      );
-    }, modalRef);
-    return () => context.revert();
-  }, [selected]);
   return (
-    <>
-      <div className="catalogue-grid">
-        {hues.map((hue) => (
-          <button className="catalogue-cell engineered-card" key={hue.id} onClick={() => open(hue)}>
-            <div className="swatch contrast-surface" style={contrastSurfaceStyle(hue.hex)}>
-              <strong style={{ fontSize: 27 }}>Aa</strong>
-              <span>{hue.name}</span>
-            </div>
-            <div className="meta">
-              <span className="hex">{hue.hex}</span>
-              <span>{hue.tags[0]}</span>
-            </div>
-          </button>
-        ))}
-      </div>
-      {selected && (
-        <div
-          className="engineered-modal"
-          ref={modalRef}
-          role="dialog"
-          aria-modal="true"
-          aria-label={`${selected.name} detail`}
-          onClick={(event) => event.target === event.currentTarget && close()}
+    <div className="catalogue-grid">
+      {hues.map((hue) => (
+        <a
+          className="catalogue-cell engineered-card"
+          key={hue.id}
+          href={`${base}/engineered/view?slug=${encodeURIComponent(hue.slug)}`}
         >
-          <section className="engineered-modal-card">
-            <button className="modal-close" onClick={close} aria-label="Close colour detail">
-              <X size={20} />
-            </button>
-            <div
-              className="swatch contrast-surface"
-              style={contrastSurfaceStyle(selected.hex, { minHeight: 280 })}
-            >
-              <button
-                className="fullscreen-trigger"
-                type="button"
-                aria-label={`View ${selected.name} fullscreen`}
-              >
-                <Maximize2 size={18} />
-              </button>
-              <span style={{ fontSize: 84 }}>Aa</span>
-              <strong>{selected.hex}</strong>
-            </div>
-            <div className="engineered-modal-copy">
-              <div className="eyebrow">Engineered hue</div>
-              <h2>{selected.name}</h2>
-              <p>{selected.description}</p>
-              <p className="hex">{selected.oklch}</p>
-              <div className="toolbar">
-                <a
-                  className="button"
-                  href={`${base}/engineered/view?slug=${encodeURIComponent(selected.slug)}`}
-                >
-                  Open full page
-                </a>
-                <button className="button primary" onClick={close}>
-                  Done
-                </button>
-              </div>
-            </div>
-          </section>
-        </div>
-      )}
-    </>
+          <div className="swatch contrast-surface" style={contrastSurfaceStyle(hue.hex)}>
+            <strong style={{ fontSize: 27 }}>Aa</strong>
+            <span>{hue.name}</span>
+          </div>
+          <div className="meta">
+            <span>{hue.name}</span>
+            <span>{hue.tags[0]}</span>
+          </div>
+        </a>
+      ))}
+    </div>
   );
 }

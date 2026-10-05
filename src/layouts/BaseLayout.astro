@@ -134,7 +134,8 @@ const toolLinks = [
           const exitFullscreen = document.exitFullscreen || document.webkitExitFullscreen;
           if (document.fullscreenElement || document.webkitFullscreenElement)
             exitFullscreen?.call(document).catch?.(() => {});
-          returnFocus?.focus?.();
+          if (returnFocus?.isConnected) returnFocus.focus();
+          else (document.querySelector('.hue-toast-expand') || document.querySelector('.hue-detail-trigger'))?.focus();
           returnFocus = null;
         };
         const open = (source) => {
@@ -195,6 +196,7 @@ const toolLinks = [
             if (!target) return;
             event.preventDefault();
             event.stopPropagation();
+            target.closest('dialog')?.close();
             open(target);
           },
           true,
