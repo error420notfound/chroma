@@ -46,3 +46,15 @@ The configured `origin` is `error420notfound/chroma`, so this project site is bu
 - User or organization site (`<owner>.github.io`): use the same `site` and remove `base`
 
 The workflow in `.github/workflows/deploy.yml` runs on pushes to `main` and manual dispatch, uses `npm ci`, checks and builds the site, uploads `dist`, then deploys through GitHub Pages Actions. Set this once in the repository: **Settings → Pages → Source → GitHub Actions**.
+
+## Installed app and offline use
+
+Chroma can be installed through a supported browser's install menu. In iOS Safari, use **Share → Add to Home Screen**, with **Open as Web App** enabled if shown. Installed launches use standalone mode and start at the base-aware home URL.
+
+The manifest uses URLs relative to its own location, so its identity, launch URL, scope, and icons work at `/chroma/` and at `/` without editing the manifest. The build integration in `scripts/pwa.mjs` generates `dist/sw.js` from the configured Astro base and the home/offline pages' local module dependencies. Production builds register it; development does not.
+
+The worker precaches the home library, its essential CSS/JavaScript, icons, and a branded offline page. Offline home navigation opens the saved library; other routes show the offline page with retry and home links. Remote catalogue responses are not cached by the worker; the existing catalogue storage/snapshot fallback still applies. Tool pages and arbitrary catalogue detail pages are not precached.
+
+Every build-content change versions the cache. Precache downloads use content revision URLs and verify each file's SHA-256 hash so a stale CDN response or partial deployment cannot replace the working shell. A complete new cache must install successfully before replacing the current worker. Open tabs keep their current worker and drafts; an update notice asks you to close all Chroma tabs/app windows and reopen. Activation removes this app's older caches. Registration or cache failures do not block normal browsing.
+
+To check the deployed path locally, run `npm run build` followed by `npm run preview -- --host 127.0.0.1`, then open `/chroma/` rather than `/`. Physical Android/iOS installation and live GitHub Pages checks still need a deployed build and those devices.

@@ -28,8 +28,17 @@ const toolLinks = [
       content="width=device-width, initial-scale=1"
     /><meta name="description" content={description} /><meta
       name="theme-color"
-      content="#f6f4f0"
-    /><title>{title}</title></head
+      content="#f3f3f3"
+      media="(prefers-color-scheme: light)"
+    /><meta name="theme-color" content="#0b0b0b" media="(prefers-color-scheme: dark)" />
+    <link rel="manifest" href={`${base}/manifest.webmanifest`} />
+    <link rel="icon" type="image/png" sizes="192x192" href={`${base}/icons/chroma-192.png`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${base}/icons/apple-touch-icon.png`} />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Chroma" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>{title}</title></head
   >
   <body
     ><a class="skip-link" href="#main-content">Skip to content</a><div class="shell">
@@ -65,7 +74,14 @@ const toolLinks = [
             </div>
           </nav>
         </div>
-      </header><main class="page" id="main-content"><slot /></main><footer class="site-footer">
+      </header>
+      <p class="pwa-notice" data-offline-notice role="status" hidden>
+        You're offline. The saved home library is available; other pages may need a connection.
+      </p>
+      <p class="pwa-notice" data-pwa-update role="status" hidden>
+        A Chroma update is ready. Close all Chroma tabs and app windows, then reopen to update.
+      </p>
+      <main class="page" id="main-content"><slot /></main><footer class="site-footer">
         <a href={`${base}/`}>Chroma</a><span
           >Colour records and tool drafts stay in this browser.</span
         ><a href={`${base}/compare`}>Open workbench →</a>
@@ -86,7 +102,9 @@ const toolLinks = [
       >
       <span class="swatch-fullscreen-status visually-hidden" aria-live="polite"></span>
       <div class="swatch-fullscreen-content"></div>
-    </div><script is:inline>
+    </div><script>
+      import '../scripts/pwa';
+    </script><script is:inline>
       (() => {
         const overlay = document.querySelector('.swatch-fullscreen');
         const content = overlay?.querySelector('.swatch-fullscreen-content');
@@ -135,7 +153,11 @@ const toolLinks = [
           if (document.fullscreenElement || document.webkitFullscreenElement)
             exitFullscreen?.call(document).catch?.(() => {});
           if (returnFocus?.isConnected) returnFocus.focus();
-          else (document.querySelector('.hue-toast-expand') || document.querySelector('.hue-detail-trigger'))?.focus();
+          else
+            (
+              document.querySelector('.hue-toast-expand') ||
+              document.querySelector('.hue-detail-trigger')
+            )?.focus();
           returnFocus = null;
         };
         const open = (source) => {

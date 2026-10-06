@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<BaseLayout
+  title="You're offline — Chroma"
+  description="Reconnect to open this Chroma page, or browse the saved home library."
+>
+  <section class="offline-page" aria-labelledby="offline-heading">
+    <p class="eyebrow">Chroma · Offline</p>
+    <h1 id="offline-heading">This page needs a connection.</h1>
+    <p>
+      Your colour records and tool drafts are still stored in this browser. You can browse the saved
+      home library while you're offline.
+    </p>
+    <div class="offline-actions">
+      <a href={`${base}/`}>Open saved library →</a>
+      <button type="button" data-offline-retry>Try this page again</button>
+    </div>
+  </section>
+  <script>
+    document
+      .querySelector('[data-offline-retry]')
+      ?.addEventListener('click', () => location.reload());
+  </script>
+</BaseLayout>

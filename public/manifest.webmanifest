@@ -1,0 +1,22 @@
+{
+  "id": "./",
+  "name": "Chroma — Colour library & studio",
+  "short_name": "Chroma",
+  "description": "Browse colour systems and work with colour in a focused studio.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#f3f3f3",
+  "background_color": "#f3f3f3",
+  "icons": [
+    { "src": "./icons/chroma-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/chroma-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    {
+      "src": "./icons/chroma-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
