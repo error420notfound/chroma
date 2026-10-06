@@ -555,6 +555,8 @@ p {
   cursor: crosshair;
   touch-action: none;
   border-radius: 50%;
+  -webkit-mask-image: radial-gradient(circle, transparent 0 60%, #000 61%);
+  mask-image: radial-gradient(circle, transparent 0 60%, #000 61%);
   background: conic-gradient(
     from 0deg,
     #ff0000,
@@ -1680,6 +1682,25 @@ body {
   font: inherit;
   text-transform: uppercase;
   cursor: pointer;
+}
+.hue-filter-toggle {
+  min-width: 34px;
+  min-height: 28px;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 10px;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.hue-filter-toggle[aria-pressed='true'] {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: var(--surface);
 }
 .hue-wheel-panel {
   padding: 0 var(--space-3) var(--space-3);

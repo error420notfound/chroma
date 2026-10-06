@@ -34,7 +34,8 @@ function HueWheel({ hue, onChange }: { hue: number; onChange: (hue: number) => v
     const rect = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - rect.left) / rect.width) * 240 - 120;
     const y = ((event.clientY - rect.top) / rect.height) * 240 - 120;
-    if (Math.hypot(x, y) < 2) return;
+    const radius = Math.hypot(x, y);
+    if (radius < 100 || radius > 120) return;
     onChange(Math.round((Math.atan2(x, -y) * 180) / Math.PI + 360) % 360);
   };
   return (
@@ -76,14 +77,14 @@ function HueWheel({ hue, onChange }: { hue: number; onChange: (hue: number) => v
       <circle className="wheel-spectrum" cx={120} cy={120} r={120} />
       <circle
         className="wheel-marker-halo"
-        cx={120 + Math.sin(angle) * 96}
-        cy={120 - Math.cos(angle) * 96}
+        cx={120 + Math.sin(angle) * 110}
+        cy={120 - Math.cos(angle) * 110}
         r={9}
       />
       <circle
         className="wheel-marker"
-        cx={120 + Math.sin(angle) * 96}
-        cy={120 - Math.cos(angle) * 96}
+        cx={120 + Math.sin(angle) * 110}
+        cy={120 - Math.cos(angle) * 110}
         r={9}
       />
     </svg>
@@ -169,6 +170,7 @@ export default function CatalogueBrowser({
   const [lightness, setLightness] = useState<[number, number]>([0, 1]);
   const [chroma, setChroma] = useState<[number, number]>([0, 0.4]);
   const [hue, setHue] = useState(210);
+  const [hueFilterEnabled, setHueFilterEnabled] = useState(false);
   const [hueOpen, setHueOpen] = useState(false);
   const [harmony, setHarmony] = useState<HarmonyMode>('none');
   const families = useMemo(
@@ -203,12 +205,12 @@ export default function CatalogueBrowser({
             colour.l <= lightness[1] &&
             colour.c >= chroma[0] &&
             colour.c <= chroma[1] &&
-            (harmony === 'none' || hueDistance(colour.h, hue) <= 34)
+            (!hueFilterEnabled || hueDistance(colour.h, hue) <= 34)
           );
         }),
         sort,
       ),
-    [items, view, collection, sort, lightness, chroma, harmony, hue],
+    [items, view, collection, sort, lightness, chroma, hueFilterEnabled, hue],
   );
   const palette = harmonyHues(hue, harmony).flatMap((target) => nearestColours(items, target));
   const reset = () => {
@@ -217,6 +219,7 @@ export default function CatalogueBrowser({
     setSort('hue');
     setLightness([0, 1]);
     setChroma([0, 0.4]);
+    setHueFilterEnabled(false);
     setHarmony('none');
     setHue(210);
   };
@@ -293,6 +296,15 @@ export default function CatalogueBrowser({
                   aria-hidden="true"
                   style={{ background: nearestColours(items, hue)[0]?.hex ?? 'var(--blue)' }}
                 />
+                <button
+                  type="button"
+                  className="hue-filter-toggle"
+                  aria-label={`Hue filter ${hueFilterEnabled ? 'on' : 'off'}`}
+                  aria-pressed={hueFilterEnabled}
+                  onClick={() => setHueFilterEnabled((enabled) => !enabled)}
+                >
+                  {hueFilterEnabled ? 'On' : 'Off'}
+                </button>
                 <div className="hue-stepper">
                   <button
                     type="button"
